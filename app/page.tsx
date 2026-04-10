@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const CHECKOUT_LINK = "https://buy.stripe.com/6oU00kcdK02rgXg64zeOm2N";
+const CHECKOUT_LINK = "https://buy.stripe.com/8x2cN6dhO7uT22makPeOm42";
 const CONTACT_EMAIL = "contact@radarrival.fr";
 
 type Locale = "fr" | "en";
