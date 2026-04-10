@@ -101,7 +101,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="text-xl font-bold tracking-tight">
-            <span className="text-brand-400">Create</span> Co
+            <span className="text-brand-400">Radar</span>Rival
           </span>
           <div className="hidden md:flex items-center gap-8 text-sm text-slate-300">
             <a href="#comment-ca-marche" className="hover:text-white transition">Fonctionnement</a>
@@ -125,7 +125,7 @@ export default function Home() {
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <div className="inline-block mb-6 px-4 py-1.5 bg-brand-600/10 border border-brand-500/20 rounded-full text-brand-300 text-sm font-medium">
-            Veille concurrentielle pour PME &amp; indépendants
+            RadarRival · Veille concurrentielle pour PME &amp; indépendants
           </div>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
             Chaque lundi, sachez exactement ce que font{" "}
@@ -338,7 +338,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <span className="text-lg font-bold">
-                <span className="text-brand-400">Create</span> Co
+                <span className="text-brand-400">Radar</span>Rival
               </span>
               <p className="text-slate-500 text-sm mt-1">
                 Veille concurrentielle hebdomadaire pour PME &amp; indépendants.
@@ -347,11 +347,11 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
               <a href="#tarif" className="hover:text-white transition">Tarif</a>
               <a href="#faq" className="hover:text-white transition">FAQ</a>
-              <a href="mailto:contact@create-co.fr" className="hover:text-white transition">Contact</a>
+              <a href="mailto:contact@radarrival.fr" className="hover:text-white transition">Contact</a>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-800/50 text-center text-xs text-slate-500 space-y-2">
-            <p>© 2026 Create Co. Tous droits réservés.</p>
+            <p>© 2026 RadarRival. Tous droits réservés.</p>
             <p>
               Conformément à la loi n°78-17 du 6 janvier 1978 relative à l&apos;informatique, aux fichiers et aux libertés, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression des données vous concernant.
               Hébergement&nbsp;: Vercel Inc. — Paiement sécurisé&nbsp;: Stripe.

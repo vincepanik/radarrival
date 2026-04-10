@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CheckoutSuccess() {
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
@@ -15,12 +17,12 @@ export default function CheckoutSuccess() {
         <p className="text-slate-400 text-sm mb-8">
           Pensez à vérifier votre dossier spam si vous ne voyez pas notre email.
         </p>
-        <a
+        <Link
           href="/"
           className="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-3 rounded-xl transition"
         >
           Retour à l&apos;accueil
-        </a>
+        </Link>
       </div>
     </div>
   );
