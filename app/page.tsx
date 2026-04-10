@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-const STARTER_PAYMENT_LINK = "https://buy.stripe.com/aFa00k4LicPd0Yi2SneOm2A";
-const PRO_PAYMENT_LINK = "https://buy.stripe.com/fZu6oI7Xu4iH8qK64zeOm2B";
+const CHECKOUT_LINK = "https://buy.stripe.com/6oU00kcdK02rgXg64zeOm2N";
 
 /* ─── Icons as inline SVGs ─── */
 function IconSearch() {
@@ -70,7 +69,7 @@ const plans = [
     price: "19€",
     cadence: "/mois",
     description: "Surveillez jusqu'à 3 concurrents. Rapport hebdomadaire chaque lundi.",
-    href: STARTER_PAYMENT_LINK,
+    href: CHECKOUT_LINK,
     cta: "Choisir Starter",
     badge: "Pour démarrer",
     features: [
@@ -87,7 +86,7 @@ const plans = [
     price: "29€",
     cadence: "/mois",
     description: "Surveillez jusqu'à 5 concurrents. Rapport hebdomadaire + alertes en temps réel.",
-    href: PRO_PAYMENT_LINK,
+    href: CHECKOUT_LINK,
     cta: "Choisir Pro",
     badge: "Le plus complet",
     features: [
@@ -369,13 +368,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={STARTER_PAYMENT_LINK}
+              href={CHECKOUT_LINK}
               className="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-xl text-lg transition shadow-lg shadow-brand-600/20"
             >
               Starter — 19€/mois
             </a>
             <a
-              href={PRO_PAYMENT_LINK}
+              href={CHECKOUT_LINK}
               className="inline-block border border-slate-700 hover:border-brand-500/40 text-white font-semibold px-8 py-4 rounded-xl text-lg transition"
             >
               Pro — 29€/mois
