@@ -10,11 +10,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "RadarRival — Veille Concurrentielle Hebdomadaire",
   description:
-    "RadarRival aide les PME et indépendants français à suivre leurs concurrents chaque lundi avec une veille claire, actionnable et sans effort. 49€/mois.",
+    "RadarRival aide les PME et indépendants français à suivre leurs concurrents chaque lundi avec une veille claire, actionnable et sans effort. Starter à 19€/mois, Pro à 29€/mois.",
   openGraph: {
     title: "RadarRival — Veille Concurrentielle Hebdomadaire",
     description:
-      "Chaque lundi, sachez exactement ce que font vos concurrents.",
+      "Choisissez Starter ou Pro pour suivre vos concurrents chaque lundi.",
     locale: "fr_FR",
     type: "website",
   },

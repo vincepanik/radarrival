@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-const PAYMENT_LINK = "https://buy.stripe.com/9B6cN63He7uTgXg9gLeOg1C";
+const STARTER_PAYMENT_LINK = "https://buy.stripe.com/aFa00k4LicPd0Yi2SneOm2A";
+const PRO_PAYMENT_LINK = "https://buy.stripe.com/fZu6oI7Xu4iH8qK64zeOm2B";
 
 /* ─── Icons as inline SVGs ─── */
 function IconSearch() {
@@ -39,7 +40,7 @@ function IconCheck() {
 const faqs = [
   {
     q: "Comment fonctionne la surveillance de mes concurrents\u00a0?",
-    a: "Vous nous communiquez 3 à 5 concurrents lors de votre inscription. Notre système surveille en continu leurs sites web, réseaux sociaux, offres d\u2019emploi et mentions presse. Chaque lundi, vous recevez un rapport clair et actionnable par email.",
+    a: "Vous choisissez votre formule lors de l\u2019inscription : Starter pour suivre jusqu\u2019à 3 concurrents, Pro pour aller jusqu\u2019à 5 concurrents. Notre système surveille ensuite leurs sites web, réseaux sociaux, offres d\u2019emploi et mentions presse. Chaque lundi, vous recevez un rapport clair et actionnable par email.",
   },
   {
     q: "Puis-je changer mes concurrents surveillés\u00a0?",
@@ -60,6 +61,45 @@ const faqs = [
   {
     q: "Sous quel format reçois-je le rapport\u00a0?",
     a: "Vous recevez chaque lundi matin un email structuré avec un résumé des changements clés, accompagné d\u2019un lien vers votre rapport détaillé en ligne.",
+  },
+];
+
+const plans = [
+  {
+    name: "Starter",
+    price: "19€",
+    cadence: "/mois",
+    description: "Surveillez jusqu'à 3 concurrents. Rapport hebdomadaire chaque lundi.",
+    href: STARTER_PAYMENT_LINK,
+    cta: "Choisir Starter",
+    badge: "Pour démarrer",
+    features: [
+      "Jusqu'à 3 concurrents suivis",
+      "Rapport hebdomadaire chaque lundi",
+      "Changements web & contenus",
+      "Veille réseaux sociaux",
+      "Suivi des prix et offres",
+      "Support par email",
+    ],
+  },
+  {
+    name: "Pro",
+    price: "29€",
+    cadence: "/mois",
+    description: "Surveillez jusqu'à 5 concurrents. Rapport hebdomadaire + alertes en temps réel.",
+    href: PRO_PAYMENT_LINK,
+    cta: "Choisir Pro",
+    badge: "Le plus complet",
+    features: [
+      "Jusqu'à 5 concurrents suivis",
+      "Rapport hebdomadaire chaque lundi",
+      "Alertes en temps réel",
+      "Changements web & contenus",
+      "Veille réseaux sociaux",
+      "Suivi des prix et offres",
+      "Retombées presse",
+      "Support prioritaire",
+    ],
   },
 ];
 
@@ -110,10 +150,10 @@ export default function Home() {
             <a href="#faq" className="hover:text-white transition">FAQ</a>
           </div>
           <a
-            href={PAYMENT_LINK}
+            href="#tarif"
             className="bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition"
           >
-            Commencer
+            Voir les offres
           </a>
         </div>
       </nav>
@@ -135,12 +175,15 @@ export default function Home() {
             Recevez un rapport de veille complet chaque semaine — changements web,
             réseaux sociaux, prix, recrutements — sans lever le petit doigt.
           </p>
+          <p className="text-sm md:text-base text-brand-300 font-medium mb-8">
+            Deux formules mensuelles : Starter à 19€/mois, Pro à 29€/mois.
+          </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={PAYMENT_LINK}
+              href="#tarif"
               className="bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-xl text-lg transition shadow-lg shadow-brand-600/20"
             >
-              Démarrer ma veille — 49€/mois
+              Choisir mon plan
             </a>
             <a
               href="#comment-ca-marche"
@@ -178,8 +221,8 @@ export default function Home() {
               {
                 step: "1",
                 icon: <IconSearch />,
-                title: "Donnez-nous 3 à 5 concurrents",
-                desc: "Inscrivez-vous et partagez les noms ou URLs de vos principaux concurrents. C\u2019est tout ce dont nous avons besoin.",
+                title: "Choisissez Starter ou Pro",
+                desc: "Sélectionnez la formule adaptée à votre besoin, puis partagez les noms ou URLs de 3 à 5 concurrents selon votre plan.",
               },
               {
                 step: "2",
@@ -241,59 +284,60 @@ export default function Home() {
 
       {/* ─── Pricing ─── */}
       <section id="tarif" className="py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Un tarif simple et transparent
+              Deux formules simples pour votre veille
             </h2>
             <p className="text-slate-400 text-lg">
-              Tout est inclus. Sans engagement mensuel.
+              Choisissez le niveau de suivi adapté à votre marché.
             </p>
           </div>
 
-          <div className="bg-gradient-to-b from-slate-900 to-slate-900/50 border border-slate-700/50 rounded-2xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <div className="text-sm font-medium text-brand-400 mb-2">
-                Veille Concurrentielle
-              </div>
-              <div className="flex items-end justify-center gap-2 mb-1">
-                <span className="text-5xl md:text-6xl font-bold">49€</span>
-                <span className="text-slate-400 text-lg mb-2">/mois</span>
-              </div>
-              <p className="text-slate-400 text-sm">
-                ou <span className="text-brand-300 font-medium">39€/mois</span> avec l&apos;abonnement annuel (468€/an)
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 max-w-lg mx-auto">
-              {[
-                "Surveillance de 3 à 5 concurrents",
-                "Rapport hebdomadaire par email",
-                "Changements web & contenus",
-                "Veille réseaux sociaux",
-                "Suivi des prix et offres",
-                "Offres d\u2019emploi détectées",
-                "Retombées presse",
-                "Support par email",
-              ].map((feat) => (
-                <div key={feat} className="flex items-start gap-3 py-1">
-                  <IconCheck />
-                  <span className="text-slate-200 text-sm">{feat}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <a
-                href={PAYMENT_LINK}
-                className="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition shadow-lg shadow-brand-600/20"
+          <div className="grid lg:grid-cols-2 gap-8">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className="bg-gradient-to-b from-slate-900 to-slate-900/50 border border-slate-700/50 rounded-2xl p-8 md:p-10"
               >
-                Commencer maintenant
-              </a>
-              <p className="text-slate-500 text-sm mt-4">
-                Paiement sécurisé par Stripe. Annulation en un clic.
-              </p>
-            </div>
+                <div className="mb-8">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-600/10 border border-brand-500/20 text-brand-300 text-sm font-medium mb-5">
+                    {plan.badge}
+                  </div>
+                  <div className="text-sm font-medium text-brand-400 mb-2">
+                    Plan {plan.name}
+                  </div>
+                  <div className="flex items-end gap-2 mb-3">
+                    <span className="text-5xl md:text-6xl font-bold">{plan.price}</span>
+                    <span className="text-slate-400 text-lg mb-2">{plan.cadence}</span>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed">
+                    {plan.description}
+                  </p>
+                </div>
+
+                <div className="space-y-3 mb-10">
+                  {plan.features.map((feat) => (
+                    <div key={feat} className="flex items-start gap-3 py-1">
+                      <IconCheck />
+                      <span className="text-slate-200 text-sm">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div>
+                  <a
+                    href={plan.href}
+                    className="inline-block w-full text-center bg-brand-600 hover:bg-brand-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition shadow-lg shadow-brand-600/20"
+                  >
+                    {plan.cta}
+                  </a>
+                  <p className="text-slate-500 text-sm mt-4 text-center">
+                    Paiement sécurisé par Stripe.
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -321,14 +365,22 @@ export default function Home() {
             Prêt à surveiller vos concurrents&nbsp;?
           </h2>
           <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-            Rejoignez les dirigeants qui démarrent chaque semaine avec un avantage concurrentiel.
+            Comparez Starter et Pro, puis choisissez la formule qui correspond à votre rythme de veille.
           </p>
-          <a
-            href={PAYMENT_LINK}
-            className="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition shadow-lg shadow-brand-600/20"
-          >
-            Démarrer ma veille — 49€/mois
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={STARTER_PAYMENT_LINK}
+              className="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-xl text-lg transition shadow-lg shadow-brand-600/20"
+            >
+              Starter — 19€/mois
+            </a>
+            <a
+              href={PRO_PAYMENT_LINK}
+              className="inline-block border border-slate-700 hover:border-brand-500/40 text-white font-semibold px-8 py-4 rounded-xl text-lg transition"
+            >
+              Pro — 29€/mois
+            </a>
+          </div>
         </div>
       </section>
 
