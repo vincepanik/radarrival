@@ -8,15 +8,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RadarRival — Veille Concurrentielle Hebdomadaire",
+  metadataBase: new URL("https://co-rgl1.nanocorp.app"),
+  title: "RadarRival | Veille concurrentielle hebdomadaire",
   description:
-    "RadarRival aide les PME et indépendants français à suivre leurs concurrents chaque lundi avec une veille claire, actionnable et sans effort. Starter à 19€/mois, Pro à 29€/mois.",
+    "Chaque lundi, sachez exactement ce que font vos concurrents avec RadarRival. Landing page bilingue FR/EN. Starter 19€/mois, Pro 29€/mois, essai gratuit 7 jours.",
   openGraph: {
-    title: "RadarRival — Veille Concurrentielle Hebdomadaire",
+    title: "RadarRival | Veille concurrentielle hebdomadaire",
     description:
-      "Choisissez Starter ou Pro pour suivre vos concurrents chaque lundi.",
+      "Landing page bilingue FR/EN avec Starter à 19€/mois et Pro à 29€/mois.",
+    url: "https://co-rgl1.nanocorp.app",
+    siteName: "RadarRival",
     locale: "fr_FR",
+    alternateLocale: ["en_US"],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RadarRival | Veille concurrentielle hebdomadaire",
+    description:
+      "Chaque lundi, sachez exactement ce que font vos concurrents. Starter 19€/mois, Pro 29€/mois.",
   },
 };
 
