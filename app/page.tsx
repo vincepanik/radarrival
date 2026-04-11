@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const CHECKOUT_LINK = "https://buy.stripe.com/8x2cN6dhO7uT22makPeOm42";
+const STARTER_CHECKOUT_LINK = "/checkout/starter";
+const PRO_CHECKOUT_LINK = "/checkout/pro";
 const CONTACT_EMAIL = "contact@radarrival.fr";
 
 type Locale = "fr" | "en";
@@ -49,6 +50,7 @@ type Copy = {
       trial: string;
       description: string;
       cta: string;
+      href: string;
       features: string[];
     }>;
   };
@@ -151,7 +153,7 @@ const copy: Record<Locale, Copy> = {
     pricing: {
       title: "Deux formules, un radar plus net",
       subtitle: "Choisissez le niveau de couverture adapté à votre marché et démarrez avec 7 jours d'essai gratuit.",
-      checkoutHint: "Les deux boutons ouvrent la page de paiement Stripe active, où vous pourrez finaliser la formule choisie.",
+      checkoutHint: "Chaque bouton ouvre une page Stripe dédiée à la formule choisie, sans mélange entre Starter et Pro.",
       securePayment: "Paiement sécurisé par Stripe.",
       plans: [
         {
@@ -162,6 +164,7 @@ const copy: Record<Locale, Copy> = {
           trial: "Essai gratuit 7 jours",
           description: "L'essentiel pour suivre les mouvements clés de votre marché sans friction.",
           cta: "Essai gratuit 7 jours",
+          href: STARTER_CHECKOUT_LINK,
           features: [
             "Jusqu'à 3 concurrents",
             "Rapport hebdomadaire chaque lundi",
@@ -177,6 +180,7 @@ const copy: Record<Locale, Copy> = {
           trial: "Essai gratuit 7 jours",
           description: "Plus de couverture, plus de signaux et des alertes plus rapides pour les marchés actifs.",
           cta: "Essai gratuit 7 jours",
+          href: PRO_CHECKOUT_LINK,
           features: [
             "Jusqu'à 5 concurrents",
             "Rapport hebdomadaire chaque lundi",
@@ -221,12 +225,12 @@ const copy: Record<Locale, Copy> = {
       buttons: [
         {
           label: "Starter · Essai gratuit 7 jours",
-          href: CHECKOUT_LINK,
+          href: STARTER_CHECKOUT_LINK,
           variant: "primary",
         },
         {
           label: "Pro · Essai gratuit 7 jours",
-          href: CHECKOUT_LINK,
+          href: PRO_CHECKOUT_LINK,
           variant: "secondary",
         },
       ],
@@ -324,7 +328,7 @@ const copy: Record<Locale, Copy> = {
     pricing: {
       title: "Two plans, one clearer radar",
       subtitle: "Choose the level of competitor coverage that fits your market and start with a 7-day free trial.",
-      checkoutHint: "Both buttons open the current Stripe checkout page, where you can complete the plan you want.",
+      checkoutHint: "Each button opens a Stripe checkout dedicated to that plan, with no Starter/Pro mix in the cart.",
       securePayment: "Secure payment with Stripe.",
       plans: [
         {
@@ -335,6 +339,7 @@ const copy: Record<Locale, Copy> = {
           trial: "7-day free trial",
           description: "The essential layer for keeping up with key competitor moves without extra overhead.",
           cta: "7-day free trial",
+          href: STARTER_CHECKOUT_LINK,
           features: [
             "Up to 3 competitors",
             "Weekly report every Monday",
@@ -350,6 +355,7 @@ const copy: Record<Locale, Copy> = {
           trial: "7-day free trial",
           description: "More coverage, more signals, and faster alerts for active, fast-moving markets.",
           cta: "7-day free trial",
+          href: PRO_CHECKOUT_LINK,
           features: [
             "Up to 5 competitors",
             "Weekly report every Monday",
@@ -394,12 +400,12 @@ const copy: Record<Locale, Copy> = {
       buttons: [
         {
           label: "Starter · 7-day free trial",
-          href: CHECKOUT_LINK,
+          href: STARTER_CHECKOUT_LINK,
           variant: "primary",
         },
         {
           label: "Pro · 7-day free trial",
-          href: CHECKOUT_LINK,
+          href: PRO_CHECKOUT_LINK,
           variant: "secondary",
         },
       ],
@@ -566,7 +572,7 @@ export default function Home() {
                 </p>
                 <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <a
-                    href={CHECKOUT_LINK}
+                    href="#pricing"
                     className="inline-flex rounded-full bg-brand-500 px-7 py-4 text-center text-base font-semibold text-slate-950 transition hover:bg-brand-400 md:text-lg"
                   >
                     {t.hero.primaryCta}
@@ -715,7 +721,7 @@ export default function Home() {
                   </div>
 
                   <a
-                    href={CHECKOUT_LINK}
+                    href={plan.href}
                     className={`inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-center text-lg font-semibold transition ${
                       index === 1
                         ? "bg-brand-400 text-slate-950 hover:bg-brand-300"
