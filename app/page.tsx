@@ -42,6 +42,7 @@ type Copy = {
     subtitle: string;
     checkoutHint: string;
     securePayment: string;
+    currencyNote: string;
     plans: Array<{
       name: string;
       badge: string;
@@ -155,6 +156,7 @@ const copy: Record<Locale, Copy> = {
       subtitle: "Choisissez le niveau de couverture adapté à votre marché et démarrez avec 7 jours d'essai gratuit.",
       checkoutHint: "Chaque bouton ouvre une page Stripe dédiée à la formule choisie, sans mélange entre Starter et Pro.",
       securePayment: "Paiement sécurisé par Stripe.",
+      currencyNote: "Prix affichés en USD — équivalent à environ 19 €/mois ou 29 €/mois selon votre formule.",
       plans: [
         {
           name: "Starter",
@@ -330,6 +332,7 @@ const copy: Record<Locale, Copy> = {
       subtitle: "Choose the level of competitor coverage that fits your market and start with a 7-day free trial.",
       checkoutHint: "Each button opens a Stripe checkout dedicated to that plan, with no Starter/Pro mix in the cart.",
       securePayment: "Secure payment with Stripe.",
+      currencyNote: "Prices displayed in USD — equivalent to approximately €19/month or €29/month depending on your plan.",
       plans: [
         {
           name: "Starter",
@@ -735,6 +738,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-slate-500">
+            {t.pricing.currencyNote}
+          </p>
         </div>
       </section>
 
