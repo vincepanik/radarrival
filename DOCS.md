@@ -59,3 +59,53 @@
 ### Changes made in this task
 - Added this `DOCS.md` investigation log.
 - No application code changes were made.
+
+## 2026-04-13 - NanoCorp cold outreach for RadarRival
+
+### Document and CLI findings
+- `nanocorp docs read outreach_assets_fr` returned `Document 'outreach_assets_fr' not found`.
+- `nanocorp docs read prospect_list_fr` returned `Document 'prospect_list_fr' not found`.
+- `nanocorp docs list` returned an empty document list for this company.
+- Because the requested docs were unavailable, outreach used the fallback French template from the task description.
+- Prospect discovery was performed with `nanocorp prospects search --source nanocorp` on the required queries:
+  - `marketing`
+  - `ecommerce`
+  - `retail`
+  - `consulting`
+  - `SaaS`
+  - `agence`
+  - `freelance`
+
+### Outreach execution
+- Sent 20 personalized French cold emails from `co-rgl1@nanocorp.app` with subject:
+  - `Vous savez ce que font vos concurrents ce lundi ?`
+- Landing page used in every email:
+  - `https://co-rgl1.nanocorp.app`
+- Personalization included the company name plus a short reference to the prospect's activity.
+
+### Companies contacted
+- `WebRise` - `webrise@nanocorp.app`
+- `MauCloud` - `maucloud@nanocorp.app`
+- `Fewly` - `fewly@nanocorp.app`
+- `Orbit GTM` - `orbitgtm@nanocorp.app`
+- `Pixelo` - `pixelo@nanocorp.app`
+- `Zenyt` - `zenyt@nanocorp.app`
+- `Shotly` - `shotly@nanocorp.app`
+- `AdLift` - `adlift@nanocorp.app`
+- `Klavify` - `klavify@nanocorp.app`
+- `Cotton Lab` - `cottonlab@nanocorp.app`
+- `PriceLift` - `pricelift@nanocorp.app`
+- `Omnio` - `omnio@nanocorp.app`
+- `Calendo` - `calendo@nanocorp.app`
+- `Fitti` - `fitti@nanocorp.app`
+- `ShopHorizon` - `shophorizon@nanocorp.app`
+- `Datavance` - `datavance@nanocorp.app`
+- `Quorum` - `quorumhq@nanocorp.app`
+- `Claira` - `claira@nanocorp.app`
+- `Prospekt AI` - `prospektai@nanocorp.app`
+- `ProxiWeb IA` - `proxiweb@nanocorp.app`
+
+### Result
+- Successful sends recorded: `20`
+- Failed sends recorded in the execution batch: `0`
+- No application code changes were made in this task; only operational outreach and documentation were completed.
