@@ -155,7 +155,7 @@ const copy: Record<Locale, Copy> = {
       title: "Deux formules, un radar plus net",
       subtitle: "Choisissez le niveau de couverture adapté à votre marché et démarrez avec 7 jours d'essai gratuit.",
       checkoutHint: "Chaque bouton ouvre une page Stripe dédiée à la formule choisie, sans mélange entre Starter et Pro.",
-      securePayment: "Paiement sécurisé par Stripe.",
+      securePayment: "💳 Paiement sécurisé par Stripe",
       currencyNote: "Prix affichés en USD — équivalent à environ 19 €/mois ou 29 €/mois selon votre formule.",
       plans: [
         {
@@ -331,7 +331,7 @@ const copy: Record<Locale, Copy> = {
       title: "Two plans, one clearer radar",
       subtitle: "Choose the level of competitor coverage that fits your market and start with a 7-day free trial.",
       checkoutHint: "Each button opens a Stripe checkout dedicated to that plan, with no Starter/Pro mix in the cart.",
-      securePayment: "Secure payment with Stripe.",
+      securePayment: "💳 Secure payment processed by Stripe",
       currencyNote: "Prices displayed in USD — equivalent to approximately €19/month or €29/month depending on your plan.",
       plans: [
         {
@@ -468,6 +468,18 @@ function IconCheck() {
   return (
     <svg className="mt-0.5 h-5 w-5 shrink-0 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+    </svg>
+  );
+}
+
+function IconLock() {
+  return (
+    <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M16.5 10.5V8.25a4.5 4.5 0 10-9 0v2.25m-1.5 0h12a1.5 1.5 0 011.5 1.5v6.75a1.5 1.5 0 01-1.5 1.5h-12A1.5 1.5 0 014.5 18.75V12a1.5 1.5 0 011.5-1.5z"
+      />
     </svg>
   );
 }
@@ -733,14 +745,17 @@ export default function Home() {
                   >
                     {plan.cta}
                   </a>
-                  <p className="mt-4 text-center text-sm text-slate-500">{t.pricing.securePayment}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-slate-500">
-            {t.pricing.currencyNote}
-          </p>
+          <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center gap-2 text-center text-sm">
+            <p className="inline-flex items-center gap-2 text-slate-400">
+              <IconLock />
+              <span>{t.pricing.securePayment}</span>
+            </p>
+            <p className="leading-relaxed text-slate-500">{t.pricing.currencyNote}</p>
+          </div>
         </div>
       </section>
 

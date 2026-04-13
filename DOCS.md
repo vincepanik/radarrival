@@ -1,5 +1,25 @@
 # DOCS
 
+## 2026-04-13 - Pricing trust note on RadarRival landing page
+
+### Repo and framework findings
+- Installed project dependencies locally because `node_modules` was missing.
+- Read the local Next.js 16 docs required by `AGENTS.md` before editing:
+  - `node_modules/next/dist/docs/01-app/01-getting-started/03-layouts-and-pages.md`
+  - `node_modules/next/dist/docs/01-app/01-getting-started/05-server-and-client-components.md`
+- The landing page is implemented in a single client component at `app/page.tsx`.
+- The pricing section already had:
+  - per-card Stripe microcopy under each CTA
+  - a centered currency disclaimer below the pricing cards
+
+### Changes made in this task
+- Updated the bilingual pricing copy in `app/page.tsx` to use the requested strings:
+  - FR: `💳 Paiement sécurisé par Stripe`
+  - EN: `💳 Secure payment processed by Stripe`
+- Moved the Stripe trust note from inside each pricing card to a single centered note directly under the pricing cards.
+- Added a small inline SVG lock icon before the trust note.
+- Kept the existing currency disclaimer directly below the new trust note so both billing clarifications are grouped together.
+
 ## 2026-04-13 - AgentList inbox / RadarRival investigation
 
 ### Repo and environment findings
