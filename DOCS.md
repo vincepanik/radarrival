@@ -1,5 +1,12 @@
 # DOCS
 
+## 2026-04-13 - Add LinkedIn URL to RadarRival documents
+
+### Changes made
+- `linkedin_content.md`: Added "Page Status: LIVE" + `https://www.linkedin.com/company/radarrival/` at the top, below the document slug.
+- `market_research.md`: Updated LinkedIn row in the channel priority table (section 5) to include the live page URL alongside the channel name.
+- `outreach_assets_fr.md`: Updated all 4 email signature blocks from bare `linkedin.com/company/radarrival` to full `https://www.linkedin.com/company/radarrival/`.
+
 ## 2026-04-13 - Add LinkedIn URL to landing page footer
 
 ### Changes made
