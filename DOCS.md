@@ -80,6 +80,23 @@
 - Added this `DOCS.md` investigation log.
 - No application code changes were made.
 
+## 2026-04-13 - Add LinkedIn URL to outreach signatures
+
+### Changes made
+- Updated `outreach_assets_fr.md` to add the LinkedIn signature block to all 4 templates:
+  - Email principal (section 1)
+  - Version formulaire de contact (section 2)
+  - Version message LinkedIn (section 3)
+  - Email de relance (section 4)
+- Signature block format added:
+  ```
+  ---
+  L'équipe RadarRival
+  🌐 radarrival.com
+  💼 linkedin.com/company/radarrival
+  ```
+- LinkedIn URL: https://www.linkedin.com/company/radarrival/
+
 ## 2026-04-13 - NanoCorp cold outreach for RadarRival
 
 ### Document and CLI findings
