@@ -66,7 +66,7 @@ type Copy = {
   };
   footer: {
     tagline: string;
-    links: Array<{ href: string; label: string }>;
+    links: Array<{ href: string; label: string; external?: boolean }>;
     copyright: string;
     legal: string;
   };
@@ -243,6 +243,7 @@ const copy: Record<Locale, Copy> = {
         { href: "#pricing", label: "Tarifs" },
         { href: "#faq", label: "FAQ" },
         { href: `mailto:${CONTACT_EMAIL}`, label: "Contact" },
+        { href: "https://www.linkedin.com/company/radarrival/", label: "Suivez-nous sur LinkedIn", external: true },
       ],
       copyright: "© 2026 RadarRival. Tous droits réservés.",
       legal:
@@ -419,6 +420,7 @@ const copy: Record<Locale, Copy> = {
         { href: "#pricing", label: "Pricing" },
         { href: "#faq", label: "FAQ" },
         { href: `mailto:${CONTACT_EMAIL}`, label: "Contact" },
+        { href: "https://www.linkedin.com/company/radarrival/", label: "LinkedIn", external: true },
       ],
       copyright: "© 2026 RadarRival. All rights reserved.",
       legal:
@@ -806,7 +808,12 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
               {t.footer.links.map((link) => (
-                <a key={link.label} href={link.href} className="transition hover:text-white">
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="transition hover:text-white"
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
                   {link.label}
                 </a>
               ))}
