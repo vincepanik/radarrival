@@ -215,7 +215,7 @@ The best channels are the ones that combine trust, relevance, and a direct path 
 
 | Priority | Channel | Why it fits | Recommended tactic |
 | --- | --- | --- | --- |
-| 1 | LinkedIn | Best direct channel for French B2B owners, consultants, agencies, recruiters, and service firms | Founder-led content, sample weekly reports, targeted outbound, sector-specific posts |
+| 1 | LinkedIn — https://www.linkedin.com/company/radarrival/ | Best direct channel for French B2B owners, consultants, agencies, recruiters, and service firms | Founder-led content, sample weekly reports, targeted outbound, sector-specific posts |
 | 2 | CCI and local business networks | Chambers already reach and advise hundreds of thousands of business leaders in France.[14] | Co-branded webinars, local workshops, downloadable benchmark reports, member offers |
 | 3 | Bpifrance / Bpifrance Création ecosystem | Strong trust with founders and small-company leaders | Educational content, partnership pages, webinars, founder support programs |
 | 4 | France Num / digital-advisor ecosystem | France Num is already a reference point for SME digitization; many firms actively seek trusted providers there.[3][4] | Partnerships with digital advisors, referrals, marketplace-style distribution if possible |

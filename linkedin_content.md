@@ -4,6 +4,9 @@ Prepared on 2026-04-12.
 
 Document type slug: `linkedin_content`
 
+**Page Status: LIVE**
+**LinkedIn URL:** https://www.linkedin.com/company/radarrival/
+
 ## 1. Company Page Profile
 
 **Company name:** RadarRival

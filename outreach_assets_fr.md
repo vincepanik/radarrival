@@ -17,7 +17,7 @@ Bien cordialement,
 ---
 L'équipe RadarRival
 🌐 radarrival.com
-💼 linkedin.com/company/radarrival
+💼 https://www.linkedin.com/company/radarrival/
 
 ## 2. Version formulaire de contact
 
@@ -28,7 +28,7 @@ RadarRival permet à des équipes comme [Entreprise] de suivre plus facilement l
 ---
 L'équipe RadarRival
 🌐 radarrival.com
-💼 linkedin.com/company/radarrival
+💼 https://www.linkedin.com/company/radarrival/
 
 ## 3. Version message LinkedIn
 
@@ -37,7 +37,7 @@ Bonjour [Prénom], je vous écris car RadarRival aide des entreprises comme [Ent
 ---
 L'équipe RadarRival
 🌐 radarrival.com
-💼 linkedin.com/company/radarrival
+💼 https://www.linkedin.com/company/radarrival/
 
 ## 4. Email de relance
 
@@ -52,7 +52,7 @@ Bien cordialement,
 ---
 L'équipe RadarRival
 🌐 radarrival.com
-💼 linkedin.com/company/radarrival
+💼 https://www.linkedin.com/company/radarrival/
 
 ## 5. Variantes d'objet pour A/B test
 
