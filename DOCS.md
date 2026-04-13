@@ -1,5 +1,18 @@
 # DOCS
 
+## 2026-04-13 - Add LinkedIn URL to landing page footer
+
+### Changes made
+- Updated `app/page.tsx`:
+  - Extended `Copy.footer.links` type to include `external?: boolean`.
+  - Added LinkedIn link to FR footer: `{ href: "https://www.linkedin.com/company/radarrival/", label: "Suivez-nous sur LinkedIn", external: true }`.
+  - Added LinkedIn link to EN footer: `{ href: "https://www.linkedin.com/company/radarrival/", label: "LinkedIn", external: true }`.
+  - Updated footer link renderer to spread `target="_blank" rel="noopener noreferrer"` when `link.external === true`.
+- Build verified (`npx next build` passes clean).
+- Pushed to `main` (commit `5552195`); Vercel auto-deploy in progress.
+
+---
+
 ## 2026-04-13 - Pricing trust note on RadarRival landing page
 
 ### Repo and framework findings
