@@ -1,5 +1,54 @@
 # DOCS
 
+## 2026-04-14 - Follow-up replies sent to Bergamotte and Medoucine
+
+### Repo and mailbox findings
+- Read the existing `DOCS.md` first to confirm prior Wave 1 outreach context and earlier send behavior.
+- `nanocorp emails send --help` confirms reply threading is supported through `--reply-to`.
+- `nanocorp emails list` showed the relevant inbound auto-replies and the original outbound Wave 1 emails:
+  - Bergamotte inbound auto-reply: `f5fc0f60-b323-4a81-919f-3ba98b1e218a`
+  - Medoucine inbound auto-reply: `8e6a6b19-2223-4910-8823-41a94843f475`
+- Reading the Bergamotte email confirmed their acknowledgement addressed us as `Create`, so the follow-up explicitly corrected the sender identity to `RadarRival`.
+
+### Outreach execution
+- Sent a threaded French follow-up reply to `help@bergamotte.com` with subject:
+  - `Re: Fleurs & concurrence : garder un œil sur le marché sans effort`
+- Bergamotte send details:
+  - Replied to inbound email ID `f5fc0f60-b323-4a81-919f-3ba98b1e218a`
+  - New outbound email ID `493ffe5b-ebad-4300-8918-34de068bda8f`
+  - CTA used: `radarrival.com` with `7 jours d'essai gratuit, sans engagement`
+- Sent a threaded French follow-up reply to `hello@medoucine.com` with subject:
+  - `Re: Médecines douces & veille marché - restez informé sans effort`
+- Medoucine send details:
+  - Replied to inbound email ID `8e6a6b19-2223-4910-8823-41a94843f475`
+  - New outbound email ID `15ac9f15-f1af-4252-8c6e-7446c2fa18d8`
+  - CTA used: `radarrival.com` with `7 jours d'essai gratuit, sans engagement`
+
+### Drafts sent
+- Bergamotte:
+  - `Bonjour L'équipe Bergamotte,`
+  - `Merci pour votre accusé de réception, et petite précision : nous vous écrivions bien de la part de RadarRival, et non "Create".`
+  - `Suite à notre message "Fleurs & concurrence : garder un œil sur le marché sans effort", nous pensons qu'une veille simple peut être utile dans un marché aussi concurrentiel que la livraison de fleurs en ligne.`
+  - `Chaque lundi, voir rapidement ce que font Interflora, 1001Fleurs ou d'autres acteurs sur les prix et promotions peut donner un vrai avantage.`
+  - `Si le sujet est pertinent pour vous, vous pouvez découvrir RadarRival sur radarrival.com.`
+  - `L'essai est gratuit pendant 7 jours, sans engagement.`
+  - `Bien à vous,`
+  - `L'équipe RadarRival | contact@radarrival.com | radarrival.com | linkedin.com/company/radarrival`
+- Medoucine:
+  - `Bonjour L'équipe Médoucine,`
+  - `Merci pour votre message de confirmation et pour la bonne prise en compte de notre précédent email "Médecines douces & veille marché - restez informé sans effort".`
+  - `Dans un marché bien-être en forte croissance, entre naturopathie, ostéopathie, acupuncture et nouvelles plateformes, suivre Naturalopolis, Therapeutes.com ou de nouveaux entrants aide à garder une longueur d'avance.`
+  - `Chaque lundi, une veille claire sur les offres, positionnements et promotions concurrentes peut vite devenir un vrai atout.`
+  - `Si cela peut vous être utile, vous pouvez découvrir RadarRival sur radarrival.com.`
+  - `Nous proposons 7 jours d'essai gratuit, sans engagement.`
+  - `Bien à vous,`
+  - `L'équipe RadarRival | contact@radarrival.com | radarrival.com | linkedin.com/company/radarrival`
+
+### Result
+- Both NanoCorp email send requests returned `status: sent`.
+- Messages were sent from the company mailbox `co-rgl1@nanocorp.app` via the standard `nanocorp emails send` workflow.
+- No application code changes were made in this task; only operational outreach and documentation were completed.
+
 ## 2026-04-14 - Add lead capture form to hero section
 
 ### Changes made
