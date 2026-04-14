@@ -209,4 +209,6 @@
 - Prepared a clean export of the tracked RadarRival files in a separate directory so the new GitHub push would not disturb the current workspace's existing Git remote.
 
 ### Operational result
-- Intended next step from this state: create `vincepanik/radarrival`, initialize a fresh Git repo in the export directory, and push the full RadarRival codebase to `main`.
+- Created public GitHub repository `vincepanik/radarrival`.
+- Exported the tracked RadarRival files to a separate clean directory, initialized a fresh Git repository there, and pushed commit `5b61734` to branch `main`.
+- Verified the export build before push with `npm install` and `npm run build` in the clean export directory.
