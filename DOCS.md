@@ -1,5 +1,20 @@
 # DOCS
 
+## 2026-04-14 - Add lead capture form to hero section
+
+### Changes made
+- `app/api/subscribe/route.ts` (new): POST `/api/subscribe` — validates email, inserts into `leads` table with `ON CONFLICT DO NOTHING` (upsert on email).
+- `app/page.tsx`: Added 6 new `hero` copy keys per locale (`signupTitle`, `signupPlaceholder`, `signupCta`, `signupSuccess`, `signupError`, `signupDivider`). Added `email`, `signupState` state + `handleSignup` handler in `Home`. Replaced the two hero CTAs with: prominent email form box (brand-500 border, bg-brand-500/8), success message on submit, "Ou payer directement" divider, then the two existing Stripe CTAs in smaller styling below.
+- `package.json` / `package-lock.json`: Added `pg` + `@types/pg` for server-side Postgres in the API route.
+- Database: `leads` table created in Neon (`id SERIAL PK, email TEXT UNIQUE, created_at TIMESTAMPTZ DEFAULT NOW(), source TEXT DEFAULT 'landing_page'`).
+- Verified end-to-end: form submits, success message shows, row inserted into `leads`.
+
+### Remaining follow-up tasks
+- Send a welcome/confirmation email when a lead signs up (hook into `/api/subscribe`).
+- Build an admin view or export of leads for manual follow-up.
+- Add email deduplication feedback (currently silent on duplicate; could say "already registered").
+- A/B test form placement / copy against Stripe CTA conversion.
+
 ## 2026-04-13 - Wave 1 April 18 follow-up emails sent
 
 ### Repo and CLI findings
