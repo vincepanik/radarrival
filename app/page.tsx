@@ -24,6 +24,12 @@ type Copy = {
     secondaryCta: string;
     previewTitle: string;
     previewDay: string;
+    signupTitle: string;
+    signupPlaceholder: string;
+    signupCta: string;
+    signupSuccess: string;
+    signupError: string;
+    signupDivider: string;
   };
   trustBar: string[];
   howItWorks: {
@@ -95,6 +101,12 @@ const copy: Record<Locale, Copy> = {
       secondaryCta: "Voir les plans",
       previewTitle: "Brief concurrentiel hebdomadaire",
       previewDay: "Lundi",
+      signupTitle: "Démarrez votre essai gratuit",
+      signupPlaceholder: "Entrez votre email pour commencer",
+      signupCta: "Commencer gratuitement",
+      signupSuccess: "Merci\u00a0! Vous recevrez votre premier rapport lundi prochain.",
+      signupError: "Une erreur est survenue. Veuillez réessayer.",
+      signupDivider: "Ou payer directement",
     },
     trustBar: [
       "Essai gratuit 7 jours",
@@ -272,6 +284,12 @@ const copy: Record<Locale, Copy> = {
       secondaryCta: "See plans",
       previewTitle: "Weekly competitor brief",
       previewDay: "Monday",
+      signupTitle: "Start your free trial",
+      signupPlaceholder: "Enter your email to get started",
+      signupCta: "Get started for free",
+      signupSuccess: "Thanks! You\u2019ll receive your first report next Monday.",
+      signupError: "Something went wrong. Please try again.",
+      signupDivider: "Or pay directly",
     },
     trustBar: [
       "7-day free trial",
@@ -509,10 +527,32 @@ const stepIcons = [<IconSearch key="search" />, <IconEye key="eye" />, <IconMail
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("fr");
   const t = copy[locale];
+  const [email, setEmail] = useState("");
+  const [signupState, setSignupState] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
+
+  async function handleSignup(e: React.FormEvent) {
+    e.preventDefault();
+    setSignupState("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "landing_page" }),
+      });
+      if (res.ok) {
+        setSignupState("success");
+        setEmail("");
+      } else {
+        setSignupState("error");
+      }
+    } catch {
+      setSignupState("error");
+    }
+  }
 
   return (
     <div className="relative flex flex-col overflow-x-hidden">
@@ -587,19 +627,53 @@ export default function Home() {
                 <p className="mt-6 text-sm font-medium uppercase tracking-[0.22em] text-brand-200">
                   {t.hero.planSummary}
                 </p>
-                <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                  <a
-                    href="#pricing"
-                    className="inline-flex rounded-full bg-brand-500 px-7 py-4 text-center text-base font-semibold text-slate-950 transition hover:bg-brand-400 md:text-lg"
-                  >
-                    {t.hero.primaryCta}
-                  </a>
-                  <a
-                    href="#pricing"
-                    className="inline-flex rounded-full border border-white/12 px-7 py-4 text-base font-medium text-slate-200 transition hover:border-brand-500/35 hover:text-white md:text-lg"
-                  >
-                    {t.hero.secondaryCta}
-                  </a>
+                <div className="mt-10">
+                  <div className="rounded-2xl border border-brand-500/30 bg-brand-500/8 p-6">
+                    <p className="mb-4 text-base font-semibold text-white">{t.hero.signupTitle}</p>
+                    {signupState === "success" ? (
+                      <p className="text-sm font-medium text-brand-300">{t.hero.signupSuccess}</p>
+                    ) : (
+                      <form onSubmit={handleSignup} className="flex flex-col gap-3 sm:flex-row">
+                        <input
+                          type="email"
+                          required
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder={t.hero.signupPlaceholder}
+                          className="flex-1 rounded-full border border-white/15 bg-slate-900 px-5 py-3 text-sm text-white placeholder-slate-500 outline-none focus:border-brand-500/60 focus:ring-1 focus:ring-brand-500/40"
+                        />
+                        <button
+                          type="submit"
+                          disabled={signupState === "loading"}
+                          className="shrink-0 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-400 disabled:opacity-60"
+                        >
+                          {signupState === "loading" ? "…" : t.hero.signupCta}
+                        </button>
+                      </form>
+                    )}
+                    {signupState === "error" && (
+                      <p className="mt-2 text-xs text-red-400">{t.hero.signupError}</p>
+                    )}
+                  </div>
+                  <div className="mt-6 flex items-center gap-4">
+                    <div className="h-px flex-1 bg-white/10" />
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-500">{t.hero.signupDivider}</span>
+                    <div className="h-px flex-1 bg-white/10" />
+                  </div>
+                  <div className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                    <a
+                      href="#pricing"
+                      className="inline-flex rounded-full bg-white/8 px-6 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/12 hover:text-white border border-white/10"
+                    >
+                      {t.hero.primaryCta}
+                    </a>
+                    <a
+                      href="#pricing"
+                      className="inline-flex rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-slate-400 transition hover:text-slate-200"
+                    >
+                      {t.hero.secondaryCta}
+                    </a>
+                  </div>
                 </div>
               </div>
 
