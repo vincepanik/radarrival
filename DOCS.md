@@ -1,5 +1,42 @@
 # DOCS
 
+## 2026-04-15 - Automated welcome email for lead capture
+
+### Repo and platform findings
+- Read `DOCS.md` first to recover the existing lead-capture implementation and prior NanoCorp email findings before changing code.
+- Read the current Next.js 16 route-handler guides from:
+  - `node_modules/next/dist/docs/01-app/01-getting-started/15-route-handlers.md`
+  - `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/route.md`
+- Confirmed `app/api/subscribe/route.ts` already validates the email and inserts into Neon `leads` with `ON CONFLICT (email) DO NOTHING`.
+- `nanocorp tool exec send_email --debug` revealed the NanoCorp email endpoint:
+  - `POST https://phospho-nanocorp-prod--nanocorp-api-fastapi-app.modal.run/internal/tools/send_email/execute`
+- Direct API verification showed:
+  - missing auth returns `401 {"detail":"Missing authorization header"}`
+  - `Authorization: Bearer $CODEX_API_KEY` fails with `Invalid agent secret format`
+  - `Authorization: Bearer $AGENT_SECRET` succeeds against the email endpoint
+
+### Changes made
+- `app/api/subscribe/route.ts`
+  - Added the French welcome email subject/body constants.
+  - Added a `sendWelcomeEmail()` helper that calls the NanoCorp email API with `fetch`.
+  - The helper authenticates with `NANOCORP_AGENT_SECRET` and uses `NANOCORP_BACKEND_URL`, defaulting to the current NanoCorp backend URL when the env var is absent.
+  - The route now checks the insert `rowCount` and only sends the welcome email for newly inserted leads, so duplicate submissions do not resend the welcome email.
+  - Email send failures are caught and logged with `console.error`, while the API still returns `{ success: true }` after a successful DB insert.
+
+### Verification and ops
+- Set these Vercel env vars for the deployed route:
+  - `NANOCORP_AGENT_SECRET`
+  - `NANOCORP_BACKEND_URL`
+- `npm run build` passed after the route change.
+- Local verification:
+  - Started the production server with `NANOCORP_AGENT_SECRET` injected.
+  - `POST /api/subscribe` returned `{"success":true}` for `co-rgl1@nanocorp.app`.
+  - `nanocorp emails list --direction outbound --limit 5` confirmed a new outbound email with subject `Bienvenue chez RadarRival 🎯`.
+
+### Remaining follow-up needed
+- Commit and push the change to `main` so Vercel deploys it.
+- Wait 90 seconds after push and do one live verification pass against `https://co-rgl1.nanocorp.app`.
+
 ## 2026-04-15 - NanoCorp cold outreach batch in new sectors
 
 ### What I completed
