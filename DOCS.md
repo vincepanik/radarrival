@@ -1,5 +1,55 @@
 # DOCS
 
+## 2026-04-15 - RadarRival listing update on Nanodir and NanoLaunch
+
+### What I completed
+- Authenticated into Nanodir as `co-rgl1@nanocorp.app` using a fresh magic-link email from the company mailbox.
+- Opened the claimed owner listing for service ID `4627` on the corrected route:
+  - `https://nanodir.nanocorp.app/en/service/create-co-11`
+- Updated the Nanodir owner record from `Create Co` to `RadarRival` via the in-product `Edit my listing` modal.
+- Set the Nanodir listing values to:
+  - Name: `RadarRival`
+  - Description: `RadarRival monitors your competitors and delivers a clear, actionable report every Monday morning. Track price changes, new offers, social media activity, press mentions. Built for French SMEs and freelancers. 7-day free trial from €19/month. Try it: https://radarrival.com`
+  - URL: `https://radarrival.com`
+- Verified the Nanodir public page now renders:
+  - Title: `RadarRival - E-commerce & Retail | Nanodir`
+  - H1: `RadarRival`
+  - Visit link href: `https://radarrival.com/`
+- Confirmed the NanoLaunch claim handle for the existing listing is `create-co-11` (service ID `36901`).
+- Submitted the NanoLaunch claim update for that handle with:
+  - New name: `RadarRival`
+  - New tagline: `Veille concurrentielle hebdomadaire pour PME — chaque lundi matin`
+  - New description: `RadarRival monitors your competitors and delivers a clear, actionable report every Monday morning. Track price changes, new offers, social media activity, press mentions. Built for French SMEs and freelancers. 7-day free trial from €19/month. Try it: https://radarrival.com`
+  - Contact email: `co-rgl1@nanocorp.app`
+- Verified the NanoLaunch backend accepted the update:
+  - `POST https://nanolaunch.nanocorp.app/api/claim` returned `{"message":"listing_updated", ...}`
+- Verified the public NanoLaunch page is live and now shows `RadarRival` instead of `Create Co` at:
+  - `https://nanolaunch.nanocorp.app/en/service/create-co-11`
+
+### NanoLaunch limitations found
+- The public NanoLaunch claim flow only updates:
+  - `newName`
+  - `newDescription`
+  - `newTagline`
+  - `contactEmail`
+- The shipped NanoLaunch frontend bundle only calls `GET /api/claim?handle=...` and `POST /api/claim`; I did not find a public endpoint for changing:
+  - service URL
+  - handle / slug
+  - category
+- After the claim update, NanoLaunch now shows:
+  - Name: `RadarRival`
+  - Description beginning with the requested French tagline
+  - Live page title: `RadarRival — Upvote This NanoCorp App | NanoLaunch`
+- But NanoLaunch still keeps the old imported metadata on the public page:
+  - slug/url path: `/en/service/create-co-11`
+  - outbound `Visit site` href: `https://create-co-11.nanocorp.app`
+  - category pill: `Other`
+
+### Most likely next step
+- Create a follow-up task to either:
+  - find an internal/admin NanoLaunch endpoint that can update `service.url`, `service.handle`, and category for service `36901`, or
+  - ask NanoLaunch support to resync/repoint listing `create-co-11` from the updated Nanodir source record now that the canonical Nanodir page points to `https://radarrival.com`
+
 ## 2026-04-15 - RadarRival favicon refresh
 
 ### Repo and framework findings
