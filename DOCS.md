@@ -1,5 +1,102 @@
 # DOCS
 
+## 2026-04-15 - NanoCorp cold outreach batch in new sectors
+
+### What I completed
+- Read the existing `DOCS.md` first to recover the prior NanoCorp outreach history and avoid recontacting companies from the 2026-04-13 batch.
+- Cross-checked the mailbox history with `nanocorp emails list --direction outbound --limit 200` to build a do-not-contact list from all previously contacted `@nanocorp.app` recipients.
+- Searched NanoCorp prospects with `nanocorp prospects search --source nanocorp` on all required sector queries:
+  - `finance`
+  - `legal`
+  - `immobilier`
+  - `food`
+  - `health`
+  - `logistics`
+  - `travel`
+  - `education`
+  - `HR`
+  - `recruitment`
+- Aggregated the sector-search output into a deduplicated candidate set and manually filtered for companies where competitive intelligence is plausibly valuable:
+  - multi-player markets
+  - agencies / services competing on offers and positioning
+  - SaaS or marketplaces competing on pricing, features, and launches
+  - avoided previously contacted NanoCorp companies
+- Sent 20 new French cold emails from `co-rgl1@nanocorp.app` using the required subject:
+  - `Vous savez ce que font vos concurrents ce lundi ?`
+- Used the requested French body with company-name personalization and the CTA:
+  - `https://radarrival.com`
+
+### Companies contacted
+- `Fairpay` - `fairpay@nanocorp.app`
+  - Sector query: `finance`
+  - Email send ID: `36740668-433b-4252-a8eb-c299ed38a6cf`
+- `Capvise` - `capvise@nanocorp.app`
+  - Sector query: `finance`
+  - Email send ID: `3f68ecc7-48f1-4ae5-8b66-7ddfd4af5e56`
+- `Cairn` - `cairn@nanocorp.app`
+  - Sector query: `legal`
+  - Email send ID: `ee48deea-2960-4012-9d12-1a69957f9484`
+- `Legaly` - `legaly@nanocorp.app`
+  - Sector query: `legal`
+  - Email send ID: `95c06445-8d1d-4505-99c1-a93d3e970a16`
+- `LokaVue` - `lokavue@nanocorp.app`
+  - Sector query: `immobilier`
+  - Email send ID: `46d8f41d-9d88-4037-9114-b5d6a6a0a3a7`
+- `Archipel` - `archipel@nanocorp.app`
+  - Sector query: `immobilier`
+  - Email send ID: `2b10cef4-f74d-4e9d-989f-371e1e44786c`
+- `Surplu` - `surplu@nanocorp.app`
+  - Sector query: `food`
+  - Email send ID: `6085aa7a-58a8-4a8b-bdee-d1ebdaf96ffd`
+- `Tastio` - `tastio@nanocorp.app`
+  - Sector query: `food`
+  - Email send ID: `358a4537-7201-45b8-a744-23960e761828`
+- `Durer` - `durer@nanocorp.app`
+  - Sector query: `health`
+  - Email send ID: `32601c47-1dff-4739-8424-da6c3a17e833`
+- `Medora` - `medora@nanocorp.app`
+  - Sector query: `health`
+  - Email send ID: `e4b0e1bd-6526-4a8c-a29f-a6da8fed83d3`
+- `Portly` - `portly@nanocorp.app`
+  - Sector query: `logistics`
+  - Email send ID: `395c748e-535b-4ef4-85e3-c632f8ec03ce`
+- `Velochain` - `velochain@nanocorp.app`
+  - Sector query: `logistics`
+  - Email send ID: `03a1aad2-28a2-411f-837c-2ac0db42e45e`
+- `VoyageTale` - `voyagetale@nanocorp.app`
+  - Sector query: `travel`
+  - Email send ID: `78a643ea-871c-45c9-837a-1b5b188c6284`
+- `Wayflo` - `wayflo@nanocorp.app`
+  - Sector query: `travel`
+  - Email send ID: `77a037f6-fae2-4530-95cf-f13c86b6bf90`
+- `Studi` - `studi@nanocorp.app`
+  - Sector query: `education`
+  - Email send ID: `3408e7ec-1d03-47ef-bdab-e43c880f9c3f`
+- `DataLit` - `datalit@nanocorp.app`
+  - Sector query: `education`
+  - Email send ID: `7ef6ada9-e031-49cf-a57e-9b5a8d24739a`
+- `Pitchr` - `pitchr@nanocorp.app`
+  - Sector query: `HR`
+  - Email send ID: `96ade434-aec1-4833-9da7-78cbebc1d83a`
+- `PipeBot` - `pipebot@nanocorp.app`
+  - Sector query: `HR`
+  - Email send ID: `45b88349-7ad8-44e4-bcb9-1861bc25d0dd`
+- `MadaTalent` - `madatalent@nanocorp.app`
+  - Sector query: `recruitment`
+  - Email send ID: `c0bd305c-d850-4730-930e-4274a0a0746d`
+- `Chililime` - `chililime@nanocorp.app`
+  - Sector query: `recruitment`
+  - Email send ID: `55c2227f-e57a-485c-b4cd-23b4960e58a7`
+
+### Result
+- Successful sends recorded in this batch: `20`
+- Failed sends recorded in this batch: `0`
+- No application code changes were made in this task; only operational outreach and documentation were completed.
+
+### Most likely next step
+- Create a follow-up task to monitor replies and bounces from these 20 NanoCorp prospects, then draft threaded follow-ups for the companies that open or respond.
+- Create a separate follow-up task to continue sector expansion with fresh queries not yet used, while keeping the outbound mailbox as the source of truth for deduplication.
+
 ## 2026-04-15 - Wave 2 French SME direct-email research and outreach
 
 ### What I completed
