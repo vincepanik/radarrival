@@ -309,3 +309,34 @@
 - Successful sends recorded: `20`
 - Failed sends recorded in the execution batch: `0`
 - No application code changes were made in this task; only operational outreach and documentation were completed.
+
+## 2026-04-15 - Wave 2 French SME outreach eligibility check
+
+### What I completed
+- Read `contactform_wave2.md` to inspect the 14 personalized Wave 2 outreach drafts.
+- Cross-checked all 14 company names against `prospect_list_fr.md` to determine whether a direct generic contact email existed for each prospect.
+- Confirmed every Wave 2 prospect is listed with a public contact-form URL only, not a direct email address, in the repo source of truth.
+- Confirmed `Beanstock` is not part of the 14-company Wave 2 file; no send was attempted to `contact@beanstock.com`.
+
+### Eligibility result
+- No Wave 2 prospects were eligible for `nanocorp emails send` because all 14 entries are `form-only`.
+- Prospects requiring manual form submission instead of email:
+  - `Intuiti`
+  - `Axome`
+  - `Wecasa`
+  - `Wecandoo`
+  - `Merci Handy`
+  - `Respire`
+  - `Le Chocolat des Français`
+  - `French Bloom`
+  - `Hari&Co`
+  - `Spacefill`
+  - `Cubyn`
+  - `Check & Visit`
+  - `Crisp`
+  - `Kairntech`
+
+### Result
+- Successful sends recorded: `0`
+- Skipped as `form-only — manual submission needed`: `14`
+- No application code changes were made in this task; only operational triage and documentation were completed.
