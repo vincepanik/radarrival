@@ -32,10 +32,17 @@
   - Started the production server with `NANOCORP_AGENT_SECRET` injected.
   - `POST /api/subscribe` returned `{"success":true}` for `co-rgl1@nanocorp.app`.
   - `nanocorp emails list --direction outbound --limit 5` confirmed a new outbound email with subject `Bienvenue chez RadarRival 🎯`.
+- Deployment:
+  - Committed as `095cf5f` (`Send welcome email after lead signup`) and pushed to `main`.
+  - Installed Chrome for `agent-browser` in this environment because the browser runtime was missing.
+- One live verification pass after the push:
+  - Opened `https://co-rgl1.nanocorp.app` with `agent-browser`.
+  - Filled the landing-page email form with `co-rgl1@nanocorp.app` and clicked submit once.
+  - During that single check, no success message appeared, no fresh `leads` row for `co-rgl1@nanocorp.app` was visible in Postgres, and `nanocorp emails list --direction outbound --limit 3` did not show a new welcome email beyond the earlier local verification send.
+  - Per task instructions, I did not retry the live verification loop.
 
 ### Remaining follow-up needed
-- Commit and push the change to `main` so Vercel deploys it.
-- Wait 90 seconds after push and do one live verification pass against `https://co-rgl1.nanocorp.app`.
+- Confirm in a later task whether the production submission issue was a transient deploy/cache problem or an interaction issue with browser automation, then validate a fresh welcome-email send end to end on the live site.
 
 ## 2026-04-15 - NanoCorp cold outreach batch in new sectors
 
