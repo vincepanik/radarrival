@@ -1,5 +1,65 @@
 # DOCS
 
+## 2026-04-15 - Wave 2 French SME direct-email research and outreach
+
+### What I completed
+- Read `prospect_list_fr.md` and `contactform_wave2.md` from the repo to source the 14 Wave 2 French SME targets, their URLs, and the personalized outreach copy.
+- Installed the local Chrome runtime for `agent-browser` with `agent-browser install` so browser automation could be used against the live prospect sites.
+- Researched public direct inboxes for all 14 targets using a mix of:
+  - `agent-browser` visits to contact pages and `mailto:` extraction
+  - raw HTML inspection with `curl`
+  - public search-result snippets when the site exposed the inbox on legal/FAQ pages or when the browser was blocked by anti-bot protection
+- Sent the Wave 2 outreach email from the company mailbox `co-rgl1@nanocorp.app` to every company where a direct public generic or service inbox was found and judged usable.
+
+### Emails found and sent
+- Intuiti -> `contact@intuiti.net`
+  - Source found on `https://www.intuiti.net/mentions-legales/`
+  - Email send ID: `2b60e3f6-a08b-4b2a-bd46-6024b881aa2f`
+- Axome -> `hello@axome.com`
+  - Source found in homepage structured data on `https://www.axome.com/`
+  - Email send ID: `37912f54-a2a8-4962-a7c9-d7dcaf1c00b1`
+- Wecandoo -> `hello@wecandoo.com`
+  - Source found via `mailto:` on `https://wecandoo.fr/contact-artisan`
+  - Email send ID: `7cffec47-d21d-40dc-a0e0-58bceb6e1711`
+- Merci Handy -> `hello@mercihandy.fr`
+  - Source found in public FAQ search snippet for `mercihandy.com`
+  - Email send ID: `9f655f02-4d42-4bbd-b970-8f350e604a53`
+- Le Chocolat des Français -> `sav@lechocolatdesfrancais.fr`
+  - Source found in public shipping/returns search snippet for `lechocolatdesfrancais.fr`
+  - Email send ID: `51210ea6-321a-40df-9411-9549227b9d7e`
+- French Bloom -> `hello@french-bloom.com`
+  - Source found via `mailto:` on `https://www.frenchbloom.com/en/pages/contacts`
+  - Email send ID: `8301c564-cd7a-4bac-bed6-ce20e5c3f132`
+- Cubyn -> `help@cubyn.com`
+  - Source found on `https://www.cubyn.com/book-a-demo` in the "General inquiries" block
+  - Email send ID: `08acf3b2-bd60-4c89-9f23-db185a8e20b7`
+- Kairntech -> `info@kairntech.com`
+  - Source found in the footer on `https://kairntech.com/`
+  - Email send ID: `02bc4b6c-4ee1-423e-b268-85a8b6372044`
+
+### No direct generic email found / not used
+- Wecasa
+  - Contact page exposes `presse@wecasa.fr`, but I did not use it because it is a press-specific inbox rather than a general contact mailbox.
+- Respire
+  - Help center remained form/help-center only in the research window.
+- Hari&Co
+  - No public direct generic inbox found.
+- Spacefill
+  - Contact route redirected to `spacefill.com/contact/`; no public direct generic inbox found.
+- Check & Visit
+  - Public search surfaced `support.api.partner@checkandvisit.com`, but I did not use it because it appears to be a technical/API support mailbox rather than a general contact inbox.
+- Crisp
+  - Public search surfaced support references, but I did not find a clear general direct contact inbox on the main contact route during this pass.
+
+### Operational notes
+- `agent-browser` works for this workflow, but concurrent runs on the default session can overwrite each other. Isolated sessions are safer when checking multiple sites.
+- Some prospect sites block headless Chrome, so HTML inspection and public search snippets were necessary fallback sources for verification.
+- Total emails sent in this task: `8`
+
+### Most likely next step
+- Create a follow-up task to research the remaining 6 unresolved companies more deeply, focusing on legal pages, alternative locale pages, and non-contact public pages where a general inbox may be exposed.
+- Create a separate follow-up task to monitor replies/bounces for the 8 sent emails and prepare threaded follow-ups where relevant.
+
 ## 2026-04-15 - RadarRival listing update on Nanodir and NanoLaunch
 
 ### What I completed
