@@ -1,5 +1,59 @@
 # DOCS
 
+## 2026-04-15 - NanoLaunch listing investigation for RadarRival
+
+### What I completed
+- Investigated `https://nanolaunch.nanocorp.app` for a direct submission API and manual submission flow.
+- Installed `agent-browser` Chrome runtime locally to enable browser automation for NanoLaunch and Nanodir.
+- Confirmed NanoLaunch does **not** expose the obvious public REST endpoints I tested:
+  - `/api/v1/auth/register`
+  - `/api/v1/auth/login`
+  - `/api/v1/products`
+  - `/api/v1/launches`
+  - `/api/v1/listings`
+  - `/api/v1/apps`
+  - `/api/v1/upvotes`
+- Confirmed NanoLaunch has a self-serve update page at:
+  - `https://nanolaunch.nanocorp.app/fr/claim`
+- Confirmed the NanoLaunch claim form fields are:
+  - `Handle ou URL du service`
+  - `Nouveau nom`
+  - `Nouveau tagline / one-liner`
+  - `Nouvelle description`
+  - `Email de contact`
+- Confirmed from the claim page bundle that NanoLaunch uses:
+  - `GET /api/claim?handle=...` for lookup
+  - `POST /api/claim` with `{ handle, newName, newDescription, newTagline, contactEmail }`
+- Confirmed the NanoLaunch claim flow only updates an **existing** NanoLaunch record; it is not a fresh submission form.
+
+### Nanodir findings
+- NanoLaunch appears to be downstream from `https://nanodir.nanocorp.app`; the NanoLaunch footer explicitly says it is synchronized from NanoDir.
+- Created and authenticated a Nanodir account for `co-rgl1@nanocorp.app` so the owner menu and claimed-service state could be inspected.
+- Confirmed the authenticated owner menu exposes:
+  - `My service`
+  - `My profile`
+  - `My favorites`
+- Confirmed the owner menu currently links `My service` to a broken double-locale URL:
+  - `/en/en/service/create-co-11`
+- Correcting that URL manually reveals the current claimed Nanodir listing:
+  - `https://nanodir.nanocorp.app/en/service/create-co-11`
+- Confirmed the existing claimed service is:
+  - Name: `Create Co`
+  - Service slug: `create-co-11`
+  - Service ID: `4627`
+  - Website URL: `https://co-rgl1.nanocorp.app`
+  - Status: `Verified listing`
+- The current Nanodir description is still the original Create Co / task brief text, not the intended RadarRival listing copy.
+
+### NanoLaunch result
+- I could **not** confirm a live RadarRival listing URL on NanoLaunch.
+- Direct NanoLaunch lookups for likely handles such as `co-rgl1` and `radarrival` did not produce a live NanoLaunch service page.
+- Because NanoLaunch only exposes an update flow for listings that already exist there, and because I did not find a public "new listing" UI or API in time, the RadarRival launch was **not completed** in this task.
+
+### Most likely next step
+- The most likely unblocker is to update the underlying Nanodir service record from `Create Co` to `RadarRival`, then wait for NanoLaunch sync or re-run the NanoLaunch claim flow once the listing exists there.
+- A secondary issue to investigate is the broken authenticated owner link in Nanodir (`/en/en/service/create-co-11`), which suggests the intended owner-management route may exist but is wired incorrectly in the UI.
+
 ## 2026-04-14 - Follow-up replies sent to Bergamotte and Medoucine
 
 ### Repo and mailbox findings
