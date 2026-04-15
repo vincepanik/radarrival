@@ -24,6 +24,9 @@
 - Merci Handy -> `hello@mercihandy.fr`
   - Source found in public FAQ search snippet for `mercihandy.com`
   - Email send ID: `9f655f02-4d42-4bbd-b970-8f350e604a53`
+- Respire -> `hello@respire.co`
+  - Source found in public help-center search result for `help.respire.co`
+  - Email send ID: `2219dd6e-7a78-4d08-a382-446f788f29dc`
 - Le Chocolat des Français -> `sav@lechocolatdesfrancais.fr`
   - Source found in public shipping/returns search snippet for `lechocolatdesfrancais.fr`
   - Email send ID: `51210ea6-321a-40df-9411-9549227b9d7e`
@@ -40,8 +43,6 @@
 ### No direct generic email found / not used
 - Wecasa
   - Contact page exposes `presse@wecasa.fr`, but I did not use it because it is a press-specific inbox rather than a general contact mailbox.
-- Respire
-  - Help center remained form/help-center only in the research window.
 - Hari&Co
   - No public direct generic inbox found.
 - Spacefill
@@ -54,11 +55,11 @@
 ### Operational notes
 - `agent-browser` works for this workflow, but concurrent runs on the default session can overwrite each other. Isolated sessions are safer when checking multiple sites.
 - Some prospect sites block headless Chrome, so HTML inspection and public search snippets were necessary fallback sources for verification.
-- Total emails sent in this task: `8`
+- Total emails sent in this task: `9`
 
 ### Most likely next step
-- Create a follow-up task to research the remaining 6 unresolved companies more deeply, focusing on legal pages, alternative locale pages, and non-contact public pages where a general inbox may be exposed.
-- Create a separate follow-up task to monitor replies/bounces for the 8 sent emails and prepare threaded follow-ups where relevant.
+- Create a follow-up task to research the remaining 5 unresolved companies more deeply, focusing on legal pages, alternative locale pages, and non-contact public pages where a general inbox may be exposed.
+- Create a separate follow-up task to monitor replies/bounces for the 9 sent emails and prepare threaded follow-ups where relevant.
 
 ## 2026-04-15 - RadarRival listing update on Nanodir and NanoLaunch
 
