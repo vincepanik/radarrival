@@ -1,5 +1,29 @@
 # DOCS
 
+## 2026-04-15 - RadarRival favicon refresh
+
+### Repo and framework findings
+- The landing page is a Next.js 16.2.3 App Router app with a top-level `app/layout.tsx` metadata export already in place.
+- Installed dependencies locally so the required local Next.js docs could be read before editing:
+  - `node_modules/next/dist/docs/01-app/01-getting-started/14-metadata-and-og-images.md`
+  - `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/01-metadata/app-icons.md`
+- Those docs confirm:
+  - `app/favicon.ico` at the top level is automatically added to `<head>`
+  - `app/icon.svg` is also supported as a file-based icon in App Router
+- The repo already had an `app/favicon.ico`, but it was the generic default Next.js icon rather than a RadarRival-branded asset.
+- `agent-browser` initially lacked a local Chrome runtime in this environment, so `agent-browser install` was required before browser automation worked.
+
+### Favico findings
+- `https://favico.nanocorp.app` is reachable and successfully analyzed `https://radarrival.com`.
+- Favico exposed style options including `Shield` and `Hexagon`, which matched the requested direction.
+- In the available automation window, Favico did not expose a clean downloadable asset flow for SVG/PNG/ICO that was faster than generating the files locally, so I used it as style reference only and switched to a manual favicon implementation.
+
+### Changes made
+- Added `app/icon.svg`: a manual RadarRival favicon source using a dark blue hexagon with a radar sweep and green accents that match the existing landing-page palette.
+- Re-generated `app/favicon.ico` from that SVG so the App Router root favicon is now brand-specific instead of the default Next icon.
+- Added `public/favicon-32x32.png` as a matching PNG export for external/favicon reuse.
+- Verified the app still builds successfully with `npm run build`.
+
 ## 2026-04-15 - NanoLaunch listing investigation for RadarRival
 
 ### What I completed

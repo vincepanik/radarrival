@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#29527d" />
+      <stop offset="1" stop-color="#12263d" />
+    </linearGradient>
+  </defs>
+  <polygon
+    points="32,4 52,15 52,49 32,60 12,49 12,15"
+    fill="url(#bg)"
+    stroke="#34d399"
+    stroke-linejoin="round"
+    stroke-width="3"
+  />
+  <path
+    d="M32 32 L42 14 A20 20 0 0 1 50 22 Z"
+    fill="#34d399"
+    opacity="0.18"
+  />
+  <circle
+    cx="32"
+    cy="32"
+    r="18"
+    fill="none"
+    opacity="0.75"
+    stroke="#10b981"
+    stroke-width="3"
+  />
+  <circle
+    cx="32"
+    cy="32"
+    r="10"
+    fill="none"
+    opacity="0.95"
+    stroke="#6ee7b7"
+    stroke-width="3"
+  />
+  <path
+    d="M32 32 L45 21"
+    fill="none"
+    stroke="#ecfdf5"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+  <circle cx="32" cy="32" r="3.5" fill="#ecfdf5" />
+  <circle cx="45" cy="21" r="3" fill="#ecfdf5" />
+</svg>
