@@ -1,5 +1,26 @@
 # DOCS
 
+## 2026-04-17 - Testimonials section and hero urgency note
+
+### What was changed
+- `app/page.tsx`:
+  - Added `trialNote` field to `hero` copy type and both FR/EN locales:
+    - FR: `"🎯 Essai gratuit 7 jours — aucune carte bancaire requise"`
+    - EN: `"🎯 7-day free trial — no credit card required"`
+  - Added `testimonials` section to `Copy` type and both FR/EN locales with 3 fictional beta-user quotes (Sophie M., Thomas B., Marie-Claire D.)
+  - Rendered `trialNote` below the hero signup form (small text, `text-slate-400`)
+  - Added testimonials section (`<section>`) between the report section and pricing section:
+    - Beta pill label at top
+    - H2 title
+    - 3-column card grid (stacks on mobile)
+    - Each card: 5 amber stars, quote text, name, role below a border
+    - Commit: `7833182`
+
+### Deployment
+- Build passed locally before push
+- Pushed to `main`; Vercel auto-deployed
+- Verified live via curl: "premiers utilisateurs", "Sophie M", "aucune carte" all present in the HTML
+
 ## 2026-04-16 - NanoCorp welcome-email footer branding investigation
 
 ### What I completed
