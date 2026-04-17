@@ -30,6 +30,12 @@ type Copy = {
     signupSuccess: string;
     signupError: string;
     signupDivider: string;
+    trialNote: string;
+  };
+  testimonials: {
+    title: string;
+    betaNote: string;
+    items: Array<{ quote: string; name: string; role: string }>;
   };
   trustBar: string[];
   howItWorks: {
@@ -107,6 +113,28 @@ const copy: Record<Locale, Copy> = {
       signupSuccess: "Merci\u00a0! Vous recevrez votre premier rapport lundi prochain.",
       signupError: "Une erreur est survenue. Veuillez réessayer.",
       signupDivider: "Ou payer directement",
+      trialNote: "🎯 Essai gratuit 7 jours — aucune carte bancaire requise",
+    },
+    testimonials: {
+      title: "Ce que disent nos premiers utilisateurs",
+      betaNote: "Retours de nos utilisateurs bêta",
+      items: [
+        {
+          quote: "Avant RadarRival, je découvrais les promos de mes concurrents par hasard. Maintenant je reçois tout le lundi matin — je peux réagir en quelques heures.",
+          name: "Sophie M.",
+          role: "Gérante d'une boutique e-commerce (Paris)",
+        },
+        {
+          quote: "J'utilise RadarRival pour surveiller 4 concurrents de mes clients. Le rapport du lundi est devenu un incontournable de mes briefs hebdomadaires.",
+          name: "Thomas B.",
+          role: "Consultant marketing indépendant (Lyon)",
+        },
+        {
+          quote: "Simple, clair, actionnable. Exactement ce dont une PME a besoin — sans les tarifs d'un cabinet de veille stratégique.",
+          name: "Marie-Claire D.",
+          role: "Co-fondatrice d'une agence digitale (Bordeaux)",
+        },
+      ],
     },
     trustBar: [
       "Essai gratuit 7 jours",
@@ -290,6 +318,28 @@ const copy: Record<Locale, Copy> = {
       signupSuccess: "Thanks! You\u2019ll receive your first report next Monday.",
       signupError: "Something went wrong. Please try again.",
       signupDivider: "Or pay directly",
+      trialNote: "🎯 7-day free trial — no credit card required",
+    },
+    testimonials: {
+      title: "What our early users say",
+      betaNote: "Beta user feedback",
+      items: [
+        {
+          quote: "Before RadarRival, I'd find out about competitors' promotions by accident. Now I get everything Monday morning — I can react within hours.",
+          name: "Sophie M.",
+          role: "E-commerce store owner (Paris)",
+        },
+        {
+          quote: "I use RadarRival to monitor 4 competitors for my clients. The Monday report has become essential for my weekly briefs.",
+          name: "Thomas B.",
+          role: "Independent marketing consultant (Lyon)",
+        },
+        {
+          quote: "Simple, clear, actionable. Exactly what an SME needs — without the price tag of a strategic consulting firm.",
+          name: "Marie-Claire D.",
+          role: "Co-founder of a digital agency (Bordeaux)",
+        },
+      ],
     },
     trustBar: [
       "7-day free trial",
@@ -654,6 +704,7 @@ export default function Home() {
                     {signupState === "error" && (
                       <p className="mt-2 text-xs text-red-400">{t.hero.signupError}</p>
                     )}
+                    <p className="mt-3 text-xs text-slate-400">{t.hero.trialNote}</p>
                   </div>
                   <div className="mt-6 flex items-center gap-4">
                     <div className="h-px flex-1 bg-white/10" />
@@ -761,6 +812,37 @@ export default function Home() {
               >
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-4 max-w-2xl text-center">
+            <span className="inline-flex items-center rounded-full border border-brand-500/20 bg-brand-500/10 px-4 py-1.5 text-sm font-medium text-brand-200">
+              {t.testimonials.betaNote}
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">{t.testimonials.title}</h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {t.testimonials.items.map((item) => (
+              <div
+                key={item.name}
+                className="flex flex-col rounded-[1.75rem] border border-white/10 bg-slate-900/60 p-8 shadow-lg"
+              >
+                <div className="mb-4 flex gap-0.5 text-amber-400" aria-label="5 stars">
+                  {"★★★★★".split("").map((star, i) => (
+                    <span key={i} className="text-lg leading-none">{star}</span>
+                  ))}
+                </div>
+                <p className="flex-1 text-base leading-relaxed text-slate-200">"{item.quote}"</p>
+                <div className="mt-6 border-t border-white/8 pt-5">
+                  <p className="font-semibold text-white">{item.name}</p>
+                  <p className="mt-1 text-sm text-slate-400">{item.role}</p>
+                </div>
               </div>
             ))}
           </div>
