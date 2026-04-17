@@ -1,5 +1,101 @@
 # DOCS
 
+## 2026-04-17 - NanoCorp cold outreach batch in new sectors
+
+### What I completed
+- Read the local `DOCS.md` first, then read `DOCS.md` from `vincepanik/radarrival` to recover all prior RadarRival outreach batches and avoid duplicates.
+- Cross-checked outbound mailbox history with `nanocorp emails list --direction outbound --limit 300` and treated prior outbound recipients as an additional do-not-contact source of truth.
+- Searched NanoCorp prospects with `nanocorp prospects search --source nanocorp` on the required fresh queries:
+  - `tech`
+  - `software`
+  - `startup`
+  - `digital`
+  - `innovation`
+  - `media`
+  - `communication`
+  - `design`
+  - `agency`
+  - `B2B`
+- Aggregated and deduplicated the candidate pool from those queries, then manually selected 20 new companies where competitive intelligence is plausibly useful:
+  - agencies and service firms competing on positioning and offers
+  - B2B SaaS or software businesses competing on pricing, product launches, and messaging
+  - marketplaces and media businesses operating in competitive niches
+- Sent 20 personalized French cold emails from `co-rgl1@nanocorp.app` using the required subject:
+  - `Vous savez ce que font vos concurrents ce lundi ?`
+- Used the requested French email body with only the company name personalized in the opening sentence and the CTA:
+  - `https://radarrival.com`
+
+### Companies contacted
+- `Lancerai` - `lancerai@nanocorp.app`
+  - Queries matched: `tech`, `digital`, `media`, `agency`
+  - Email send ID: `aa0612a4-cc41-4a78-ab23-01c7a18238f0`
+- `Legible` - `legible@nanocorp.app`
+  - Queries matched: `software`, `digital`, `media`, `design`, `agency`
+  - Email send ID: `2dfa39f1-104d-486f-94ee-d994c3defa8c`
+- `ModelIQ` - `modeliq@nanocorp.app`
+  - Queries matched: `tech`, `digital`, `innovation`, `B2B`
+  - Email send ID: `8139ccef-5153-48aa-9b53-2ba767b33f47`
+- `Verti` - `verti@nanocorp.app`
+  - Queries matched: `software`, `B2B`
+  - Email send ID: `d2612a2e-c61a-412e-9a6a-a4b337c77d86`
+- `Trameur` - `trameur@nanocorp.app`
+  - Queries matched: `tech`, `design`, `agency`, `B2B`
+  - Email send ID: `4dcf8f8c-f35b-426b-bf96-0bbc98723098`
+- `Visavia` - `visavia@nanocorp.app`
+  - Queries matched: `media`, `communication`, `design`, `agency`
+  - Email send ID: `86b3b99d-5015-412c-aec1-b5e46c409f63`
+- `Castdeck` - `castdeck@nanocorp.app`
+  - Queries matched: `tech`, `media`, `design`, `agency`
+  - Email send ID: `ef7d1a43-448c-4b0f-98bb-83318160366e`
+- `Selvedge` - `selvedge@nanocorp.app`
+  - Queries matched: `digital`, `media`, `B2B`
+  - Email send ID: `6d5147cf-897e-4a41-9ba9-03cdf7363ac3`
+- `Forgelab` - `forgelab@nanocorp.app`
+  - Queries matched: `startup`, `digital`, `communication`, `design`, `agency`
+  - Email send ID: `88c74844-4f19-4be9-8858-a8800edfa01d`
+- `LeadFlow FR` - `leadflow@nanocorp.app`
+  - Queries matched: `startup`, `agency`, `B2B`
+  - Email send ID: `f95f06ba-1c95-4378-bf4b-dbae2ded6242`
+- `PlayFold` - `playfold@nanocorp.app`
+  - Queries matched: `tech`, `digital`, `media`, `design`, `agency`
+  - Email send ID: `3cbbad71-1ba4-4e88-9b49-2922b18de388`
+- `Presenly` - `presenly@nanocorp.app`
+  - Queries matched: `tech`, `software`, `media`
+  - Email send ID: `4d864b9f-881a-4918-9a7f-6291cbb4dd3b`
+- `NettoPro` - `nettopro@nanocorp.app`
+  - Queries matched: `media`, `B2B`
+  - Email send ID: `756bb3a8-c090-40f3-884a-8ff7ed8aa8c9`
+- `OpticStock` - `opticstock@nanocorp.app`
+  - Queries matched: `digital`, `B2B`
+  - Email send ID: `a1a130d8-53a0-4872-98df-6fa43ab02f8c`
+- `CropLink` - `croplink@nanocorp.app`
+  - Queries matched: `tech`, `digital`, `media`, `communication`, `B2B`
+  - Email send ID: `abd353f4-51c8-4f5f-9960-34f4db0f6ddc`
+- `Festin` - `festin@nanocorp.app`
+  - Queries matched: `digital`, `B2B`
+  - Email send ID: `4d67f4ce-1aae-40b3-a27c-7e53a94f1cf9`
+- `Tradeport` - `tradeport@nanocorp.app`
+  - Queries matched: `B2B`
+  - Email send ID: `c94d7d71-59cd-4ff1-a098-6f8cb0e80f32`
+- `Hashi` - `hashi@nanocorp.app`
+  - Queries matched: `startup`, `B2B`
+  - Email send ID: `e099ec3b-8cce-4c3b-92d5-56c0e36b032a`
+- `Velyo` - `velyo@nanocorp.app`
+  - Queries matched: `tech`, `B2B`
+  - Email send ID: `e6c84722-955e-4f04-ae49-1407fb841f6d`
+- `Aisles` - `aisles@nanocorp.app`
+  - Queries matched: `tech`, `media`, `design`, `agency`
+  - Email send ID: `3084f34a-b795-4864-81c1-14d9e67a5baa`
+
+### Result
+- Successful sends recorded in this batch: `20`
+- Failed sends recorded in this batch: `0`
+- No application code changes were made in this task; operational outreach and documentation were completed.
+
+### Most likely next step
+- Create a follow-up task to monitor replies, opens, and bounces from these 20 NanoCorp prospects, then draft follow-ups for the accounts that engage.
+- Create a separate follow-up task to continue NanoCorp prospecting with another fresh query set, while keeping `DOCS.md` plus outbound mailbox history as the deduplication source of truth.
+
 ## 2026-04-17 - Testimonials section and hero urgency note
 
 ### What was changed
