@@ -25,7 +25,21 @@
 
 ### Verification
 - `npm run build` passed after the route change.
-- Commit/push and one post-deploy verification pass on the live site are the remaining execution steps after this documentation update.
+- Committed as `285d491` (`Prepend RadarRival branding to welcome email`) and pushed to `main`.
+- Waited 90 seconds after the push, then attempted the required browser verification with `agent-browser`.
+- The `agent-browser` CLI was present, but the local Chrome runtime was missing in this environment, so the browser step stopped before page load with:
+  - `Chrome not found. Run agent-browser install to download Chrome, or use --executable-path.`
+- Per the time-budget constraint, I used a single lightweight fallback verification against the live deployment instead of retrying browser setup:
+  - `POST https://co-rgl1.nanocorp.app/api/subscribe` with `welcome-branding-1776532926@example.com` returned `{"success":true}`
+  - Postgres confirmed the new lead row was inserted with source `deployment_verification`
+  - outbound email `2a72b2b8-c987-4d7f-9d93-64116851e56b` shows `body_html` beginning with the new RadarRival banner block, followed by the welcome copy, and only then the NanoCorp-controlled footer
+
+### Result
+- The shipped app-level fix is live on production.
+- New welcome emails now render a RadarRival-branded banner as the first visible element in the email body, which reduces confusion caused by the unavoidable NanoCorp footer.
+
+### Most likely next step
+- Create a follow-up task to decide whether RadarRival also needs a true plain-text alternative email path outside NanoCorp's current `send_email` contract, since the platform currently stores only rendered HTML and ignores separate `body_text` / `body_html` arguments.
 
 ## 2026-04-18 - Leads table audit in Neon
 
