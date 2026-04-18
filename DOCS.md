@@ -1,5 +1,32 @@
 # DOCS
 
+## 2026-04-18 - Welcome email RadarRival branding banner
+
+### Repo and platform findings
+- Read the existing `DOCS.md` first, then inspected `app/api/subscribe/route.ts` before editing.
+- Installed dependencies locally because `node_modules` was missing in this checkout.
+- Read the required local Next.js 16 route-handler docs before editing:
+  - `node_modules/next/dist/docs/01-app/01-getting-started/15-route-handlers.md`
+  - `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/route.md`
+- Confirmed the subscribe route was sending a single plain-text `body` string to NanoCorp's `send_email` tool.
+- Re-checked the NanoCorp internal tool schema and confirmed `send_email` publicly documents only `to`, `subject`, `body`, and optional `in_reply_to`.
+- Ran a controlled self-send probe against `/internal/tools/send_email/execute` with extra `body_text` and `body_html` arguments and confirmed the backend ignored them:
+  - stored outbound email `44b65ac7-744d-422b-bcd3-3f4067fa1577` saved only the fallback `body` content in `body_html`
+  - `body_text` remained `null`
+- Conclusion: the reliable app-level fix is to send branded HTML in the single supported `body` field so the first rendered block is clearly RadarRival-branded.
+
+### Changes made
+- `app/api/subscribe/route.ts`
+  - Replaced the single welcome-email string with a structured `WELCOME_EMAIL` object containing:
+    - the subject
+    - the requested plain-text intro copy at the top of a text variant
+    - the requested RadarRival HTML banner at the top of an HTML variant
+  - Updated the email send payload to use the HTML variant so the first visible element in the delivered email is the RadarRival branding note instead of the NanoCorp footer at the bottom.
+
+### Verification
+- `npm run build` passed after the route change.
+- Commit/push and one post-deploy verification pass on the live site are the remaining execution steps after this documentation update.
+
 ## 2026-04-18 - Leads table audit in Neon
 
 ### What I completed

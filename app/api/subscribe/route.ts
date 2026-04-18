@@ -7,8 +7,12 @@ const NANOCORP_BACKEND_URL =
   "https://phospho-nanocorp-prod--nanocorp-api-fastapi-app.modal.run";
 const NANOCORP_AGENT_SECRET = process.env.NANOCORP_AGENT_SECRET;
 
-const WELCOME_EMAIL_SUBJECT = "Bienvenue chez RadarRival 🎯";
-const WELCOME_EMAIL_BODY = `Bonjour,
+const WELCOME_EMAIL = {
+  subject: "Bienvenue chez RadarRival 🎯",
+  text: `✉️ Ceci est un email de RadarRival — radarrival.com
+---
+
+Bonjour,
 
 Merci de votre intérêt pour RadarRival !
 
@@ -21,7 +25,17 @@ Des questions ? Répondez simplement à cet email.
 
 À lundi,
 L'équipe RadarRival
-contact@radarrival.com | linkedin.com/company/radarrival`;
+contact@radarrival.com | linkedin.com/company/radarrival`,
+  html: `<div style="background:#1e3a5f;color:#ffffff;padding:10px 16px;border-radius:6px;margin-bottom:16px;font-size:13px;">
+  ✉️ Email envoyé par <strong>RadarRival</strong> — <a href="https://radarrival.com" style="color:#93c5fd;">radarrival.com</a>
+</div>
+<p>Bonjour,</p>
+<p>Merci de votre intérêt pour RadarRival !</p>
+<p>Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux, mentions presse.</p>
+<p>Pour commencer votre essai gratuit de 7 jours (sans carte bancaire), cliquez ici :<br>👉 <a href="https://radarrival.com">https://radarrival.com</a></p>
+<p>Des questions ? Répondez simplement à cet email.</p>
+<p>À lundi,<br>L'équipe RadarRival<br>contact@radarrival.com | linkedin.com/company/radarrival</p>`,
+} as const;
 
 async function sendWelcomeEmail(email: string) {
   if (!NANOCORP_AGENT_SECRET) {
@@ -39,8 +53,9 @@ async function sendWelcomeEmail(email: string) {
       body: JSON.stringify({
         arguments: {
           to: email,
-          subject: WELCOME_EMAIL_SUBJECT,
-          body: WELCOME_EMAIL_BODY,
+          subject: WELCOME_EMAIL.subject,
+          // NanoCorp's send_email tool currently honors a single rendered body field.
+          body: WELCOME_EMAIL.html,
         },
       }),
       signal: AbortSignal.timeout(10_000),
