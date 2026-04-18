@@ -1,5 +1,34 @@
 # DOCS
 
+## 2026-04-18 - Leads table audit in Neon
+
+### What I completed
+- Read the existing `DOCS.md` first to recover prior lead-capture context before touching anything.
+- Connected to Postgres using the runtime `DATABASE_URL` and queried the Neon `public.leads` table directly.
+- Verified the current table schema:
+  - `id integer NOT NULL DEFAULT nextval('leads_id_seq'::regclass)`
+  - `email text NOT NULL`
+  - `created_at timestamptz NOT NULL DEFAULT now()`
+  - `source text NOT NULL DEFAULT 'landing_page'`
+- Verified the current table constraints:
+  - primary key on `id`
+  - unique constraint on `email`
+- Ran the requested lead query ordered by newest first and confirmed the current captured lead set.
+
+### Current leads snapshot
+- Total rows in `public.leads`: `1`
+- Current row set from `SELECT * FROM leads ORDER BY created_at DESC;`:
+  - `test-verify@example.com` | `2026-04-14 12:53:27.262594+00` | `landing_page`
+
+### Result
+- The `leads` table exists and is not empty.
+- Only one lead has been captured so far in Neon.
+- No application code changes were required for this task; documentation was updated with the live database findings.
+
+### Most likely next step
+- Create a follow-up task to compare the lead-capture row (`test-verify@example.com`) against payment/customer records and determine whether this was only a test submission or a real prospect.
+- Create a follow-up task to validate the production landing-page signup flow end to end on the live site, since visitor volume is much higher than the current lead count.
+
 ## 2026-04-17 - NanoCorp cold outreach batch in new sectors
 
 ### What I completed
