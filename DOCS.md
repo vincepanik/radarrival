@@ -1,5 +1,39 @@
 # DOCS
 
+## 2026-04-19 - Landing page report preview section
+
+### Repo and framework findings
+- Read `DOCS.md` first to recover the current landing-page structure and prior landing-page edits before changing code.
+- Read the required local Next.js App Router documentation from `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/page.md` before editing.
+- Confirmed the landing page lives in a single client component at `app/page.tsx` with the existing section order:
+  - hero
+  - trust bar
+  - `#how-it-works`
+  - `#report`
+  - testimonials
+  - pricing
+  - FAQ
+  - final CTA
+- Confirmed the site already uses a bilingual in-file `copy` object with separate `fr` and `en` locale content and an in-page language toggle.
+
+### Changes made
+- `app/page.tsx`
+  - Added a new bilingual `reportPreview` copy block to the shared `Copy` type and both locale payloads.
+  - Added a new "Aperçu du rapport" / "What does your report look like?" section between the existing `#report` section and testimonials.
+  - Built the preview as a white report card styled like a Monday client email/report with:
+    - report date header
+    - fictional client label
+    - three competitor cards
+    - translated FR/EN bakery-example content
+    - CTA button linking to pricing/free-trial flow
+  - Kept the existing locale toggle behavior so all preview content switches with the rest of the landing page.
+
+### Verification plan
+- Run `npm run build` locally.
+- Commit and push to `main` so Vercel auto-deploys.
+- After the push, wait 90 seconds once, then verify the live site shows the new preview section.
+
+
 ## 2026-04-19 - Reply sent to DevisVocal partnership proposal
 
 ### What I completed

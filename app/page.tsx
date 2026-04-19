@@ -37,6 +37,18 @@ type Copy = {
     betaNote: string;
     items: Array<{ quote: string; name: string; role: string }>;
   };
+  reportPreview: {
+    title: string;
+    badge: string;
+    clientLabel: string;
+    clientName: string;
+    competitorsLabel: string;
+    competitors: Array<{
+      name: string;
+      updates: string[];
+    }>;
+    cta: string;
+  };
   trustBar: string[];
   howItWorks: {
     title: string;
@@ -135,6 +147,37 @@ const copy: Record<Locale, Copy> = {
           role: "Co-fondatrice d'une agence digitale (Bordeaux)",
         },
       ],
+    },
+    reportPreview: {
+      title: "📋 À quoi ressemble votre rapport ?",
+      badge: "Rapport RadarRival — Lundi 14 avril 2026",
+      clientLabel: "Client fictif",
+      clientName: "Boulangerie Martin",
+      competitorsLabel: "surveille 3 concurrents",
+      competitors: [
+        {
+          name: "🏪 Boulangerie du Coin",
+          updates: [
+            "📉 Prix de la baguette baissé de 1,20€ à 0,99€ (-17%) — promotion jusqu'au 20 avril",
+            "📸 5 nouveaux posts Instagram cette semaine (photos de viennoiseries artisanales)",
+          ],
+        },
+        {
+          name: "☕ CaféBio Paris",
+          updates: [
+            '🆕 Nouveau produit ajouté au menu : "Pack Brunch Weekend" à 18€',
+            "🌐 Refonte partielle du site web (nouvelle page menu)",
+          ],
+        },
+        {
+          name: "🥐 Au Bon Pain Frais",
+          updates: [
+            '📰 Mention dans Le Parisien : "Les meilleures boulangeries du 11e arrondissement"',
+            "💼 Offre d'emploi publiée : Boulanger-Pâtissier (CDI)",
+          ],
+        },
+      ],
+      cta: "→ Recevoir votre rapport chaque lundi — Essai gratuit 7 jours",
     },
     trustBar: [
       "Essai gratuit 7 jours",
@@ -340,6 +383,37 @@ const copy: Record<Locale, Copy> = {
           role: "Co-founder of a digital agency (Bordeaux)",
         },
       ],
+    },
+    reportPreview: {
+      title: "📋 What does your report look like?",
+      badge: "RadarRival Report — Monday, April 14, 2026",
+      clientLabel: "Fictional client",
+      clientName: "Boulangerie Martin",
+      competitorsLabel: "tracking 3 competitors",
+      competitors: [
+        {
+          name: "🏪 Boulangerie du Coin",
+          updates: [
+            "📉 Baguette price reduced from €1.20 to €0.99 (-17%) — promotion running until April 20",
+            "📸 5 new Instagram posts this week (artisan pastry photos)",
+          ],
+        },
+        {
+          name: "☕ CaféBio Paris",
+          updates: [
+            '🆕 New product added to the menu: "Weekend Brunch Pack" at €18',
+            "🌐 Partial website redesign (new menu page)",
+          ],
+        },
+        {
+          name: "🥐 Au Bon Pain Frais",
+          updates: [
+            '📰 Featured in Le Parisien: "The best bakeries in Paris 11th arrondissement"',
+            "💼 Job posting published: Baker-Pastry Chef (full-time)",
+          ],
+        },
+      ],
+      cta: "→ Get your report every Monday — 7-day free trial",
     },
     trustBar: [
       "7-day free trial",
@@ -814,6 +888,51 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-relaxed text-slate-400">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white/5 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t.reportPreview.title}</h2>
+          </div>
+
+          <div className="mt-12 rounded-[2rem] border border-slate-200/80 bg-white p-6 text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.35)] md:p-8">
+            <div className="flex flex-col gap-6 border-b border-slate-200 pb-6 md:flex-row md:items-start md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">RadarRival</p>
+                <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-950">{t.reportPreview.badge}</h3>
+                <p className="mt-3 text-sm text-slate-600">
+                  <span className="font-semibold text-slate-950">{t.reportPreview.clientLabel} :</span> {t.reportPreview.clientName} ({t.reportPreview.competitorsLabel})
+                </p>
+              </div>
+              <div className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
+                {t.hero.previewDay}
+              </div>
+            </div>
+
+            <div className="mt-6 space-y-5">
+              {t.reportPreview.competitors.map((competitor) => (
+                <div key={competitor.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-semibold text-slate-950">{competitor.name}</h4>
+                  <ul className="mt-3 space-y-3 text-sm leading-relaxed text-slate-700">
+                    {competitor.updates.map((update) => (
+                      <li key={update}>{update}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 border-t border-slate-200 pt-6">
+              <a
+                href="#pricing"
+                className="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 px-6 py-4 text-center text-base font-semibold text-slate-950 transition hover:bg-emerald-400 md:w-auto"
+              >
+                {t.reportPreview.cta}
+              </a>
+            </div>
           </div>
         </div>
       </section>
