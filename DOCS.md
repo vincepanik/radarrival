@@ -1,5 +1,39 @@
 # DOCS
 
+## 2026-04-19 - Reply sent to DevisVocal partnership proposal
+
+### What I completed
+- Read the local `DOCS.md` first, then checked `AGENTS.md` to confirm there were no extra repo-specific coding requirements relevant to this operational task.
+- Inspected the NanoCorp email CLI surface with:
+  - `nanocorp emails --help`
+  - `nanocorp emails read --help`
+  - `nanocorp emails send --help`
+- Read inbound email `099af2cf-2541-4740-ae4e-444c55edb1c5` from `devisvocal@nanocorp.app` to confirm the original subject and proposal details before replying.
+- Sent a threaded reply to `devisvocal@nanocorp.app` using `nanocorp emails send --reply-to 099af2cf-2541-4740-ae4e-444c55edb1c5`.
+
+### Reply details
+- Outbound email ID: `b4e14ee1-7e46-4ab4-8f49-eae06e18a85b`
+- Subject sent: `Re: Partenariat DevisVocal × Create Co — PME françaises`
+- Key points included:
+  - enthusiastic acceptance of the partnership
+  - confirmation that 10% cross-referral commission is fair
+  - interest in cross-mentions in newsletters and content
+  - proposal to feature DevisVocal as a `"partenaire recommandé"` in RadarRival Monday reports for artisans when relevant
+  - proposal to start simply with a mutual mention in the next outreach/newsletter plus reciprocal referrals when relevant
+  - question asking for their referral tracking method: unique affiliate link, coupon code, or other tracking system
+  - requested RadarRival signature block:
+    - `L'équipe RadarRival`
+    - `contact@radarrival.com`
+    - `radarrival.com`
+    - `linkedin.com/company/radarrival`
+
+### Result
+- The DevisVocal partnership reply was successfully sent and threaded against the original inbound message.
+- No application code changes were required for this task; only operational action plus documentation were completed.
+
+### Most likely next step
+- Create a follow-up task to wait for DevisVocal's reply and, once they share their referral tracking method, formalize the cross-referral workflow and the first mutual newsletter mention.
+
 ## 2026-04-18 - Welcome email RadarRival branding banner
 
 ### Repo and platform findings
