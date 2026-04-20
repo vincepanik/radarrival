@@ -1,5 +1,41 @@
 # DOCS
 
+## 2026-04-20 - Leads conversion email send from Neon leads table
+
+### What I completed
+- Read the existing `DOCS.md` first to recover prior lead-table and outreach context before doing anything else.
+- Inspected the NanoCorp email CLI surface with:
+  - `nanocorp --help`
+  - `nanocorp emails --help`
+  - `nanocorp emails send --help`
+- Connected to Postgres using the runtime `DATABASE_URL` and ran the requested query:
+  - `SELECT * FROM leads ORDER BY created_at DESC;`
+- Confirmed the current `public.leads` row set:
+  - `welcome-branding-1776532926@example.com` | `2026-04-18 17:22:07.119905+00` | `deployment_verification`
+  - `test-verify@example.com` | `2026-04-14 12:53:27.262594+00` | `landing_page`
+- Confirmed the current total lead count with `SELECT COUNT(*) FROM leads;`:
+  - `2`
+- Sent the requested French conversion email individually to every captured lead from `co-rgl1@nanocorp.app` with subject:
+  - `Votre rapport RadarRival du lundi — à une étape près 🎯`
+
+### Send records
+- `welcome-branding-1776532926@example.com`
+  - outbound email ID: `91ea7b82-de10-45e4-9d20-2fd674a2f231`
+  - sent at: `2026-04-20T17:28:14.411244`
+- `test-verify@example.com`
+  - outbound email ID: `2cd0e6e8-6df4-4b75-ae3b-da6e934ad3aa`
+  - sent at: `2026-04-20T17:28:20.091785`
+
+### Result
+- Total leads found: `2`
+- Emails sent: `2`
+- No application code changes were required for this task; operational email sends plus documentation were completed.
+- Note: both current rows appear to be verification-style addresses rather than obvious real prospects, but the task requirement was to email every captured lead in the table, so both were sent.
+
+### Most likely next step
+- Create a follow-up task to audit whether real production leads are being captured, because the current table contents still look dominated by test and deployment-verification addresses.
+- Create a follow-up task to compare captured leads against payment and signup activity so the next conversion campaign excludes obvious test records and focuses on real prospects.
+
 ## 2026-04-19 - Landing page report preview section
 
 ### Repo and framework findings
