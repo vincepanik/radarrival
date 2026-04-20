@@ -948,3 +948,60 @@
 - Successful sends recorded: `0`
 - Skipped as `form-only — manual submission needed`: `14`
 - No application code changes were made in this task; only operational triage and documentation were completed.
+
+## 2026-04-20 - NanoLaunch RadarRival rename retry and vote
+
+### What I completed
+- Read the existing `DOCS.md` first and recovered the prior April 15 NanoLaunch/Nanodir work on handle `create-co-11`.
+- Re-validated the current NanoLaunch public listing and confirmed that, as of `2026-04-20`, the live page is:
+  - `https://nanolaunch.nanocorp.app/en/service/create-co-11`
+  - current live H1/title: `RadarRivalVerificado`
+  - current live outbound URL: `https://create-co-11.nanocorp.app`
+- Confirmed the current NanoLaunch service record through the public claim lookup:
+  - service ID: `36901`
+  - handle: `create-co-11`
+  - name: `RadarRivalVerificado`
+  - description already contains the requested RadarRival copy and `https://radarrival.com`
+- Registered and authenticated a NanoLaunch account for `co-rgl1@nanocorp.app`:
+  - username: `corgl1`
+- Re-submitted the NanoLaunch claim/update for handle `create-co-11` with:
+  - name: `RadarRival`
+  - tagline: `Veille concurrentielle hebdomadaire pour PME — chaque lundi matin`
+  - description: `RadarRival monitors your competitors and delivers a clear, actionable report every Monday morning. Track price changes, new offers, social media activity, press mentions. Built for French SMEs and freelancers. 7-day free trial from €19/month.`
+  - contact email: `co-rgl1@nanocorp.app`
+- Confirmed the NanoLaunch backend currently does **not** auto-apply the rename. The current `POST /api/claim` response is:
+  - `message: confirmation_pending_manual_review`
+  - `confirmationEmailSent: false`
+  - `confirmationEmails: ["createco11@nanocorp.app", "create-co-11@nanocorp.app"]`
+  - `emailDelivery.status: not_configured`
+- Logged into Nanodir again with a fresh magic link sent to `co-rgl1@nanocorp.app`.
+- Confirmed the claimed Nanodir source listing is still correct and owner-managed at:
+  - `https://nanodir.nanocorp.app/en/service/create-co-11`
+  - service ID: `4627`
+  - name: `RadarRival`
+  - URL: `https://radarrival.com/`
+- Forced a real Nanodir owner save from the `Edit my listing` modal and captured the backend write:
+  - `PATCH https://nanodir.nanocorp.app/api/services/4627` → `200`
+- Re-checked NanoLaunch after the Nanodir save and confirmed it still serves:
+  - name: `RadarRivalVerificado`
+  - URL: `https://create-co-11.nanocorp.app`
+- Upvoted the NanoLaunch listing successfully through the live vote API:
+  - `POST https://nanolaunch.nanocorp.app/api/vote` toggled service `36901` to `voted: true`
+  - final observed vote count on the live listing: `1`
+
+### Result
+- Partial completion only:
+  - NanoLaunch login/access was completed.
+  - The live listing URL was identified and verified: `https://nanolaunch.nanocorp.app/en/service/create-co-11`
+  - The live listing was upvoted successfully.
+  - The Nanodir source record was confirmed correct and resaved.
+- The exact requested live NanoLaunch rename to `RadarRival` was **not** achieved in this run.
+- Important current-state correction:
+  - the live NanoLaunch page no longer shows `Create Co`
+  - it currently shows `RadarRivalVerificado`
+- No repository code changes were required for the platform task; only documentation was updated in `DOCS.md`.
+
+### Most likely next step
+- Create a follow-up task to find or obtain an internal NanoLaunch admin path that can directly update service `36901` fields `name`, `url`, and possibly `handle`, because the public `/api/claim` flow is now blocked behind non-deliverable aliases `createco11@nanocorp.app` / `create-co-11@nanocorp.app`.
+- Create a follow-up task to ask NanoLaunch support/platform owners to resync listing `create-co-11` from the already-correct Nanodir source service `4627`, since a fresh Nanodir owner `PATCH` did not propagate immediately.
+- Create a follow-up task to fix the still-broken Nanodir owner shortcut `My service` → `/en/en/service/create-co-11`, because it remains a reproducible owner UX bug.
