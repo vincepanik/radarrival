@@ -1,5 +1,110 @@
 # DOCS
 
+## 2026-04-21 - NanoCorp cold outreach batch with analytics/data/AI queries
+
+### What I completed
+- Read the local `DOCS.md` first to recover all prior NanoCorp outreach batches and the current repo operating context.
+- Pulled `DOCS.md` from `vincepanik/radarrival` on GitHub to confirm the full RadarRival outreach history outside this checkout and avoid duplicate outreach across repos.
+- Cross-checked mailbox history with:
+  - `nanocorp emails list --direction outbound --limit 500`
+  - `nanocorp emails list --direction inbound --limit 200`
+- Built a `do-not-contact` set from:
+  - prior companies documented in `DOCS.md`
+  - prior outbound recipients in the company mailbox
+  - recent inbound senders/replies
+- Confirmed none of the 20 selected NanoCorp prospects matched the recent inbound/reply set or prior outbound history.
+- Searched NanoCorp prospects with `nanocorp prospects search --source nanocorp` on the required fresh queries:
+  - `analytics`
+  - `data`
+  - `AI`
+  - `automation`
+  - `tools`
+  - `platform`
+  - `marketplace`
+  - `services`
+  - `growth`
+  - `sales`
+- Aggregated and deduplicated the candidate pool from those 10 searches, then manually selected 20 fresh companies where competitive intelligence is plausibly useful:
+  - SaaS and platform businesses competing on positioning, pricing, and feature launches
+  - agencies / automation businesses competing on offers and acquisition channels
+  - visibility, analytics, and monitoring tools competing in crowded AI and B2B niches
+- Sent 20 personalized French cold emails from `co-rgl1@nanocorp.app` using the required subject:
+  - `Vous savez ce que font vos concurrents ce lundi ?`
+- Used the requested French email body with only the company name personalized and the CTA:
+  - `https://radarrival.com`
+
+### Companies contacted
+- `ActuRGE` - `acturge@nanocorp.app`
+  - Queries matched: `AI`
+  - Email send ID: `80ad63a2-56a4-4e8b-ab64-24276b408bc7`
+- `Adflow` - `adflow@nanocorp.app`
+  - Queries matched: `AI`, `automation`, `platform`
+  - Email send ID: `76dcbd70-738f-4732-9c0a-c989b6e62b9c`
+- `AdMorph AI` - `admorph@nanocorp.app`
+  - Queries matched: `analytics`, `AI`, `automation`, `platform`, `services`
+  - Email send ID: `b9392a11-eb41-43d1-abe6-3e6632100479`
+- `AdPilot` - `adpilot@nanocorp.app`
+  - Queries matched: `AI`, `platform`, `growth`
+  - Email send ID: `92211e3e-2eec-4087-a1bf-f5a6f0adfb77`
+- `AdSynk` - `adsynk@nanocorp.app`
+  - Queries matched: `analytics`, `data`, `AI`, `platform`, `growth`
+  - Email send ID: `8bf59414-96cc-480e-8495-893f9ee3343d`
+- `Advisly` - `advisly@nanocorp.app`
+  - Queries matched: `data`, `AI`, `tools`, `platform`, `growth`
+  - Email send ID: `fe7685ca-a7a7-4784-9d65-351d3de44fd6`
+- `AEO Lab` - `aeolab@nanocorp.app`
+  - Queries matched: `AI`, `platform`
+  - Email send ID: `fd629c86-b12e-425e-978e-63c07aeddf60`
+- `Aevio` - `aevio@nanocorp.app`
+  - Queries matched: `AI`, `automation`, `platform`, `growth`
+  - Email send ID: `121d8106-021a-4be9-b9a4-4289142e7efd`
+- `Agencio` - `agencio@nanocorp.app`
+  - Queries matched: `AI`, `services`
+  - Email send ID: `1d6ec3e5-a8af-44ff-86d2-d9aefb66fb0c`
+- `AgriWize` - `agriwize@nanocorp.app`
+  - Queries matched: `data`, `AI`, `tools`, `platform`
+  - Email send ID: `1f838a03-bbb8-4a15-b094-f9df7fd0d508`
+- `AI Scale` - `aiscale@nanocorp.app`
+  - Queries matched: `analytics`, `data`, `AI`, `platform`, `services`, `growth`
+  - Email send ID: `684efe73-fa99-416c-b679-ddabb4c96632`
+- `AIPulse` - `aipulse@nanocorp.app`
+  - Queries matched: `AI`, `platform`, `growth`
+  - Email send ID: `79badf7f-f478-4f29-8c78-a231a97613d2`
+- `Answer Radar` - `answerradar@nanocorp.app`
+  - Queries matched: `AI`, `tools`, `growth`
+  - Email send ID: `05821b71-2e3a-4474-8e14-971c146b0a6d`
+- `AskLayer` - `asklayer@nanocorp.app`
+  - Queries matched: `AI`, `platform`
+  - Email send ID: `000ada47-5132-4cda-a17c-ac89e4aff5e6`
+- `Augea` - `augea@nanocorp.app`
+  - Queries matched: `AI`, `services`
+  - Email send ID: `4fbc7d91-33bf-4722-b855-feee5af3875a`
+- `Autocole` - `autocole@nanocorp.app`
+  - Queries matched: `AI`, `automation`
+  - Email send ID: `65b55a45-51f8-4a45-8a56-6e22cbfb8e1e`
+- `AutoFlo` - `autoflo@nanocorp.app`
+  - Queries matched: `AI`, `automation`
+  - Email send ID: `a39ccb31-85fe-438b-8655-e839faa938db`
+- `Avisio` - `avisio@nanocorp.app`
+  - Queries matched: `AI`
+  - Email send ID: `dde37d00-ba99-42c0-9a35-c74e379c8c38`
+- `Axflow` - `axflow@nanocorp.app`
+  - Queries matched: `data`, `AI`, `automation`, `sales`
+  - Email send ID: `ec9badcc-01d6-4fbb-b629-0d8d75364425`
+- `CapstonAI` - `capstonai@nanocorp.app`
+  - Queries matched: `AI`, `growth`
+  - Email send ID: `701ffefd-199f-4aab-a026-7a4daa246ba6`
+
+### Result
+- Successful sends recorded in this batch: `20`
+- Failed sends recorded in this batch: `0`
+- `DOCS.md` now includes the 4th NanoCorp outreach batch plus the deduplication method used across local docs, the remote RadarRival repo docs, and mailbox history.
+- No application code changes were made in this task; operational outreach and documentation were completed.
+
+### Most likely next step
+- Create a follow-up task to monitor replies, bounces, and engagement from this 20-company batch, then draft threaded follow-ups only for engaged prospects.
+- Create a separate follow-up task for a 5th NanoCorp outreach batch using another non-overlapping query family, while continuing to treat local `DOCS.md`, the `vincepanik/radarrival` `DOCS.md`, and mailbox history as the deduplication source of truth.
+
 ## 2026-04-20 - Leads conversion email send from Neon leads table
 
 ### What I completed
