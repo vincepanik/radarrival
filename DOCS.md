@@ -1,5 +1,69 @@
 # DOCS
 
+## 2026-04-21 - Live lead capture funnel audit on radarrival.com
+
+### What I completed
+- Read the existing `DOCS.md` first to recover prior lead-table context and confirm the concern: traffic exists but the `leads` table previously contained only verification/test addresses.
+- Inspected the production funnel code in:
+  - `app/page.tsx`
+  - `app/api/subscribe/route.ts`
+  - `app/layout.tsx`
+- Confirmed the deployed Vercel env surface needed by the subscribe route exists:
+  - `DATABASE_URL`
+  - `NANOCORP_AGENT_SECRET`
+  - `NANOCORP_BACKEND_URL`
+- Audited the live site at `https://radarrival.com` with `agent-browser` on both desktop and mobile widths.
+- Verified the hero signup UI renders on both layouts:
+  - desktop viewport `1440x900`
+  - mobile emulation `iPhone 14`
+- Submitted the live hero form once with a fresh address:
+  - `radarrival-lead-audit-20260421175816@mailinator.com`
+- Verified the live submission end to end:
+  - on-page success state appeared (`Merci ! Vous recevrez votre premier rapport lundi prochain.`)
+  - browser performance entries recorded a `fetch` to `https://radarrival.com/api/subscribe`
+  - a new row was written to the Neon `leads` table
+  - the automated welcome email was sent from `co-rgl1@nanocorp.app`
+- Probed adjacent production behavior:
+  - `POST /api/subscribe` rejects invalid email input with `400 {"error":"Invalid email address"}`
+  - `OPTIONS /api/subscribe` returns `204` with `Allow: OPTIONS, POST`
+  - current NanoCorp analytics report `121` total views and `69` unique visitors
+
+### Exact evidence from the live test
+- Lead row written:
+  - `id`: `4`
+  - `email`: `radarrival-lead-audit-20260421175816@mailinator.com`
+  - `source`: `landing_page`
+  - `created_at`: `2026-04-21 17:58:27.384213+00`
+- Welcome email record:
+  - `email_id`: `53bf7899-e40b-46cb-bba4-08fe28fee443`
+  - `to`: `radarrival-lead-audit-20260421175816@mailinator.com`
+  - `subject`: `Bienvenue chez RadarRival 🎯`
+  - `sent_at`: `2026-04-21T17:58:28.139322`
+- Browser-side submit trace:
+  - `performance.getEntriesByType("resource")` recorded `https://radarrival.com/api/subscribe`
+  - `initiatorType`: `fetch`
+  - duration observed: about `2403ms`
+
+### Findings
+- The live lead-capture funnel is currently working end to end for a new email address.
+- I did **not** find a concrete production bug preventing first-time real-user lead capture.
+- The strongest code-level source of confusion is duplicate handling in `app/api/subscribe/route.ts`:
+  - the route uses `INSERT ... ON CONFLICT (email) DO NOTHING`
+  - the API still returns `{ "success": true }` even when no new row is inserted
+  - the welcome email is only attempted when a new row is inserted
+  - result: repeat submissions of an existing address look successful in the UI, but they create no new DB row and send no email
+- That duplicate-email behavior can make manual retests look broken, but it does **not** explain failure for first-time real users.
+- No mobile-only rendering blocker was observed in the hero capture form during this audit.
+- No missing production env var was observed for the live subscribe route.
+
+### Result
+- No application code change was required because the live production funnel succeeded end to end during this audit.
+- No deploy was performed.
+
+### Most likely next step
+- Create a follow-up task to add explicit duplicate-signup messaging in the hero form/API so repeat submissions do not look like silent failures.
+- Create a follow-up task to instrument the funnel more precisely (for example, server-side logging or conversion analytics around `/api/subscribe`) so the team can distinguish low-intent traffic from actual capture failures.
+
 ## 2026-04-21 - NanoCorp cold outreach batch with analytics/data/AI queries
 
 ### What I completed
