@@ -83,6 +83,11 @@ type Copy = {
     title: string;
     items: Array<{ q: string; a: string }>;
   };
+  demoCta: {
+    title: string;
+    body: string;
+    cta: string;
+  };
   finalCta: {
     title: string;
     description: string;
@@ -303,6 +308,11 @@ const copy: Record<Locale, Copy> = {
           a: "Vous recevez un email clair chaque lundi matin, avec les changements prioritaires et un lien vers le rapport détaillé.",
         },
       ],
+    },
+    demoCta: {
+      title: "Pas prêt à démarrer ?",
+      body: "Parlez-nous de vos concurrents et de votre marché — nous vous montrerons à quoi pourrait ressembler votre rapport RadarRival.",
+      cta: "Demander une démo",
     },
     finalCta: {
       title: "Prêt à surveiller vos concurrents avec plus de précision ?",
@@ -539,6 +549,11 @@ const copy: Record<Locale, Copy> = {
           a: "You get a clear email every Monday morning with the most important changes and a link to the detailed report.",
         },
       ],
+    },
+    demoCta: {
+      title: "Not ready to start yet?",
+      body: "Tell us about your competitors and market — we'll show you what your RadarRival report could look like.",
+      cta: "Request a demo",
     },
     finalCta: {
       title: "Ready to track your competitors with more precision?",
@@ -934,6 +949,22 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl rounded-[2rem] border border-white/10 bg-white/4 px-6 py-12 text-center md:px-12">
+          <p className="mb-4 inline-flex items-center rounded-full border border-brand-500/20 bg-brand-500/10 px-4 py-1.5 text-sm font-medium text-brand-200">
+            💬
+          </p>
+          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{t.demoCta.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-slate-300">{t.demoCta.body}</p>
+          <a
+            href="mailto:contact@radarrival.com?subject=Demande%20de%20d%C3%A9mo%20RadarRival"
+            className="mt-8 inline-flex items-center rounded-full border border-brand-500/40 bg-brand-500/10 px-7 py-3.5 text-base font-semibold text-brand-200 transition hover:bg-brand-500/20 hover:text-brand-100"
+          >
+            {t.demoCta.cta}
+          </a>
         </div>
       </section>
 
