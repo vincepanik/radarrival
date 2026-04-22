@@ -1,5 +1,26 @@
 # DOCS
 
+## 2026-04-22 - Demo CTA section added to landing page
+
+### What was changed
+- `app/page.tsx`:
+  - Added `demoCta` field to the `Copy` type with `title`, `body`, and `cta` strings.
+  - Added FR locale copy: title `"Pas prêt à démarrer ?"`, body about showing what a report looks like, CTA `"Demander une démo"`.
+  - Added EN locale copy: title `"Not ready to start yet?"`, matching body, CTA `"Request a demo"`.
+  - Added a new `<section>` placed directly after the report preview section (before testimonials) rendering a centered card with the bilingual copy and a mailto CTA button.
+  - Mailto link: `contact@radarrival.com?subject=Demande%20de%20d%C3%A9mo%20RadarRival`
+  - Section uses `bg-white/4` dark card styling consistent with the rest of the page; CTA button uses `border-brand-500/40 bg-brand-500/10` ghost style to differentiate from the primary trial CTA.
+  - Language toggle already covers this section because it reads from `t.demoCta`.
+
+### Deployment
+- `npm run build` passed before commit.
+- Committed as `81699fb` and pushed to `main`.
+- Vercel auto-deploy triggered; live at `https://co-rgl1.nanocorp.app`.
+
+### Remaining follow-up
+- Consider adding a confirmation auto-reply when someone emails the demo address.
+- Track demo request volume by adding a dedicated `source=demo_request` entry to the leads table or a separate analytics event if/when a Calendly-style scheduler replaces the mailto link.
+
 ## 2026-04-21 - Live lead capture funnel audit on radarrival.com
 
 ### What I completed
