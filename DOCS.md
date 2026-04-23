@@ -1,5 +1,85 @@
 # DOCS
 
+## 2026-04-23 - NanoCorp cold outreach batch 5 prepared but blocked
+
+### What I completed
+- Read the local `DOCS.md` first to recover the full RadarRival outreach history in this checkout.
+- Pulled `DOCS.md` from `vincepanik/radarrival` on GitHub again to confirm the remote source of truth and avoid duplicate outreach across repos.
+- Rebuilt a `do-not-contact` set from:
+  - prior companies documented in local `DOCS.md`
+  - prior companies documented in the remote `vincepanik/radarrival` `DOCS.md`
+  - outbound mailbox history for the subject `Vous savez ce que font vos concurrents ce lundi ?`
+- Confirmed the platform state before attempting the batch:
+  - `nanocorp emails send` currently fails with `Outbound email is paused by the user. Do not attempt to send emails until outbound is resumed.`
+  - `nanocorp prospects search --source nanocorp --query productivity` still works
+- Ran the required fresh NanoCorp search family during the initial aggregation pass:
+  - `productivity`
+  - `CRM`
+  - `content`
+  - `SEO`
+  - `social`
+  - `events`
+  - `real estate`
+  - `insurance`
+  - `accounting`
+  - `coaching`
+- Aggregated a fresh candidate pool from those required queries, removed prior contacts, and manually shortlisted 20 companies that plausibly benefit from competitive intelligence.
+- A later inspection pass hit the hourly `search_prospects` rate limit:
+  - window reset advertised by the tool: `2026-04-23 14:00:00 UTC`
+  - instruction returned by the tool: do not wait or retry in this run
+
+### Prepared batch (not sent because outbound is paused)
+- `ExpatNest` - `expatnest@nanocorp.app`
+  - Queries matched: `content`, `events`, `insurance`, `real estate`, `social`
+- `Qualifai` - `qualifai@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `insurance`, `real estate`
+- `Ranklab` - `ranklabs@nanocorp.app`
+  - Queries matched: `SEO`, `coaching`, `content`, `social`
+- `RankRadar` - `rankradar@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `events`, `social`
+- `SmoothOps` - `smoothops@nanocorp.app`
+  - Queries matched: `CRM`, `SEO`, `content`, `social`
+- `Suitebot` - `suitebot@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `events`, `social`
+- `Upswell` - `upswell@nanocorp.app`
+  - Queries matched: `CRM`, `SEO`, `content`, `events`
+- `Voxcast` - `voxcast@nanocorp.app`
+  - Queries matched: `SEO`, `coaching`, `content`, `social`
+- `ApaGrow` - `apagrow@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `social`
+- `Appeliq` - `appeliq@nanocorp.app`
+  - Queries matched: `SEO`, `events`, `social`
+- `Artivise` - `artivise@nanocorp.app`
+  - Queries matched: `CRM`, `SEO`, `social`
+- `BonSpot` - `bonspot@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `social`
+- `Clip HQ` - `cliphq@nanocorp.app`
+  - Queries matched: `CRM`, `content`, `social`
+- `Glow` - `glow@nanocorp.app`
+  - Queries matched: `CRM`
+- `RankChef` - `rankchef@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `social`
+- `RestoIQ` - `restoiq@nanocorp.app`
+  - Queries matched: `SEO`, `accounting`, `content`
+- `Rendio` - `rendio@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `real estate`
+- `Revu` - `revu@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `social`
+- `StayForge` - `stayforge@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `social`
+- `TableSet` - `tableset@nanocorp.app`
+  - Queries matched: `SEO`, `content`, `social`
+
+### Blocking result
+- Successful sends recorded in this run: `0`
+- Failed sends attempted for the actual outreach batch: `0`
+- The required French subject/body were not sent because outbound is paused at the platform level.
+- No application code changes were made in this task; operational prep and documentation only.
+
+### Most likely next step
+- Create a follow-up task to rerun only the send step once outbound is resumed, rechecking mailbox history immediately before send to keep the batch duplicate-free.
+- Create a separate follow-up task after the next `search_prospects` window reset if the team wants a broader reserve list beyond these 20 prepared prospects.
+
 ## 2026-04-22 - Demo CTA section added to landing page
 
 ### What was changed
