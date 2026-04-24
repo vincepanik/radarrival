@@ -83,6 +83,17 @@ type Copy = {
     title: string;
     items: Array<{ q: string; a: string }>;
   };
+  useCases: {
+    title: string;
+    subtitle: string;
+    items: Array<{
+      icon: string;
+      title: string;
+      problem: string;
+      bullets: string[];
+      outcome: string;
+    }>;
+  };
   demoCta: {
     title: string;
     body: string;
@@ -306,6 +317,45 @@ const copy: Record<Locale, Copy> = {
         {
           q: "Sous quel format reçois-je le rapport ?",
           a: "Vous recevez un email clair chaque lundi matin, avec les changements prioritaires et un lien vers le rapport détaillé.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Pour qui ?",
+      subtitle: "RadarRival s'adapte à votre contexte — que vous gériez votre boutique en ligne, vos clients ou votre commerce local.",
+      items: [
+        {
+          icon: "🛒",
+          title: "PME e-commerce",
+          problem: "Vous perdez des positions sur Google sans savoir pourquoi, pendant que vos concurrents gagnent du terrain chaque semaine. Vous manquez de visibilité sur ce qu'ils font réellement : nouveaux mots-clés, changements de prix, promotions saisonnières.",
+          bullets: [
+            "Évolution du positionnement SEO de vos 5 concurrents directs sur vos catégories produits clés",
+            "Modifications de prix et offres promotionnelles sur leurs pages produits",
+            "Nouvelles pages, nouvelles catégories et changements de structure de site",
+          ],
+          outcome: "Vous réagissez en jours, pas en mois — et vous stoppez l'hémorragie de trafic avant qu'elle ne coûte des ventes.",
+        },
+        {
+          icon: "📊",
+          title: "Agence / consultant marketing",
+          problem: "Vos clients vous demandent pourquoi leurs concurrents progressent et ce qu'il faut faire — mais collecter ces données manuellement prend des heures que vous n'avez pas. Sans veille structurée, vos recommandations stratégiques manquent de preuves concrètes.",
+          bullets: [
+            "Stratégie de contenu et fréquence de publication des concurrents de vos clients",
+            "Campagnes publicitaires actives et messages clés (search, display)",
+            "Backlinks nouveaux et partenariats éditoriaux détectés sur leur domaine",
+          ],
+          outcome: "Vous livrez à chaque client un rapport de veille concurrentielle prêt à l'emploi, sans y passer une seule heure supplémentaire.",
+        },
+        {
+          icon: "🏪",
+          title: "Commerce local / réseau de boutiques",
+          problem: "Dans votre zone de chalandise, un concurrent ouvre ou change de stratégie — et vous l'apprenez trop tard, souvent par vos clients eux-mêmes. Surveiller manuellement les fiches Google Business, les avis et les offres locales de plusieurs enseignes est impossible au quotidien.",
+          bullets: [
+            "Notes, avis récents et réponses des concurrents sur Google Business Profile",
+            "Modifications d'horaires, d'offres et d'informations de contact sur leurs fiches locales",
+            "Nouvelles ouvertures ou fermetures de points de vente dans votre zone",
+          ],
+          outcome: "Vous gardez une longueur d'avance sur votre marché local sans y consacrer de ressources — et vous agissez avant que vos clients ne remarquent la différence.",
         },
       ],
     },
@@ -547,6 +597,45 @@ const copy: Record<Locale, Copy> = {
         {
           q: "How do I receive the report?",
           a: "You get a clear email every Monday morning with the most important changes and a link to the detailed report.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Who is it for?",
+      subtitle: "RadarRival adapts to your context — whether you run an online shop, manage clients, or operate local retail.",
+      items: [
+        {
+          icon: "🛒",
+          title: "E-commerce SMEs",
+          problem: "You're losing Google rankings without understanding why, while competitors gain ground week after week. You lack visibility into what they're actually doing: new keywords, price changes, seasonal promotions.",
+          bullets: [
+            "SEO ranking shifts for your 5 key competitors across your core product categories",
+            "Price changes and promotional offers on their product pages",
+            "New pages, new categories, and site structure changes",
+          ],
+          outcome: "You react in days, not months — and you stop the traffic bleed before it costs you sales.",
+        },
+        {
+          icon: "📊",
+          title: "Marketing agencies & consultants",
+          problem: "Clients ask why their competitors are growing and what to do about it — but collecting that data manually takes hours you don't have. Without structured monitoring, your strategic recommendations lack hard evidence.",
+          bullets: [
+            "Content strategy and publishing frequency for your clients' competitors",
+            "Active ad campaigns and key messages (search, display)",
+            "New backlinks and editorial partnerships detected on their domain",
+          ],
+          outcome: "You deliver a ready-to-use competitive intelligence report to every client — without spending a single extra hour on it.",
+        },
+        {
+          icon: "🏪",
+          title: "Local retail & store networks",
+          problem: "In your catchment area, a competitor opens or changes strategy — and you find out too late, often through your own customers. Manually tracking Google Business listings, reviews, and local offers across multiple stores is not feasible every day.",
+          bullets: [
+            "Ratings, recent reviews, and competitor responses on Google Business Profile",
+            "Changes to opening hours, offers, and contact info on their local listings",
+            "New store openings or closures in your area",
+          ],
+          outcome: "You stay one step ahead in your local market without dedicating resources to it — and you act before your customers notice the difference.",
         },
       ],
     },
@@ -880,6 +969,39 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-white">{item.title}</h3>
                 <p className="mt-4 leading-relaxed text-slate-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="use-cases" className="bg-white/3 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t.useCases.title}</h2>
+            <p className="mt-4 text-lg text-slate-400">{t.useCases.subtitle}</p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {t.useCases.items.map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col rounded-[1.75rem] border border-white/10 bg-slate-900/60 p-8 transition hover:border-brand-500/25 hover:bg-slate-900/80"
+              >
+                <div className="mb-5 text-4xl">{item.icon}</div>
+                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-slate-300">{item.problem}</p>
+                <ul className="mt-5 space-y-3">
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-3">
+                      <svg className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                      <span className="text-sm leading-relaxed text-slate-300">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-sm italic text-brand-200">{item.outcome}</p>
               </div>
             ))}
           </div>
