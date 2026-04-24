@@ -1,5 +1,41 @@
 # DOCS
 
+## 2026-04-24 - "Pour qui ?" / "Who is it for?" use-cases section added
+
+### What was changed
+- `app/page.tsx`:
+  - Added `useCases` field to the `Copy` type with `title`, `subtitle`, and `items` (icon, title, problem, bullets, outcome).
+  - Added FR locale copy for 3 ICP segments from `homepage_use_cases_fr.md`:
+    1. PME e-commerce (🛒) — SEO/price monitoring
+    2. Agence / consultant marketing (📊) — content/ads/backlinks monitoring
+    3. Commerce local / réseau de boutiques (🏪) — Google Business / local listing monitoring
+  - Added EN translations inline in the same copy-object pattern.
+  - Added a new `<section id="use-cases">` placed between `#how-it-works` and `#report`:
+    - 3 cards in a row on desktop, stacked on mobile (`grid md:grid-cols-3`)
+    - Each card: large icon, title, 2-sentence problem, 3 bullet points with checkmark SVG, outcome in italics (`text-brand-200 italic`)
+    - Dark card style (`bg-slate-900/60`, `border-white/10`) consistent with existing sections
+
+### Deployment
+- `npm run build` (Next.js 16.2.3) passed before commit.
+- Committed as `37b340f` and pushed to `main`.
+- Vercel auto-deploy triggered; curl confirmed `Pour qui`, `use-cases`, and `PME e-commerce` present in the live HTML at `https://radarrival.com`.
+
+### Section order (updated)
+1. Hero
+2. Trust bar
+3. `#how-it-works`
+4. `#use-cases` ← **new**
+5. `#report`
+6. Report preview
+7. Demo CTA
+8. Testimonials
+9. `#pricing`
+10. `#faq`
+11. Final CTA
+12. Footer
+
+
+
 ## 2026-04-23 - NanoCorp cold outreach batch 5 prepared but blocked
 
 ### What I completed
