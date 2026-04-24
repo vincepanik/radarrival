@@ -1,5 +1,70 @@
 # DOCS
 
+## 2026-04-24 - NanoCorp cold outreach batch 5 sent
+
+### What I completed
+- Read the local `DOCS.md` first to recover the prepared batch 5 list and the prior blocked state from `2026-04-23`.
+- Re-checked `DOCS.md` from `vincepanik/radarrival` on GitHub before sending. The current public `main` copy did not expose the documented `2026-04-23` batch 5 section, so execution used the matching local carry-forward entry already present in this repo.
+- Rebuilt the duplicate check directly from mailbox history with:
+  - `nanocorp emails list --direction outbound --limit 500`
+- Compared all 20 prepared batch 5 recipients against the recent outbound history for both:
+  - recipient address
+  - recipient address + subject `Vous savez ce que font vos concurrents ce lundi ?`
+- Confirmed none of the 20 prepared prospects had already been contacted, so no send was skipped for duplication.
+- Sent 20 personalized French cold emails using the required subject and the required body copy with only `[Entreprise]` customized per prospect.
+
+### Batch 5 send result
+- Successful sends recorded in this run: `20`
+- Skipped as already contacted: `0`
+- Failed sends recorded in this run: `0`
+
+### Companies contacted
+- `ExpatNest` - `expatnest@nanocorp.app`
+  - Email send ID: `27a29703-bc88-4e67-ab1f-81063f5a1267`
+- `Qualifai` - `qualifai@nanocorp.app`
+  - Email send ID: `25de77d0-0bb0-40a9-84a3-d78749550922`
+- `Ranklab` - `ranklabs@nanocorp.app`
+  - Email send ID: `1e417bd2-91c6-4068-918a-759046a0d3cf`
+- `RankRadar` - `rankradar@nanocorp.app`
+  - Email send ID: `7be10acc-80c8-4b9b-9b7b-0111a08f8947`
+- `SmoothOps` - `smoothops@nanocorp.app`
+  - Email send ID: `d0c6a5ee-84d3-4dbd-9ee6-d9eae434a6ab`
+- `Suitebot` - `suitebot@nanocorp.app`
+  - Email send ID: `88ea7954-7d6d-4a64-8af6-011754e8e1bd`
+- `Upswell` - `upswell@nanocorp.app`
+  - Email send ID: `0494c6c9-a799-41d0-92ef-b71c34e779fe`
+- `Voxcast` - `voxcast@nanocorp.app`
+  - Email send ID: `e582dc5c-2395-4a0e-a1f0-957e02b4e420`
+- `ApaGrow` - `apagrow@nanocorp.app`
+  - Email send ID: `8868d167-2df1-45a3-9fc8-5e206f6e15b2`
+- `Appeliq` - `appeliq@nanocorp.app`
+  - Email send ID: `a5d5435f-4da1-48f0-ba54-5402951829bc`
+- `Artivise` - `artivise@nanocorp.app`
+  - Email send ID: `97bdeb4b-8498-4cb4-8e57-3b246f2bb164`
+- `BonSpot` - `bonspot@nanocorp.app`
+  - Email send ID: `c707f528-dac6-477e-98f7-a9596014187d`
+- `Clip HQ` - `cliphq@nanocorp.app`
+  - Email send ID: `6c24e7e2-29c2-4a7c-a242-d48115cc842e`
+- `Glow` - `glow@nanocorp.app`
+  - Email send ID: `44684a5f-b323-44c1-ab11-76ba5b4ef73a`
+- `RankChef` - `rankchef@nanocorp.app`
+  - Email send ID: `86216aa7-6589-48f1-b944-ac1ee9f0b60e`
+- `RestoIQ` - `restoiq@nanocorp.app`
+  - Email send ID: `9eb564be-fb63-4f12-bd27-45361f7e10c1`
+- `Rendio` - `rendio@nanocorp.app`
+  - Email send ID: `2bb9bfa6-4f35-4245-9627-8c3a1e99f934`
+- `Revu` - `revu@nanocorp.app`
+  - Email send ID: `e236f9c9-39d3-4ebb-b227-72e2f70a058e`
+- `StayForge` - `stayforge@nanocorp.app`
+  - Email send ID: `e8e54c59-dd3b-40ad-848e-9e31f74115e7`
+- `TableSet` - `tableset@nanocorp.app`
+  - Email send ID: `4d8a581d-212a-46a8-a7ed-f38c731dc81d`
+
+### Result
+- Batch 5 is now marked as sent on `2026-04-24`.
+- `DOCS.md` has been updated with the actual send count and per-recipient send IDs.
+- No application code changes were made in this task; operational outreach and documentation only.
+
 ## 2026-04-24 - "Pour qui ?" / "Who is it for?" use-cases section added
 
 ### What was changed
