@@ -1,5 +1,62 @@
 # DOCS
 
+## 2026-04-25 - Wave 3 French SME prospect research and outreach
+
+### What I completed
+- Researched a fresh Wave 3 list of 10 real French SME prospects in competitive sectors, avoiding all companies already used in Wave 1 and Wave 2.
+- Restricted the list to real company domains only; no `@nanocorp.app` recipients were used.
+- Rechecked recent outbound history before sending and confirmed none of the 10 selected addresses had already received the subject `Vous savez ce que font vos concurrents ce lundi ?`.
+- Sent 10 personalized French outreach emails from `co-rgl1@nanocorp.app` with the required subject and sector-specific sentence.
+- Added the researched prospect summary to `wave3_prospects.md`.
+
+### Prospect list saved
+- `Pandacraft` - e-commerce jeunesse - `https://pandacraft.com` - `contact@pandacraft.com` - Paris, Ile-de-France - employee check: `35`
+- `Les Petits Prodiges` - beaute - `https://lespetitsprodiges.com` - `hello@lespetitsprodiges.com` - Paris, Ile-de-France - employee check: `10`
+- `Zcomme` - conseil / agence communication - `https://www.zcomme.fr` - `contact@zcomme.fr` - Toulouse, Occitanie - employee check: `39`
+- `Nutripure` - sante / complements / e-commerce - `https://www.nutripure.fr` - `contact@nutripure.fr` - Deyme, Occitanie - employee check: `90`
+- `Oh My Cream` - retail beaute / e-commerce - `https://www.ohmycream.com` - `contact@ohmycream.com` - Paris, Ile-de-France - employee check: `100`
+- `Make My Lemonade` - mode / retail / e-commerce - `https://www.makemylemonade.com` - `hey@makemylemonade.com` - Paris, Ile-de-France - employee check: `40`
+- `Unbottled` - hygiene-beaute / e-commerce - `https://www.unbottled.co` - `hello@eu.unbottled.co` - Paris, Ile-de-France - employee check: `33`
+- `Aime` - beaute / nutricosmetique - `https://aime.co` - `serviceclient@aime.co` - Paris, Ile-de-France - employee check: `27`
+- `MEME Cosmetics` - dermocosmetique / sante - `https://www.memecosmetics.fr` - `bonjour@memecosmetics.fr` - Paris, Ile-de-France - employee check: `19`
+- `Les Miraculeux` - sante / nutraceutique - `https://www.lesmiraculeux.com` - `help@lesmiraculeux.com` - Vincennes, Ile-de-France - employee check: `20-49`
+
+### Send result
+- Successful sends recorded in this run: `10`
+- Failed sends recorded in this run: `0`
+
+### Sent emails
+- `Pandacraft` - `contact@pandacraft.com`
+  - Email send ID: `911896b3-3f93-4ce6-a961-fb555c4ae7b3`
+- `Les Petits Prodiges` - `hello@lespetitsprodiges.com`
+  - Email send ID: `b2df4f31-c19c-49ec-bee6-621a4eeadb58`
+- `Zcomme` - `contact@zcomme.fr`
+  - Email send ID: `4cbb2375-7691-4eaa-a647-101fc0cab88d`
+- `Nutripure` - `contact@nutripure.fr`
+  - Email send ID: `3d158473-b2a0-4a3b-9f97-df1222548542`
+- `Oh My Cream` - `contact@ohmycream.com`
+  - Email send ID: `e2cb5b5d-528d-40b9-91b5-32411e12e543`
+- `Make My Lemonade` - `hey@makemylemonade.com`
+  - Email send ID: `a44a338e-36ed-4ab4-95a4-de0f7f88ce61`
+- `Unbottled` - `hello@eu.unbottled.co`
+  - Email send ID: `8c3e7d7e-e203-43f4-9a19-2c0e648a18b3`
+- `Aime` - `serviceclient@aime.co`
+  - Email send ID: `fb30c311-f9d5-4a6e-ace3-6a4fe3abdb56`
+- `MEME Cosmetics` - `bonjour@memecosmetics.fr`
+  - Email send ID: `751e75df-5920-4cdd-bd96-848d5c164240`
+- `Les Miraculeux` - `help@lesmiraculeux.com`
+  - Email send ID: `ca97ab54-1dda-46b5-b936-2d8638a66282`
+
+### Result
+- Wave 3 research and outreach are complete.
+- `wave3_prospects.md` now contains the saved list of 10 prospects plus send status.
+- No application code changes were required for this task.
+
+### Focused follow-up
+- Monitor replies from the 10 Wave 3 recipients and draft response templates for positive, neutral, and unsubscribe cases.
+- Build a Wave 4 reserve list with another 15-20 French SMEs using the same real-domain-only rule.
+- If cross-repo publication remains required, sync `wave3_prospects.md` into `vincepanik/radarrival` from a checkout with confirmed push access.
+
 ## 2026-04-24 - NanoCorp cold outreach batch 5 sent
 
 ### What I completed
