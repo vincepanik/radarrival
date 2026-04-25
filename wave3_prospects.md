@@ -10,7 +10,7 @@ Date: 2026-04-25
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Pandacraft | E-commerce jeunesse | https://pandacraft.com | contact@pandacraft.com | Paris, Ile-de-France | 35 | Sent | 911896b3-3f93-4ce6-a961-fb555c4ae7b3 |
 | Les Petits Prodiges | Beaute | https://lespetitsprodiges.com | hello@lespetitsprodiges.com | Paris, Ile-de-France | 10 | Sent | b2df4f31-c19c-49ec-bee6-621a4eeadb58 |
-| Zcomme | Conseil / agence communication | https://www.zcomme.fr | contact@zcomme.fr | Toulouse, Occitanie | 39 | Sent | 4cbb2375-7691-4eaa-a647-101fc0cab88d |
+| Zcomme | Conseil / agence communication | https://www.zcomme.fr | contact@zcomme.fr | Paris, Ile-de-France | 39 | Sent | 4cbb2375-7691-4eaa-a647-101fc0cab88d |
 | Nutripure | Sante / complements / e-commerce | https://www.nutripure.fr | contact@nutripure.fr | Deyme, Occitanie | 90 | Sent | 3d158473-b2a0-4a3b-9f97-df1222548542 |
 | Oh My Cream | Retail beaute / e-commerce | https://www.ohmycream.com | contact@ohmycream.com | Paris, Ile-de-France | 100 | Sent | e2cb5b5d-528d-40b9-91b5-32411e12e543 |
 | Make My Lemonade | Mode / retail / e-commerce | https://www.makemylemonade.com | hey@makemylemonade.com | Paris, Ile-de-France | 40 | Sent | a44a338e-36ed-4ab4-95a4-de0f7f88ce61 |

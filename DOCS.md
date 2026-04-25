@@ -12,7 +12,7 @@
 ### Prospect list saved
 - `Pandacraft` - e-commerce jeunesse - `https://pandacraft.com` - `contact@pandacraft.com` - Paris, Ile-de-France - employee check: `35`
 - `Les Petits Prodiges` - beaute - `https://lespetitsprodiges.com` - `hello@lespetitsprodiges.com` - Paris, Ile-de-France - employee check: `10`
-- `Zcomme` - conseil / agence communication - `https://www.zcomme.fr` - `contact@zcomme.fr` - Toulouse, Occitanie - employee check: `39`
+- `Zcomme` - conseil / agence communication - `https://www.zcomme.fr` - `contact@zcomme.fr` - Paris, Ile-de-France - employee check: `39`
 - `Nutripure` - sante / complements / e-commerce - `https://www.nutripure.fr` - `contact@nutripure.fr` - Deyme, Occitanie - employee check: `90`
 - `Oh My Cream` - retail beaute / e-commerce - `https://www.ohmycream.com` - `contact@ohmycream.com` - Paris, Ile-de-France - employee check: `100`
 - `Make My Lemonade` - mode / retail / e-commerce - `https://www.makemylemonade.com` - `hey@makemylemonade.com` - Paris, Ile-de-France - employee check: `40`
