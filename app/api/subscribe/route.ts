@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
 
+import { sendNanoCorpEmail } from "@/lib/nanocorp-email";
+
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-const NANOCORP_BACKEND_URL =
-  process.env.NANOCORP_BACKEND_URL ??
-  "https://phospho-nanocorp-prod--nanocorp-api-fastapi-app.modal.run";
-const NANOCORP_AGENT_SECRET = process.env.NANOCORP_AGENT_SECRET;
 
 const WELCOME_EMAIL = {
   subject: "Bienvenue chez RadarRival 🎯",
@@ -37,46 +35,6 @@ contact@radarrival.com | linkedin.com/company/radarrival`,
 <p>À lundi,<br>L'équipe RadarRival<br>contact@radarrival.com | linkedin.com/company/radarrival</p>`,
 } as const;
 
-async function sendWelcomeEmail(email: string) {
-  if (!NANOCORP_AGENT_SECRET) {
-    throw new Error("NANOCORP_AGENT_SECRET is not configured");
-  }
-
-  const response = await fetch(
-    `${NANOCORP_BACKEND_URL}/internal/tools/send_email/execute`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${NANOCORP_AGENT_SECRET}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        arguments: {
-          to: email,
-          subject: WELCOME_EMAIL.subject,
-          // NanoCorp's send_email tool currently honors a single rendered body field.
-          body: WELCOME_EMAIL.html,
-        },
-      }),
-      signal: AbortSignal.timeout(10_000),
-    }
-  );
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`NanoCorp email API returned ${response.status}: ${errorText}`);
-  }
-
-  const payload = (await response.json()) as {
-    error?: unknown;
-    success?: boolean;
-  };
-
-  if (!payload.success) {
-    throw new Error(`NanoCorp email API reported failure: ${JSON.stringify(payload.error)}`);
-  }
-}
-
 export async function POST(req: NextRequest) {
   try {
     const { email, source } = await req.json();
@@ -98,7 +56,11 @@ export async function POST(req: NextRequest) {
 
     if (insertResult.rowCount && insertResult.rowCount > 0) {
       try {
-        await sendWelcomeEmail(trimmed);
+        await sendNanoCorpEmail({
+          to: trimmed,
+          subject: WELCOME_EMAIL.subject,
+          body: WELCOME_EMAIL.html,
+        });
       } catch (error) {
         console.error("Failed to send welcome email after lead signup", {
           email: trimmed,

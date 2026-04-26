@@ -1110,7 +1110,9 @@ export default function Home() {
                     <span key={i} className="text-lg leading-none">{star}</span>
                   ))}
                 </div>
-                <p className="flex-1 text-base leading-relaxed text-slate-200">"{item.quote}"</p>
+                <p className="flex-1 text-base leading-relaxed text-slate-200">
+                  &quot;{item.quote}&quot;
+                </p>
                 <div className="mt-6 border-t border-white/8 pt-5">
                   <p className="font-semibold text-white">{item.name}</p>
                   <p className="mt-1 text-sm text-slate-400">{item.role}</p>
