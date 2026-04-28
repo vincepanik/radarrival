@@ -51,12 +51,13 @@
 ### Result
 - Wave 4 research and outreach are complete.
 - `wave4_prospects.md` now contains the saved list of 10 prospects plus send status.
-- The same `wave4_prospects.md` archive was also synced into the separate `vincepanik/radarrival` repository.
+- I prepared the same `wave4_prospects.md` archive in a fresh local clone of `vincepanik/radarrival`, but pushing that clone failed because the current deploy key does not have write access to that repository.
 - No application code changes were required for this task.
 
 ### Focused follow-up
 - Monitor replies from the 10 Wave 4 recipients and prepare response templates for positive interest, pricing questions, and unsubscribe requests.
 - Build a reserve list of another 15-20 French SME prospects in adjacent B2B sectors so the next outreach wave can move quickly.
+- Grant write access to `vincepanik/radarrival` for this environment's GitHub deploy key, or have a maintainer copy `wave4_prospects.md` there manually.
 
 ## 2026-04-28 - Stripe webhook registration attempt blocked by missing Stripe admin access
 
