@@ -1,5 +1,63 @@
 # DOCS
 
+## 2026-04-28 - Wave 4 French SME prospect research and outreach
+
+### What I completed
+- Read the local `DOCS.md` first, then reviewed the Wave 1, Wave 2, and Wave 3 exclusion lists before researching any new targets.
+- Built a fresh Wave 4 list focused on education / formation, recrutement / conseil RH, and business-services companies instead of the consumer-heavy sectors used in Wave 3.
+- Used `nanocorp prospects search --source external --company-size "11-50,51-100"` as the initial size screen, then verified the website, city, and public company-domain inbox directly from each prospect's website.
+- Re-checked outbound mail history with `nanocorp emails list --direction outbound --limit 500` before sending and confirmed none of the 10 selected addresses had already received the subject `Vous savez ce que font vos concurrents ce lundi ?`.
+- Sent 10 personalized French outreach emails from `co-rgl1@nanocorp.app` using the required subject and a sector-specific sentence for each company.
+- Added the researched prospect summary to `wave4_prospects.md`.
+
+### Prospect list saved
+- `FMSD Formation` - formation professionnelle / artisanat - `https://formation-serrurier.com` - `contact@formation-serrurier.com` - `Crosne`
+- `Semafor` - conseil RH / formation - `https://www.semafor.fr` - `contact@semafor.fr` - `Rouen`
+- `LearnAxiom` - formation professionnelle / e-learning - `https://learnaxiom.com` - `hello@learnaxiom.com` - `Lyon`
+- `Les Épaulettes` - formation / accompagnement professionnel - `https://lesepaulettes.com` - `hello@lesepaulettes.com` - `Marseille`
+- `ZOOM RH` - conseil RH / recrutement - `https://www.zoom-rh.com` - `contact@zoom-rh.com` - `Bordeaux`
+- `Ditayls` - expertise comptable / finance externalisée - `https://ditayls.com` - `contact@ditayls.com` - `Paris`
+- `PRO-RH` - cabinet de recrutement - `https://www.pro-rh.pro` - `contact@pro-rh.pro` - `Louviers`
+- `Prométhée Formations Conseil` - formation professionnelle / conseil - `https://promethee-formations.com` - `contact@promethee-formations.com` - `Valenciennes`
+- `Qualitis` - cabinet de recrutement - `https://www.qualitis.agency` - `contact@qualitis.agency` - `Aix-en-Provence`
+- `Umpacte` - cabinet de recrutement - `https://umpacte.fr` - `contact@umpacte.fr` - `Bordeaux`
+
+### Send result
+- Successful sends recorded in this run: `10`
+- Failed sends recorded in this run: `0`
+
+### Sent emails
+- `FMSD Formation` - `contact@formation-serrurier.com`
+  - Email send ID: `3f644e6e-9132-4131-9b78-6619ae5f9165`
+- `Semafor` - `contact@semafor.fr`
+  - Email send ID: `6abdc706-3a7f-4ee2-a9a6-d4db18a27714`
+- `LearnAxiom` - `hello@learnaxiom.com`
+  - Email send ID: `2be456b4-5b8c-4daa-83c2-f5b9e1ba5562`
+- `Les Épaulettes` - `hello@lesepaulettes.com`
+  - Email send ID: `700d483d-0bca-4047-a1f6-d7b5330823af`
+- `ZOOM RH` - `contact@zoom-rh.com`
+  - Email send ID: `b4914983-6709-40db-9228-f1aa3fe316bd`
+- `Ditayls` - `contact@ditayls.com`
+  - Email send ID: `3f8418d2-f3e7-4fea-8f52-2d30adcd1f7f`
+- `PRO-RH` - `contact@pro-rh.pro`
+  - Email send ID: `ff1da8a1-1ce4-4a39-a72b-01da80287a55`
+- `Prométhée Formations Conseil` - `contact@promethee-formations.com`
+  - Email send ID: `0c069491-6563-4d3d-af19-19ba5301dde7`
+- `Qualitis` - `contact@qualitis.agency`
+  - Email send ID: `383dde61-edb9-4e3b-b2b1-50837a74e183`
+- `Umpacte` - `contact@umpacte.fr`
+  - Email send ID: `a14b8abc-dc79-43c7-9175-28abeb319255`
+
+### Result
+- Wave 4 research and outreach are complete.
+- `wave4_prospects.md` now contains the saved list of 10 prospects plus send status.
+- The same `wave4_prospects.md` archive was also synced into the separate `vincepanik/radarrival` repository.
+- No application code changes were required for this task.
+
+### Focused follow-up
+- Monitor replies from the 10 Wave 4 recipients and prepare response templates for positive interest, pricing questions, and unsubscribe requests.
+- Build a reserve list of another 15-20 French SME prospects in adjacent B2B sectors so the next outreach wave can move quickly.
+
 ## 2026-04-28 - Stripe webhook registration attempt blocked by missing Stripe admin access
 
 ### What was completed
