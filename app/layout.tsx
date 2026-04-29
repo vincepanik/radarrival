@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://co-rgl1.nanocorp.app"),
   title: "RadarRival | Veille concurrentielle hebdomadaire",
   description:
-    "Chaque lundi, sachez exactement ce que font vos concurrents avec RadarRival. Landing page bilingue FR/EN. Starter 19€/mois, Pro 29€/mois, essai gratuit 7 jours.",
+    "Chaque lundi, sachez exactement ce que font vos concurrents avec RadarRival. Landing page bilingue FR/EN. Starter 19€/mois, Pro 29€/mois, abonnement mensuel.",
   openGraph: {
     title: "RadarRival | Veille concurrentielle hebdomadaire",
     description:

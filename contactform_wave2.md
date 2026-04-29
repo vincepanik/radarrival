@@ -24,7 +24,7 @@ Chaque lundi matin, vous recevez un digest automatisé de veille concurrentielle
 
 Pour une agence comme Intuiti, c'est aussi un outil que vous pouvez valoriser auprès de vos propres clients.
 
-Essayez gratuitement pendant 7 jours, sans carte bancaire requise, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bonne continuation,
 
@@ -52,7 +52,7 @@ Chaque lundi matin, vous recevez un résumé clair de ce que font vos concurrent
 
 Pour une agence spécialisée en e-commerce comme Axome, c'est un avantage compétitif direct : vous conseillez vos clients avec des données fraîches, sans mobiliser une ressource dédiée à la veille.
 
-Testez RadarRival gratuitement pendant 7 jours, sans carte bancaire, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Cordialement,
 
@@ -80,7 +80,7 @@ Chaque lundi matin, vous recevez un digest automatisé couvrant les changements 
 
 Fini les heures passées à scruter les sites concurrents ou à éplucher les réseaux sociaux — RadarRival le fait pour vous, automatiquement.
 
-Essayez gratuitement pendant 7 jours, sans carte bancaire requise, directement sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival directement sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 À votre disposition pour toute question,
 
@@ -108,7 +108,7 @@ Chaque lundi matin, vous recevez un résumé automatisé de la veille concurrent
 
 Vous gardez ainsi le focus sur ce qui compte — développer votre communauté d'artisans et enrichir l'expérience de vos utilisateurs — pendant que RadarRival surveille le marché pour vous.
 
-7 jours d'essai gratuit, sans carte bancaire requise, sur radarrival.com.
+Vous pouvez choisir votre formule RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bien cordialement,
 
@@ -136,7 +136,7 @@ Chaque lundi matin, vous recevez un digest automatisé sur vos concurrents : nou
 
 Plus besoin de scroller des heures sur Instagram ou de comparer manuellement les catalogues : RadarRival agrège tout, automatiquement, en un rapport lisible en 5 minutes.
 
-Testez gratuitement pendant 7 jours, sans carte bancaire, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Belle journée à vous,
 
@@ -164,7 +164,7 @@ Chaque lundi matin, vous recevez un résumé automatique : évolutions tarifaire
 
 Vous pouvez ainsi réagir vite — sur votre pricing, vos messages marketing ou vos lancements — sans avoir à mener vous-même une veille fastidieuse.
 
-Essayez RadarRival gratuitement pendant 7 jours, sans carte bancaire, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Cordialement,
 
@@ -192,7 +192,7 @@ Chaque lundi matin, vous recevez un digest complet : mouvements tarifaires de vo
 
 C'est une façon simple de rester agile et réactif, que ce soit pour ajuster vos collections saisonnières, vos prix ou votre communication digitale.
 
-7 jours d'essai gratuit, sans carte bancaire, sur radarrival.com.
+Vous pouvez choisir votre formule RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bien à vous,
 
@@ -220,7 +220,7 @@ Chaque lundi matin, vous recevez un résumé automatisé : nouvelles référence
 
 Vous gardez ainsi plus de temps pour l'essentiel : développer votre marque, vos partenariats et vos marchés à l'international.
 
-Testez RadarRival gratuitement pendant 7 jours, sans carte bancaire requise, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bien cordialement,
 
@@ -248,7 +248,7 @@ Chaque lundi matin, vous recevez un digest automatisé sur vos concurrents : nou
 
 Fini la veille manuelle chronophage — RadarRival agrège tout pour vous et vous livre l'essentiel chaque début de semaine.
 
-7 jours d'essai gratuit, sans carte bancaire requise, sur radarrival.com.
+Vous pouvez choisir votre formule RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 À votre disposition,
 
@@ -276,7 +276,7 @@ Chaque lundi matin, votre équipe reçoit un digest complet : évolutions des of
 
 Pas besoin d'y dédier une ressource interne — RadarRival automatise toute la veille.
 
-Essayez gratuitement pendant 7 jours, sans carte bancaire, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bien cordialement,
 
@@ -304,7 +304,7 @@ Chaque lundi matin, vous recevez un résumé automatique sur vos concurrents : n
 
 Plus besoin de compiler manuellement ces informations — RadarRival s'en charge et vous livre l'essentiel chaque début de semaine, sans effort.
 
-Testez gratuitement pendant 7 jours, sans carte bancaire requise, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bonne continuation,
 
@@ -332,7 +332,7 @@ Chaque lundi matin, vous recevez un digest automatisé : nouvelles fonctionnalit
 
 Vous pouvez ainsi prendre des décisions éclairées sur votre roadmap, votre positionnement ou vos arguments commerciaux — sans mobiliser du temps sur une veille manuelle fastidieuse.
 
-7 jours d'essai gratuit, sans carte bancaire, sur radarrival.com.
+Vous pouvez choisir votre formule RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Cordialement,
 
@@ -360,7 +360,7 @@ Chaque lundi matin, vous recevez un résumé complet : évolutions des offres co
 
 C'est un input précieux pour votre roadmap produit, votre stratégie de pricing et vos messages marketing.
 
-Essayez gratuitement pendant 7 jours, sans carte bancaire requise, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bien cordialement,
 
@@ -388,7 +388,7 @@ Chaque lundi matin, vous recevez un digest automatisé sur vos concurrents : nou
 
 C'est un outil concret pour éclairer vos décisions produit, affiner votre discours commercial et identifier les opportunités de différenciation.
 
-Testez RadarRival gratuitement pendant 7 jours, sans carte bancaire, sur radarrival.com.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bien à vous,
 

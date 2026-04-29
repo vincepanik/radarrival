@@ -7,7 +7,7 @@ Date: 2026-04-09
 
 France is a credible launch market for a lightweight competitive-intelligence offer aimed at TPE/PME and independents. The structural market is large, with roughly 4.9 million market-sector enterprises in France, including around 4.7 million microenterprises and about 159,000 SMEs, plus a very large pool of self-employed workers.[1][2] The digital baseline is no longer the problem: most French small businesses already have online visibility, most allocate at least some digital budget, and many are experimenting with AI.[3]
 
-The real gap is operational. Enterprise-grade monitoring suites such as Meltwater, Digimind/Onclusive, Mention, and Sindup are powerful but are sold, priced, and designed for communications, marketing, and insight teams rather than owner-operators. At the other end of the market, low-cost tools such as Alerti or free alerts are affordable but still require users to configure queries, monitor dashboards, and interpret weak signals themselves. That leaves a clear space for a productized service: a simple weekly competitor report, delivered with minimal setup, at 49 EUR per month.
+The real gap is operational. Enterprise-grade monitoring suites such as Meltwater, Digimind/Onclusive, Mention, and Sindup are powerful but are sold, priced, and designed for communications, marketing, and insight teams rather than owner-operators. At the other end of the market, low-cost tools such as Alerti or no-cost alerts are affordable but still require users to configure queries, monitor dashboards, and interpret weak signals themselves. That leaves a clear space for a productized service: a simple weekly competitor report, delivered with minimal setup, at 49 EUR per month.
 
 The positioning is strongest if the offer is framed as "decision support for busy owners" rather than "another dashboard." For French small businesses, time, clarity, and trust matter as much as price. A weekly report removes the setup burden, interpretation burden, and continuity burden that make existing tools feel too heavy for small teams.
 
@@ -82,7 +82,7 @@ All pricing references below are based on publicly visible pages or public prici
 | --- | --- | --- | --- | --- |
 | Digimind / Onclusive Social | No clear self-serve public price; demo-led / quote-led sales.[8] | Enterprise marketing, communications, PR, insights teams | Broad social listening, media intelligence, trend analysis, dashboards, strong enterprise workflows | Too enterprise-shaped; opaque pricing; likely overkill for a 1-10 person business |
 | Mention | One public `Company Plan` at 599 USD per month, billed yearly.[6] | Marketing, comms, brand, and social teams | Media monitoring, brand monitoring, social listening, competitor monitoring | Price point is far above typical micro-SME comfort; still a dashboard tool that requires ongoing query management |
-| Meltwater | Tailored pricing only; most contracts structured annually with a 12-month minimum; no self-serve free trial.[7] | Mid-market and enterprise PR, marketing, and media teams | End-to-end media intelligence, social listening, analytics, support | Classic enterprise sales motion; not lightweight; annual commitment raises buying friction |
+| Meltwater | Tailored pricing only; most contracts structured annually with a 12-month minimum; no self-serve signup flow.[7] | Mid-market and enterprise PR, marketing, and media teams | End-to-end media intelligence, social listening, analytics, support | Classic enterprise sales motion; not lightweight; annual commitment raises buying friction |
 | Sindup | Starter at 2,940 EUR/year, Professional at 5,900 EUR/year, Enterprise at 9,900 EUR/year.[9] | Market intelligence, innovation, strategy, and larger SMEs/corporates | Strong veille workflows, dashboards, newsletters, reports, collaborative intelligence | Starts well above a microbusiness budget; built for shared team intelligence rather than an owner wanting a simple weekly digest |
 | Alerti | French site positions pricing from 19 EUR/month; lower-cost monitoring tiers also exist in USD on public pages.[10] | Smaller teams needing web/social monitoring | Affordable monitoring, alerting, easier entry point | Cheaper, but still DIY; lower price comes with narrower scope and weaker synthesis |
 
@@ -193,7 +193,7 @@ Public French SME SaaS pricing suggests that 49 EUR/month is a normal range for 
 | --- | --- | --- |
 | Sellsy CRM / business software | Public plans around 29 EUR, 49 EUR, and 79 EUR per user per month.[11] | Shows French SMEs already accept meaningful monthly SaaS spend for sales and admin value. |
 | Axonaut business management | Public entry pricing around 41.99 EUR/month.[13] | Confirms that owner-oriented SMB software can live near the 49 EUR mark. |
-| Indy for independents | Pricing ranges from free to 49 EUR/month depending on entity type.[12] | Confirms that independents and small companies can accept a 49 EUR ceiling when the product solves a painful recurring task. |
+| Indy for independents | Pricing ranges from no-cost entry tiers up to 49 EUR/month depending on entity type.[12] | Confirms that independents and small companies can accept a 49 EUR ceiling when the product solves a painful recurring task. |
 
 ### What Must Be True for 49 EUR/Month to Work
 
@@ -282,7 +282,7 @@ The main strategic discipline is to stay focused. The winning version of this pr
 
 [6] Mention, public pricing page (`Company Plan` at 599 USD/month billed yearly), accessed 2026-04-09.
 
-[7] Meltwater, public pricing page and FAQ (custom pricing, annual contract structure, no self-serve free trial), accessed 2026-04-09.
+[7] Meltwater, public pricing page and FAQ (custom pricing, annual contract structure, no self-serve signup flow), accessed 2026-04-09.
 
 [8] Onclusive / Digimind product pages for social listening and media intelligence, accessed 2026-04-09.
 

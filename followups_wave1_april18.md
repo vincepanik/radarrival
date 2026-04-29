@@ -19,7 +19,7 @@ Je me permets de revenir vers vous suite à mon email de lundi dernier. Dans un 
 
 RadarRival vous envoie chaque lundi matin un digest automatisé de ce que font vos concurrents : changements de prix, nouvelles fonctionnalités, activités sur les réseaux sociaux, retombées presse. Tout cela sans que vous ayez à chercher vous-même.
 
-Si vous souhaitez en avoir un aperçu concret, nous proposons un essai gratuit de 7 jours sur radarrival.com — sans carte bancaire.
+Si vous souhaitez en avoir un aperçu concret, vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Belle semaine,
 **RadarRival Team | radarrival.com**
@@ -41,7 +41,7 @@ Je reviens vers vous après mon message de lundi. Vous aidez des PME à se déve
 
 RadarRival vous délivre chaque lundi un résumé automatisé des actions de vos concurrents : nouvelles offres, ajustements tarifaires, mouvements sur les réseaux sociaux, articles de presse. Une veille efficace, sans y passer des heures.
 
-Testez gratuitement pendant 7 jours sur radarrival.com — aucune carte bancaire requise.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bonne semaine,
 **RadarRival Team | radarrival.com**
@@ -63,7 +63,7 @@ Je me permets de relancer suite à mon email de lundi. Dans un secteur comme la 
 
 RadarRival vous envoie chaque lundi matin un digest automatique : changements de prix, nouvelles offres, posts réseaux sociaux, mentions dans la presse. Vous restez informé en quelques minutes, sans effort de recherche.
 
-Essayez gratuitement pendant 7 jours sur radarrival.com — sans carte bancaire.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bonne semaine,
 **RadarRival Team | radarrival.com**
@@ -85,7 +85,7 @@ Je reviens vers vous après mon message de lundi. Le marché des médecines alte
 
 RadarRival vous transmet chaque lundi un résumé automatisé de ce que font vos concurrents : évolutions tarifaires, nouvelles prestations, activité sur les réseaux, mentions presse. Une façon simple de rester au fait des tendances sans y consacrer du temps.
 
-Découvrez l'outil gratuitement pendant 7 jours sur radarrival.com — sans carte bancaire.
+Vous pouvez découvrir RadarRival sur radarrival.com et choisir votre formule payante — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Belle semaine,
 **RadarRival Team | radarrival.com**
@@ -107,7 +107,7 @@ Je me permets de revenir vers vous après mon email de lundi. Dans l'univers des
 
 RadarRival vous envoie chaque lundi un digest automatisé de l'activité de vos concurrents : changements de prix, nouvelles fonctionnalités annoncées, mouvements sur les réseaux sociaux, retombées presse. Le tout sans effort de votre part.
 
-Testez gratuitement pendant 7 jours sur radarrival.com — aucune carte bancaire requise.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Bonne semaine,
 **RadarRival Team | radarrival.com**
@@ -129,7 +129,7 @@ Je reviens vers vous suite à mon email de lundi. Le marché des plateformes d'i
 
 RadarRival vous délivre chaque lundi matin un résumé automatisé des mouvements de vos concurrents : changements de prix et conditions, nouvelles offres, activité sur les réseaux sociaux, mentions dans la presse. Une veille complète, sans vous y consacrer.
 
-Essayez gratuitement pendant 7 jours sur radarrival.com — sans carte bancaire.
+Vous pouvez démarrer votre abonnement RadarRival sur radarrival.com — Starter à 19 €/mois, Pro à 29 €/mois.
 
 Belle semaine,
 **RadarRival Team | radarrival.com**

@@ -30,7 +30,7 @@ type Copy = {
     signupSuccess: string;
     signupError: string;
     signupDivider: string;
-    trialNote: string;
+    offerNote: string;
   };
   testimonials: {
     title: string;
@@ -72,7 +72,7 @@ type Copy = {
       badge: string;
       price: string;
       cadence: string;
-      trial: string;
+      billingLabel: string;
       description: string;
       cta: string;
       href: string;
@@ -130,18 +130,18 @@ const copy: Record<Locale, Copy> = {
       titleAccent: "vos concurrents.",
       description:
         "Recevez une veille claire et exploitable sur les sites web, réseaux sociaux, prix, recrutements et signaux de marché de vos concurrents, sans y passer vos soirées.",
-      planSummary: "Starter 19€/mois · Pro 29€/mois · Essai gratuit 7 jours",
-      primaryCta: "Commencer l'essai gratuit de 7 jours",
+      planSummary: "Starter 19€/mois · Pro 29€/mois · Abonnement mensuel",
+      primaryCta: "Démarrer maintenant — 19€/mois",
       secondaryCta: "Voir les plans",
       previewTitle: "Brief concurrentiel hebdomadaire",
       previewDay: "Lundi",
-      signupTitle: "Démarrez votre essai gratuit",
-      signupPlaceholder: "Entrez votre email pour commencer",
-      signupCta: "Commencer gratuitement",
-      signupSuccess: "Merci\u00a0! Vous recevrez votre premier rapport lundi prochain.",
+      signupTitle: "Recevoir les détails avant démarrage",
+      signupPlaceholder: "Entrez votre email pour être recontacté",
+      signupCta: "Rejoindre la liste",
+      signupSuccess: "Merci\u00a0! Nous vous écrivons rapidement pour lancer votre abonnement.",
       signupError: "Une erreur est survenue. Veuillez réessayer.",
       signupDivider: "Ou payer directement",
-      trialNote: "🎯 Essai gratuit 7 jours — aucune carte bancaire requise",
+      offerNote: "🎯 Abonnements payants : Starter 19€/mois ou Pro 29€/mois",
     },
     testimonials: {
       title: "Ce que disent nos premiers utilisateurs",
@@ -193,10 +193,10 @@ const copy: Record<Locale, Copy> = {
           ],
         },
       ],
-      cta: "→ Recevoir votre rapport chaque lundi — Essai gratuit 7 jours",
+      cta: "→ Recevoir votre rapport chaque lundi — Starter dès 19€/mois",
     },
     trustBar: [
-      "Essai gratuit 7 jours",
+      "Starter dès 19€/mois",
       "Rapport chaque lundi",
       "Jusqu'à 5 concurrents surveillés",
       "Paiement sécurisé par Stripe",
@@ -252,7 +252,7 @@ const copy: Record<Locale, Copy> = {
     },
     pricing: {
       title: "Deux formules, un radar plus net",
-      subtitle: "Choisissez le niveau de couverture adapté à votre marché et démarrez avec 7 jours d'essai gratuit.",
+      subtitle: "Choisissez le niveau de couverture adapté à votre marché et activez votre abonnement mensuel dès aujourd'hui.",
       checkoutHint: "Chaque bouton ouvre une page Stripe dédiée à la formule choisie, sans mélange entre Starter et Pro.",
       securePayment: "💳 Paiement sécurisé par Stripe",
       currencyNote: "Prix affichés en USD — équivalent à environ 19 €/mois ou 29 €/mois selon votre formule.",
@@ -262,9 +262,9 @@ const copy: Record<Locale, Copy> = {
           badge: "Pour démarrer vite",
           price: "19€",
           cadence: "/mois",
-          trial: "Essai gratuit 7 jours",
+          billingLabel: "Abonnement Starter mensuel",
           description: "L'essentiel pour suivre les mouvements clés de votre marché sans friction.",
-          cta: "Essai gratuit 7 jours",
+          cta: "Choisir Starter — 19€/mois",
           href: STARTER_CHECKOUT_LINK,
           features: [
             "Jusqu'à 3 concurrents",
@@ -278,9 +278,9 @@ const copy: Record<Locale, Copy> = {
           badge: "Le plus réactif",
           price: "29€",
           cadence: "/mois",
-          trial: "Essai gratuit 7 jours",
+          billingLabel: "Abonnement Pro mensuel",
           description: "Plus de couverture, plus de signaux et des alertes plus rapides pour les marchés actifs.",
-          cta: "Essai gratuit 7 jours",
+          cta: "Choisir Pro — 29€/mois",
           href: PRO_CHECKOUT_LINK,
           features: [
             "Jusqu'à 5 concurrents",
@@ -366,15 +366,15 @@ const copy: Record<Locale, Copy> = {
     },
     finalCta: {
       title: "Prêt à surveiller vos concurrents avec plus de précision ?",
-      description: "Choisissez votre formule, lancez l'essai gratuit, puis laissez RadarRival faire le travail chaque semaine.",
+      description: "Choisissez votre formule payante et laissez RadarRival faire le travail chaque semaine.",
       buttons: [
         {
-          label: "Starter · Essai gratuit 7 jours",
+          label: "Choisir Starter — 19€/mois",
           href: STARTER_CHECKOUT_LINK,
           variant: "primary",
         },
         {
-          label: "Pro · Essai gratuit 7 jours",
+          label: "Choisir Pro — 29€/mois",
           href: PRO_CHECKOUT_LINK,
           variant: "secondary",
         },
@@ -410,18 +410,18 @@ const copy: Record<Locale, Copy> = {
       titleAccent: "your competitors are doing.",
       description:
         "Get a clear, actionable digest covering competitor websites, social media, pricing, hiring, and market signals without spending hours tracking it yourself.",
-      planSummary: "Starter €19/month · Pro €29/month · 7-day free trial",
-      primaryCta: "Start your 7-day free trial",
+      planSummary: "Starter €19/month · Pro €29/month · Monthly subscription",
+      primaryCta: "Start now — €19/month",
       secondaryCta: "See plans",
       previewTitle: "Weekly competitor brief",
       previewDay: "Monday",
-      signupTitle: "Start your free trial",
-      signupPlaceholder: "Enter your email to get started",
-      signupCta: "Get started for free",
-      signupSuccess: "Thanks! You\u2019ll receive your first report next Monday.",
+      signupTitle: "Get setup details by email",
+      signupPlaceholder: "Enter your email to join the waitlist",
+      signupCta: "Join the waitlist",
+      signupSuccess: "Thanks! We’ll email you shortly to help you start your subscription.",
       signupError: "Something went wrong. Please try again.",
       signupDivider: "Or pay directly",
-      trialNote: "🎯 7-day free trial — no credit card required",
+      offerNote: "🎯 Paid plans: Starter €19/month or Pro €29/month",
     },
     testimonials: {
       title: "What our early users say",
@@ -473,10 +473,10 @@ const copy: Record<Locale, Copy> = {
           ],
         },
       ],
-      cta: "→ Get your report every Monday — 7-day free trial",
+      cta: "→ Get your report every Monday — Starter from €19/month",
     },
     trustBar: [
-      "7-day free trial",
+      "Starter from €19/month",
       "Weekly report every Monday",
       "Track up to 5 competitors",
       "Secure Stripe checkout",
@@ -532,7 +532,7 @@ const copy: Record<Locale, Copy> = {
     },
     pricing: {
       title: "Two plans, one clearer radar",
-      subtitle: "Choose the level of competitor coverage that fits your market and start with a 7-day free trial.",
+      subtitle: "Choose the level of competitor coverage that fits your market and activate your monthly subscription today.",
       checkoutHint: "Each button opens a Stripe checkout dedicated to that plan, with no Starter/Pro mix in the cart.",
       securePayment: "💳 Secure payment processed by Stripe",
       currencyNote: "Prices displayed in USD — equivalent to approximately €19/month or €29/month depending on your plan.",
@@ -542,9 +542,9 @@ const copy: Record<Locale, Copy> = {
           badge: "Best to begin",
           price: "€19",
           cadence: "/month",
-          trial: "7-day free trial",
+          billingLabel: "Monthly Starter subscription",
           description: "The essential layer for keeping up with key competitor moves without extra overhead.",
-          cta: "7-day free trial",
+          cta: "Choose Starter — €19/month",
           href: STARTER_CHECKOUT_LINK,
           features: [
             "Up to 3 competitors",
@@ -558,9 +558,9 @@ const copy: Record<Locale, Copy> = {
           badge: "Fastest signal coverage",
           price: "€29",
           cadence: "/month",
-          trial: "7-day free trial",
+          billingLabel: "Monthly Pro subscription",
           description: "More coverage, more signals, and faster alerts for active, fast-moving markets.",
-          cta: "7-day free trial",
+          cta: "Choose Pro — €29/month",
           href: PRO_CHECKOUT_LINK,
           features: [
             "Up to 5 competitors",
@@ -646,15 +646,15 @@ const copy: Record<Locale, Copy> = {
     },
     finalCta: {
       title: "Ready to track your competitors with more precision?",
-      description: "Pick your plan, start the free trial, and let RadarRival handle the weekly monitoring.",
+      description: "Pick your paid plan and let RadarRival handle the weekly monitoring.",
       buttons: [
         {
-          label: "Starter · 7-day free trial",
+          label: "Choose Starter — €19/month",
           href: STARTER_CHECKOUT_LINK,
           variant: "primary",
         },
         {
-          label: "Pro · 7-day free trial",
+          label: "Choose Pro — €29/month",
           href: PRO_CHECKOUT_LINK,
           variant: "secondary",
         },
@@ -882,7 +882,7 @@ export default function Home() {
                     {signupState === "error" && (
                       <p className="mt-2 text-xs text-red-400">{t.hero.signupError}</p>
                     )}
-                    <p className="mt-3 text-xs text-slate-400">{t.hero.trialNote}</p>
+                    <p className="mt-3 text-xs text-slate-400">{t.hero.offerNote}</p>
                   </div>
                   <div className="mt-6 flex items-center gap-4">
                     <div className="h-px flex-1 bg-white/10" />
@@ -1153,7 +1153,7 @@ export default function Home() {
                       <span className="mb-2 text-lg text-slate-400">{plan.cadence}</span>
                     </div>
                     <p className="mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-slate-100">
-                      {plan.trial}
+                      {plan.billingLabel}
                     </p>
                     <p className="mt-5 max-w-xl leading-relaxed text-slate-300">{plan.description}</p>
                   </div>

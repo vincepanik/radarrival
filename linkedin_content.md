@@ -24,14 +24,14 @@ RadarRival surveille vos concurrents pour vous. Chaque lundi matin, recevez un r
 
 Conçu pour les PME et indépendants qui veulent rester compétitifs sans y passer des heures.
 
-Essai gratuit 7 jours — à partir de 19 $/mois.
+Abonnements à partir de 19 €/mois.
 
 **Description (EN):**
 RadarRival monitors your competitors so you don't have to. Every Monday morning, receive a clear, actionable report on what your competitors are up to: price changes, new offers, social media activity, press mentions and more.
 
 Built for SMEs and freelancers who want to stay competitive without spending hours on research.
 
-7-day free trial — from $19/month.
+Paid plans from €19/month.
 
 ## 2. Post 1
 
@@ -43,7 +43,7 @@ RadarRival s'adresse aux PME et aux indépendants qui veulent rester compétitif
 
 Vous commencez la semaine avec l'essentiel, trié et actionnable.
 
-Testez RadarRival gratuitement pendant 7 jours et voyez dès lundi prochain ce qui bouge vraiment sur votre marché.
+Démarrez RadarRival à partir de 19 €/mois et voyez dès lundi prochain ce qui bouge vraiment sur votre marché.
 
 #veilleconcurrentielle #PME #startupfrance #RadarRival
 

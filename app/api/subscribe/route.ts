@@ -6,7 +6,7 @@ import { sendNanoCorpEmail } from "@/lib/nanocorp-email";
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 const WELCOME_EMAIL = {
-  subject: "Bienvenue chez RadarRival 🎯",
+  subject: "Vous êtes bien sur la liste RadarRival 🎯",
   text: `✉️ Ceci est un email de RadarRival — radarrival.com
 ---
 
@@ -16,12 +16,14 @@ Merci de votre intérêt pour RadarRival !
 
 Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux, mentions presse.
 
-Pour commencer votre essai gratuit de 7 jours (sans carte bancaire), cliquez ici :
+Vous avez bien été ajouté à la liste RadarRival. Nos abonnements payants démarrent à 19€/mois pour Starter et 29€/mois pour Pro.
+
+Pour choisir votre formule quand vous êtes prêt :
 👉 https://radarrival.com
 
-Des questions ? Répondez simplement à cet email.
+Si vous préférez être accompagné pour le démarrage, répondez simplement à cet email.
 
-À lundi,
+À bientôt,
 L'équipe RadarRival
 contact@radarrival.com | linkedin.com/company/radarrival`,
   html: `<div style="background:#1e3a5f;color:#ffffff;padding:10px 16px;border-radius:6px;margin-bottom:16px;font-size:13px;">
@@ -30,9 +32,10 @@ contact@radarrival.com | linkedin.com/company/radarrival`,
 <p>Bonjour,</p>
 <p>Merci de votre intérêt pour RadarRival !</p>
 <p>Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux, mentions presse.</p>
-<p>Pour commencer votre essai gratuit de 7 jours (sans carte bancaire), cliquez ici :<br>👉 <a href="https://radarrival.com">https://radarrival.com</a></p>
-<p>Des questions ? Répondez simplement à cet email.</p>
-<p>À lundi,<br>L'équipe RadarRival<br>contact@radarrival.com | linkedin.com/company/radarrival</p>`,
+<p>Vous avez bien été ajouté à la liste RadarRival. Nos abonnements payants démarrent à 19€/mois pour Starter et 29€/mois pour Pro.</p>
+<p>Pour choisir votre formule quand vous êtes prêt :<br>👉 <a href="https://radarrival.com">https://radarrival.com</a></p>
+<p>Si vous préférez être accompagné pour le démarrage, répondez simplement à cet email.</p>
+<p>À bientôt,<br>L'équipe RadarRival<br>contact@radarrival.com | linkedin.com/company/radarrival</p>`,
 } as const;
 
 export async function POST(req: NextRequest) {

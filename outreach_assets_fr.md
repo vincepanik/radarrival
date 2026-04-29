@@ -10,7 +10,7 @@ Bonjour [Prénom],
 
 Je vous contacte car RadarRival aide des entreprises comme [Entreprise] à suivre simplement les mouvements de leurs concurrents: offres, prix, messages, contenus et signaux marché. Chaque lundi, vous recevez un rapport clair avec l'essentiel à surveiller, sans veille manuelle.
 
-L'essai est gratuit pendant 7 jours, puis l'abonnement coûte 19 $/mois. Si vous voulez voir le rapport en conditions réelles, vous pouvez tester ici: https://co-rgl1.nanocorp.app
+L'abonnement RadarRival démarre à 19 €/mois. Si vous voulez voir le rapport en conditions réelles, vous pouvez le découvrir ici : https://co-rgl1.nanocorp.app
 
 Bien cordialement,
 
@@ -23,7 +23,7 @@ L'équipe RadarRival
 
 Bonjour,
 
-RadarRival permet à des équipes comme [Entreprise] de suivre plus facilement les actions de leurs concurrents. Chaque lundi, vous recevez un rapport synthétique avec les signaux vraiment utiles et concrets: offres, prix, messages et nouveautés, sans passer du temps en veille manuelle. L'essai est gratuit pendant 7 jours, puis 19 $/mois. Si cela peut vous être utile, voici le lien: https://co-rgl1.nanocorp.app
+RadarRival permet à des équipes comme [Entreprise] de suivre plus facilement les actions de leurs concurrents. Chaque lundi, vous recevez un rapport synthétique avec les signaux vraiment utiles et concrets: offres, prix, messages et nouveautés, sans passer du temps en veille manuelle. Les abonnements démarrent à 19 €/mois. Si cela peut vous être utile, voici le lien : https://co-rgl1.nanocorp.app
 
 ---
 L'équipe RadarRival
@@ -32,7 +32,7 @@ L'équipe RadarRival
 
 ## 3. Version message LinkedIn
 
-Bonjour [Prénom], je vous écris car RadarRival aide des entreprises comme [Entreprise] à suivre simplement leurs concurrents. Chaque lundi, on envoie un rapport clair avec les mouvements à surveiller chaque semaine: offres, prix, messages et contenus. Il y a 7 jours d'essai gratuit, puis 19 $/mois. Si vous voulez voir: https://co-rgl1.nanocorp.app
+Bonjour [Prénom], je vous écris car RadarRival aide des entreprises comme [Entreprise] à suivre simplement leurs concurrents. Chaque lundi, on envoie un rapport clair avec les mouvements à surveiller chaque semaine: offres, prix, messages et contenus. L'abonnement démarre à 19 €/mois. Si vous voulez voir : https://co-rgl1.nanocorp.app
 
 ---
 L'équipe RadarRival
@@ -45,7 +45,7 @@ L'équipe RadarRival
 
 Bonjour [Prénom],
 
-Je me permets de revenir vers vous, sans insister, au cas où mon précédent message serait passé au second plan. RadarRival envoie chaque lundi un rapport simple pour suivre les mouvements concurrents chaque semaine: offres, prix, contenus et signaux utiles, sans veille manuelle. L'essai reste gratuit pendant 7 jours, puis 19 $/mois. Si vous souhaitez simplement jeter un oeil: https://co-rgl1.nanocorp.app
+Je me permets de revenir vers vous, sans insister, au cas où mon précédent message serait passé au second plan. RadarRival envoie chaque lundi un rapport simple pour suivre les mouvements concurrents chaque semaine: offres, prix, contenus et signaux utiles, sans veille manuelle. L'abonnement démarre à 19 €/mois. Si vous souhaitez simplement jeter un oeil : https://co-rgl1.nanocorp.app
 
 Bien cordialement,
 

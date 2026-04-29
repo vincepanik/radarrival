@@ -13,7 +13,7 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const STRIPE_SIGNATURE_TOLERANCE_SECONDS = 300;
 const ONBOARDING_EMAIL_SUBJECT =
-  "Bienvenue dans RadarRival 🎯 — dites-nous qui surveiller";
+  "Votre abonnement RadarRival est actif 🎯 — dites-nous qui surveiller";
 
 type PlanInfo = {
   name: "Starter" | "Pro";
@@ -258,7 +258,7 @@ function extractFromSubscription(subscription: Record<string, unknown>): Partial
 
 function buildOnboardingEmail(plan: PlanInfo) {
   return `<p>Bonjour,</p>
-<p>Votre essai gratuit RadarRival est lancé ! 🎉</p>
+<p>Votre abonnement RadarRival est actif ! 🎉</p>
 <p>Pour vous préparer votre premier rapport lundi prochain, nous avons besoin d'une seule chose : les noms de vos concurrents.</p>
 <p>Répondez simplement à cet email avec :</p>
 <ol>
