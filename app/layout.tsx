@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://co-rgl1.nanocorp.app"),
+  metadataBase: new URL("https://radarrival.com"),
   title: "RadarRival | Veille concurrentielle hebdomadaire",
   description:
     "Chaque lundi, sachez exactement ce que font vos concurrents avec RadarRival. Landing page bilingue FR/EN. Starter 19€/mois, Pro 29€/mois, abonnement mensuel.",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "RadarRival | Veille concurrentielle hebdomadaire",
     description:
       "Landing page bilingue FR/EN avec Starter à 19€/mois et Pro à 29€/mois.",
-    url: "https://co-rgl1.nanocorp.app",
+    url: "https://radarrival.com",
     siteName: "RadarRival",
     locale: "fr_FR",
     alternateLocale: ["en_US"],

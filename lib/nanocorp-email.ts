@@ -7,12 +7,14 @@ type SendNanoCorpEmailInput = {
   to: string;
   subject: string;
   body: string;
+  fromName?: string;
 };
 
 export async function sendNanoCorpEmail({
   to,
   subject,
   body,
+  fromName = "RadarRival",
 }: SendNanoCorpEmailInput) {
   if (!NANOCORP_AGENT_SECRET) {
     throw new Error("NANOCORP_AGENT_SECRET is not configured");
@@ -32,6 +34,7 @@ export async function sendNanoCorpEmail({
           subject,
           // NanoCorp's send_email tool currently honors a single rendered body field.
           body,
+          from_name: fromName,
         },
       }),
       signal: AbortSignal.timeout(10_000),

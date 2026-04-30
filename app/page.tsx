@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const STARTER_CHECKOUT_LINK = "/checkout/starter";
-const PRO_CHECKOUT_LINK = "/checkout/pro";
+const STARTER_CHECKOUT_LINK = "https://buy.stripe.com/14A8wR1xAfQi98KcPJ5wI05";
+const PRO_CHECKOUT_LINK = "https://buy.stripe.com/fZudRb7VY7jMacOaHB5wI06";
 const CONTACT_EMAIL = "contact@radarrival.fr";
 
 type Locale = "fr" | "en";
