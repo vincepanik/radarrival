@@ -2,13 +2,22 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
-
-import { sendNanoCorpEmail } from "@/lib/nanocorp-email";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+
+  return new Resend(apiKey);
+}
 
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const STRIPE_SIGNATURE_TOLERANCE_SECONDS = 300;
@@ -518,10 +527,11 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      await sendNanoCorpEmail({
+      await getResend().emails.send({
+        from: process.env.RESEND_FROM_EMAIL ?? "RadarRival <noreply@radarrival.com>",
         to: claimedState.customer_email,
         subject: ONBOARDING_EMAIL_SUBJECT,
-        body: buildOnboardingEmail(plan),
+        html: buildOnboardingEmail(plan),
       });
       await markOnboardingEmailSent(partialState.dedupeKey);
     } catch (error) {

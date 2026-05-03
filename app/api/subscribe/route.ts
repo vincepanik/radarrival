@@ -1,11 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Pool } from "pg";
-
-import { sendNanoCorpEmail } from "@/lib/nanocorp-email";
+import { Resend } from "resend";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const STARTER_CHECKOUT_LINK = "https://buy.stripe.com/14A8wR1xAfQi98KcPJ5wI05";
 const PRO_CHECKOUT_LINK = "https://buy.stripe.com/fZudRb7VY7jMacOaHB5wI06";
+
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+
+  return new Resend(apiKey);
+}
 
 const WELCOME_EMAIL = {
   subject: "Vous êtes bien sur la liste RadarRival 🎯",
@@ -64,10 +73,12 @@ export async function POST(req: NextRequest) {
 
     if (insertResult.rowCount && insertResult.rowCount > 0) {
       try {
-        await sendNanoCorpEmail({
+        await getResend().emails.send({
+          from: process.env.RESEND_FROM_EMAIL ?? "RadarRival <noreply@radarrival.com>",
           to: trimmed,
           subject: WELCOME_EMAIL.subject,
-          body: WELCOME_EMAIL.html,
+          html: WELCOME_EMAIL.html,
+          text: WELCOME_EMAIL.text,
         });
       } catch (error) {
         console.error("Failed to send welcome email after lead signup", {
