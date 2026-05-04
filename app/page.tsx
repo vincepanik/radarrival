@@ -22,6 +22,7 @@ type Copy = {
     planSummary: string;
     primaryCta: string;
     secondaryCta: string;
+    trustLine: string;
     previewTitle: string;
     previewDay: string;
     signupTitle: string;
@@ -129,10 +130,11 @@ const copy: Record<Locale, Copy> = {
       titleStart: "Chaque lundi, sachez exactement ce que font",
       titleAccent: "vos concurrents.",
       description:
-        "Recevez une veille claire et exploitable sur les sites web, réseaux sociaux, prix, recrutements et signaux de marché de vos concurrents, sans y passer vos soirées.",
+        "Changements de prix, nouvelles offres, activité sociale, mentions presse — tout en un rapport clair, chaque lundi matin. Conçu pour les PME et indépendants français.",
       planSummary: "Starter 19€/mois · Pro 29€/mois · Abonnement mensuel",
-      primaryCta: "Démarrer maintenant — 19€/mois",
+      primaryCta: "Démarrer — 19€/mois",
       secondaryCta: "Voir les plans",
+      trustLine: "✓ Sans engagement · ✓ Résultats dès le 1er lundi · ✓ Paiement sécurisé Stripe",
       previewTitle: "Brief concurrentiel hebdomadaire",
       previewDay: "Lundi",
       signupTitle: "Recevoir les détails avant démarrage",
@@ -409,10 +411,11 @@ const copy: Record<Locale, Copy> = {
       titleStart: "Every Monday, know exactly what",
       titleAccent: "your competitors are doing.",
       description:
-        "Get a clear, actionable digest covering competitor websites, social media, pricing, hiring, and market signals without spending hours tracking it yourself.",
+        "Price changes, new offers, social activity, press mentions — all in one clear report, every Monday morning. Built for French SMEs and freelancers.",
       planSummary: "Starter €19/month · Pro €29/month · Monthly subscription",
-      primaryCta: "Start now — €19/month",
+      primaryCta: "Get started — €19/month",
       secondaryCta: "See plans",
+      trustLine: "✓ No commitment · ✓ Results from your 1st Monday · ✓ Secure payment via Stripe",
       previewTitle: "Weekly competitor brief",
       previewDay: "Monday",
       signupTitle: "Get setup details by email",
@@ -903,6 +906,7 @@ export default function Home() {
                       {t.hero.secondaryCta}
                     </a>
                   </div>
+                  <p className="mt-3 text-xs text-slate-500">{t.hero.trustLine}</p>
                 </div>
               </div>
 
