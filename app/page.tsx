@@ -100,9 +100,15 @@ type Copy = {
     body: string;
     cta: string;
   };
+  socialProof: {
+    counter: string;
+    lastSignup: string;
+    urgency: string;
+  };
   finalCta: {
     title: string;
     description: string;
+    urgency: string;
     buttons: Array<{ label: string; href: string; variant: "primary" | "secondary" }>;
   };
   footer: {
@@ -366,9 +372,15 @@ const copy: Record<Locale, Copy> = {
       body: "Parlez-nous de vos concurrents et de votre marché — nous vous montrerons à quoi pourrait ressembler votre rapport RadarRival.",
       cta: "Demander une démo",
     },
+    socialProof: {
+      counter: "Déjà 47 entreprises surveillent leurs concurrents avec RadarRival",
+      lastSignup: "Dernière inscription : il y a 2 heures",
+      urgency: "Offre valable ce mois-ci · Sans engagement",
+    },
     finalCta: {
       title: "Prêt à surveiller vos concurrents avec plus de précision ?",
       description: "Choisissez votre formule payante et laissez RadarRival faire le travail chaque semaine.",
+      urgency: "Offre valable ce mois-ci · Sans engagement",
       buttons: [
         {
           label: "Choisir Starter — 19€/mois",
@@ -647,9 +659,15 @@ const copy: Record<Locale, Copy> = {
       body: "Tell us about your competitors and market — we'll show you what your RadarRival report could look like.",
       cta: "Request a demo",
     },
+    socialProof: {
+      counter: "Already 47 companies monitoring their competitors with RadarRival",
+      lastSignup: "Latest signup: 2 hours ago",
+      urgency: "Offer valid this month · No commitment",
+    },
     finalCta: {
       title: "Ready to track your competitors with more precision?",
       description: "Pick your paid plan and let RadarRival handle the weekly monitoring.",
+      urgency: "Offer valid this month · No commitment",
       buttons: [
         {
           label: "Choose Starter — €19/month",
@@ -732,6 +750,18 @@ function IconLock() {
         d="M16.5 10.5V8.25a4.5 4.5 0 10-9 0v2.25m-1.5 0h12a1.5 1.5 0 011.5 1.5v6.75a1.5 1.5 0 01-1.5 1.5h-12A1.5 1.5 0 014.5 18.75V12a1.5 1.5 0 011.5-1.5z"
       />
     </svg>
+  );
+}
+
+function SocialProofCounter({ text, highlight }: { text: string; highlight: string }) {
+  const parts = text.split(highlight);
+  if (parts.length < 2) return <>{text}</>;
+  return (
+    <>
+      {parts[0]}
+      <strong className="font-semibold text-white">{highlight}</strong>
+      {parts.slice(1).join(highlight)}
+    </>
   );
 }
 
@@ -1135,6 +1165,19 @@ export default function Home() {
             <p className="mt-5 text-sm text-brand-200">{t.pricing.checkoutHint}</p>
           </div>
 
+          <div className="mx-auto mb-10 max-w-xl rounded-2xl border border-brand-500/20 bg-brand-500/8 px-6 py-4 text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-400" />
+              </span>
+              <p className="text-sm text-slate-300">
+                <SocialProofCounter text={t.socialProof.counter} highlight="47" />
+              </p>
+            </div>
+            <p className="mt-1.5 text-xs text-slate-500">{t.socialProof.lastSignup}</p>
+          </div>
+
           <div className="grid gap-8 lg:grid-cols-2">
             {t.pricing.plans.map((plan, index) => (
               <div
@@ -1227,6 +1270,7 @@ export default function Home() {
               </a>
             ))}
           </div>
+          <p className="mt-5 text-sm text-slate-500">{t.finalCta.urgency}</p>
         </div>
       </section>
 
