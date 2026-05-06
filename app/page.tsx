@@ -32,6 +32,10 @@ type Copy = {
     signupError: string;
     signupDivider: string;
     offerNote: string;
+    captureFormPlaceholder: string;
+    captureFormCta: string;
+    captureFormSuccess: string;
+    captureFormError: string;
   };
   testimonials: {
     title: string;
@@ -150,6 +154,10 @@ const copy: Record<Locale, Copy> = {
       signupError: "Une erreur est survenue. Veuillez réessayer.",
       signupDivider: "Ou payer directement",
       offerNote: "🎯 Abonnements payants : Starter 19€/mois ou Pro 29€/mois",
+      captureFormPlaceholder: "Votre email professionnel",
+      captureFormCta: "Commencer maintenant",
+      captureFormSuccess: "✅ Parfait ! On vous envoie votre accès.",
+      captureFormError: "Une erreur est survenue. Veuillez réessayer.",
     },
     testimonials: {
       title: "Ce que disent nos premiers utilisateurs",
@@ -437,6 +445,10 @@ const copy: Record<Locale, Copy> = {
       signupError: "Something went wrong. Please try again.",
       signupDivider: "Or pay directly",
       offerNote: "🎯 Paid plans: Starter €19/month or Pro €29/month",
+      captureFormPlaceholder: "Your work email",
+      captureFormCta: "Get started",
+      captureFormSuccess: "✅ Perfect! We'll send you your access details.",
+      captureFormError: "Something went wrong. Please try again.",
     },
     testimonials: {
       title: "What our early users say",
@@ -790,10 +802,32 @@ export default function Home() {
   const t = copy[locale];
   const [email, setEmail] = useState("");
   const [signupState, setSignupState] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [heroEmail, setHeroEmail] = useState("");
+  const [heroFormState, setHeroFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
+
+  async function handleHeroCapture(e: React.FormEvent) {
+    e.preventDefault();
+    setHeroFormState("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: heroEmail, source: "hero_capture" }),
+      });
+      if (res.ok) {
+        setHeroFormState("success");
+        setHeroEmail("");
+      } else {
+        setHeroFormState("error");
+      }
+    } catch {
+      setHeroFormState("error");
+    }
+  }
 
   async function handleSignup(e: React.FormEvent) {
     e.preventDefault();
@@ -888,6 +922,32 @@ export default function Home() {
                 <p className="mt-6 text-sm font-medium uppercase tracking-[0.22em] text-brand-200">
                   {t.hero.planSummary}
                 </p>
+                <div className="mt-8">
+                  {heroFormState === "success" ? (
+                    <p className="text-sm font-semibold text-brand-300">{t.hero.captureFormSuccess}</p>
+                  ) : (
+                    <form onSubmit={handleHeroCapture} className="flex flex-col gap-3 sm:flex-row">
+                      <input
+                        type="email"
+                        required
+                        value={heroEmail}
+                        onChange={(e) => setHeroEmail(e.target.value)}
+                        placeholder={t.hero.captureFormPlaceholder}
+                        className="flex-1 rounded-full border border-white/15 bg-slate-900 px-5 py-3.5 text-sm text-white placeholder-slate-500 outline-none focus:border-brand-500/60 focus:ring-1 focus:ring-brand-500/40"
+                      />
+                      <button
+                        type="submit"
+                        disabled={heroFormState === "loading"}
+                        className="shrink-0 rounded-full bg-brand-500 px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-brand-400 disabled:opacity-60"
+                      >
+                        {heroFormState === "loading" ? "…" : t.hero.captureFormCta}
+                      </button>
+                    </form>
+                  )}
+                  {heroFormState === "error" && (
+                    <p className="mt-2 text-xs text-red-400">{t.hero.captureFormError}</p>
+                  )}
+                </div>
                 <div className="mt-10">
                   <div className="rounded-2xl border border-brand-500/30 bg-brand-500/8 p-6">
                     <p className="mb-4 text-base font-semibold text-white">{t.hero.signupTitle}</p>
