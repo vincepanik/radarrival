@@ -104,6 +104,15 @@ type Copy = {
     body: string;
     cta: string;
   };
+  exitPopup: {
+    headline: string;
+    subtext: string;
+    placeholder: string;
+    cta: string;
+    noCard: string;
+    success: string;
+    error: string;
+  };
   socialProof: {
     counter: string;
     lastSignup: string;
@@ -379,6 +388,15 @@ const copy: Record<Locale, Copy> = {
       title: "Pas prêt à démarrer ?",
       body: "Parlez-nous de vos concurrents et de votre marché — nous vous montrerons à quoi pourrait ressembler votre rapport RadarRival.",
       cta: "Demander une démo",
+    },
+    exitPopup: {
+      headline: "Avant de partir...",
+      subtext: "Essayez RadarRival 7 jours gratuitement. Annulez à tout moment.",
+      placeholder: "Votre email professionnel",
+      cta: "Commencer gratuitement",
+      noCard: "Pas de carte bancaire requise",
+      success: "✅ C'est parti ! Vérifiez votre email.",
+      error: "Une erreur est survenue. Veuillez réessayer.",
     },
     socialProof: {
       counter: "Déjà 47 entreprises surveillent leurs concurrents avec RadarRival",
@@ -671,6 +689,15 @@ const copy: Record<Locale, Copy> = {
       body: "Tell us about your competitors and market — we'll show you what your RadarRival report could look like.",
       cta: "Request a demo",
     },
+    exitPopup: {
+      headline: "Before you go...",
+      subtext: "Try RadarRival free for 7 days. Cancel anytime.",
+      placeholder: "Your work email",
+      cta: "Start for free",
+      noCard: "No credit card required",
+      success: "✅ You're in! Check your email.",
+      error: "Something went wrong. Please try again.",
+    },
     socialProof: {
       counter: "Already 47 companies monitoring their competitors with RadarRival",
       lastSignup: "Latest signup: 2 hours ago",
@@ -797,6 +824,128 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 const stepIcons = [<IconSearch key="search" />, <IconEye key="eye" />, <IconMail key="mail" />];
 
+function ExitIntentPopup({ content }: { content: Copy["exitPopup"] }) {
+  const [visible, setVisible] = useState(false);
+  const [popupEmail, setPopupEmail] = useState("");
+  const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    const SESSION_KEY = "radar_exit_shown";
+    if (sessionStorage.getItem(SESSION_KEY)) return;
+
+    const show = () => {
+      if (sessionStorage.getItem(SESSION_KEY)) return;
+      sessionStorage.setItem(SESSION_KEY, "1");
+      setVisible(true);
+    };
+
+    const isMobile = window.innerWidth < 768 || "ontouchstart" in window;
+
+    if (isMobile) {
+      const timer = setTimeout(show, 45000);
+
+      const handleScroll = () => {
+        const scrolled = window.scrollY + window.innerHeight;
+        const total = document.documentElement.scrollHeight;
+        if (total > 0 && scrolled / total >= 0.7) show();
+      };
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      const handleMouseLeave = (e: MouseEvent) => {
+        if (e.clientY <= 0) show();
+      };
+      document.addEventListener("mouseleave", handleMouseLeave);
+      return () => document.removeEventListener("mouseleave", handleMouseLeave);
+    }
+  }, []);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setFormState("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: popupEmail, source: "exit_popup" }),
+      });
+      if (res.ok) {
+        setFormState("success");
+        setPopupEmail("");
+      } else {
+        setFormState("error");
+      }
+    } catch {
+      setFormState("error");
+    }
+  }
+
+  if (!visible) return null;
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+      <div
+        className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+        onClick={() => setVisible(false)}
+        aria-hidden="true"
+      />
+      <div
+        role="dialog"
+        aria-modal="true"
+        className="relative w-full max-w-[440px] rounded-3xl bg-white p-8 shadow-2xl"
+      >
+        <button
+          type="button"
+          onClick={() => setVisible(false)}
+          aria-label="Close"
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+        >
+          ✕
+        </button>
+
+        {formState === "success" ? (
+          <div className="py-4 text-center">
+            <p className="text-lg font-semibold text-slate-900">{content.success}</p>
+          </div>
+        ) : (
+          <>
+            <h2 className="pr-8 text-2xl font-bold text-slate-900">{content.headline}</h2>
+            <p className="mt-3 leading-relaxed text-slate-600">{content.subtext}</p>
+
+            <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3">
+              <input
+                type="email"
+                required
+                value={popupEmail}
+                onChange={(e) => setPopupEmail(e.target.value)}
+                placeholder={content.placeholder}
+                className="rounded-full border border-slate-200 px-5 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/40"
+              />
+              <button
+                type="submit"
+                disabled={formState === "loading"}
+                className="rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600 disabled:opacity-60"
+              >
+                {formState === "loading" ? "…" : content.cta}
+              </button>
+            </form>
+
+            {formState === "error" && (
+              <p className="mt-2 text-xs text-red-500">{content.error}</p>
+            )}
+
+            <p className="mt-4 text-center text-xs text-slate-400">{content.noCard}</p>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("fr");
   const t = copy[locale];
@@ -851,6 +1000,7 @@ export default function Home() {
 
   return (
     <div className="relative flex flex-col overflow-x-hidden">
+      <ExitIntentPopup content={t.exitPopup} />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.22),_transparent_48%)]" />
       <div className="pointer-events-none absolute left-1/2 top-32 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full border border-brand-500/12" />
       <div className="pointer-events-none absolute left-1/2 top-44 h-[25rem] w-[25rem] -translate-x-1/2 rounded-full border border-brand-500/12" />
