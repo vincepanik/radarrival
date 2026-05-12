@@ -280,7 +280,7 @@ const copy: Record<Locale, Copy> = {
       subtitle: "Choisissez le niveau de couverture adapté à votre marché et activez votre abonnement mensuel dès aujourd'hui.",
       checkoutHint: "Chaque bouton ouvre une page Stripe dédiée à la formule choisie, sans mélange entre Starter et Pro.",
       securePayment: "💳 Paiement sécurisé par Stripe",
-      currencyNote: "Prix affichés en USD — équivalent à environ 19 €/mois ou 29 €/mois selon votre formule.",
+      currencyNote: "Prix affichés en EUR : 19€/mois pour Starter et 29€/mois pour Pro.",
       plans: [
         {
           name: "Starter",
@@ -580,7 +580,7 @@ const copy: Record<Locale, Copy> = {
       subtitle: "Choose the level of competitor coverage that fits your market and activate your monthly subscription today.",
       checkoutHint: "Each button opens a Stripe checkout dedicated to that plan, with no Starter/Pro mix in the cart.",
       securePayment: "💳 Secure payment processed by Stripe",
-      currencyNote: "Prices displayed in USD — equivalent to approximately €19/month or €29/month depending on your plan.",
+      currencyNote: "Prices are displayed in EUR: €19/month for Starter and €29/month for Pro.",
       plans: [
         {
           name: "Starter",
@@ -1134,7 +1134,7 @@ export default function Home() {
                   </div>
                   <div className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                     <a
-                      href="#pricing"
+                      href={STARTER_CHECKOUT_LINK}
                       className="inline-flex rounded-full bg-white/8 px-6 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/12 hover:text-white border border-white/10"
                     >
                       {t.hero.primaryCta}
@@ -1308,7 +1308,7 @@ export default function Home() {
 
             <div className="mt-6 border-t border-slate-200 pt-6">
               <a
-                href="#pricing"
+                href={STARTER_CHECKOUT_LINK}
                 className="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 px-6 py-4 text-center text-base font-semibold text-slate-950 transition hover:bg-emerald-400 md:w-auto"
               >
                 {t.reportPreview.cta}

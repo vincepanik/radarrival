@@ -19,6 +19,16 @@ function getResend() {
   return new Resend(apiKey);
 }
 
+function getResendFromEmail() {
+  const from = process.env.RESEND_FROM_EMAIL;
+
+  if (!from) {
+    throw new Error("RESEND_FROM_EMAIL is not configured");
+  }
+
+  return from;
+}
+
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 const STRIPE_SIGNATURE_TOLERANCE_SECONDS = 300;
 const ONBOARDING_EMAIL_SUBJECT =
@@ -528,7 +538,7 @@ export async function POST(request: NextRequest) {
 
     try {
       await getResend().emails.send({
-        from: process.env.RESEND_FROM_EMAIL ?? "RadarRival <noreply@radarrival.com>",
+        from: getResendFromEmail(),
         to: claimedState.customer_email,
         subject: ONBOARDING_EMAIL_SUBJECT,
         html: buildOnboardingEmail(plan),

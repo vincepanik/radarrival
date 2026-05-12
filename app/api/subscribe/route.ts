@@ -3,8 +3,6 @@ import { Pool } from "pg";
 import { Resend } from "resend";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-const STARTER_CHECKOUT_LINK = "https://buy.stripe.com/14A8wR1xAfQi98KcPJ5wI05";
-const PRO_CHECKOUT_LINK = "https://buy.stripe.com/fZudRb7VY7jMacOaHB5wI06";
 
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY;
@@ -16,40 +14,47 @@ function getResend() {
   return new Resend(apiKey);
 }
 
+function getResendFromEmail() {
+  const from = process.env.RESEND_FROM_EMAIL;
+
+  if (!from) {
+    throw new Error("RESEND_FROM_EMAIL is not configured");
+  }
+
+  return from;
+}
+
 const WELCOME_EMAIL = {
   subject: "Vous êtes bien sur la liste RadarRival 🎯",
-  text: `Bonjour,
+  text: `✉️ Ceci est un email de RadarRival — radarrival.com
+---
 
-Merci de votre intérêt pour RadarRival.
+Bonjour,
 
-Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux et mentions presse.
+Merci de votre intérêt pour RadarRival !
+
+Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux, mentions presse.
 
 Vous avez bien été ajouté à la liste RadarRival. Nos abonnements payants démarrent à 19€/mois pour Starter et 29€/mois pour Pro.
 
-Choisir votre formule :
-Starter — ${STARTER_CHECKOUT_LINK}
-Pro — ${PRO_CHECKOUT_LINK}
+Pour choisir votre formule quand vous êtes prêt :
+👉 https://radarrival.com
 
 Si vous préférez être accompagné pour le démarrage, répondez simplement à cet email.
 
 À bientôt,
 L'équipe RadarRival
-contact@radarrival.com
-radarrival.com`,
+contact@radarrival.com | linkedin.com/company/radarrival`,
   html: `<div style="background:#1e3a5f;color:#ffffff;padding:10px 16px;border-radius:6px;margin-bottom:16px;font-size:13px;">
-  <strong>RadarRival</strong> vous accompagne pour activer votre veille concurrentielle.
+  ✉️ Email envoyé par <strong>RadarRival</strong> — <a href="https://radarrival.com" style="color:#93c5fd;">radarrival.com</a>
 </div>
 <p>Bonjour,</p>
-<p>Merci de votre intérêt pour RadarRival.</p>
-<p>Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux et mentions presse.</p>
+<p>Merci de votre intérêt pour RadarRival !</p>
+<p>Nous aidons les PME et indépendants à suivre leurs concurrents sans effort. Chaque lundi matin, vous recevez un rapport clair et actionnable : changements de prix, nouvelles offres, activité réseaux sociaux, mentions presse.</p>
 <p>Vous avez bien été ajouté à la liste RadarRival. Nos abonnements payants démarrent à 19€/mois pour Starter et 29€/mois pour Pro.</p>
-<p>Choisir votre formule :</p>
-<ul>
-  <li><a href="${STARTER_CHECKOUT_LINK}">Starter — 19€/mois</a></li>
-  <li><a href="${PRO_CHECKOUT_LINK}">Pro — 29€/mois</a></li>
-</ul>
+<p>Pour choisir votre formule quand vous êtes prêt :<br>👉 <a href="https://radarrival.com">https://radarrival.com</a></p>
 <p>Si vous préférez être accompagné pour le démarrage, répondez simplement à cet email.</p>
-<p>À bientôt,<br>L'équipe RadarRival<br>contact@radarrival.com<br><a href="https://radarrival.com">radarrival.com</a></p>`,
+<p>À bientôt,<br>L'équipe RadarRival<br>contact@radarrival.com | linkedin.com/company/radarrival</p>`,
 } as const;
 
 export async function POST(req: NextRequest) {
@@ -74,7 +79,7 @@ export async function POST(req: NextRequest) {
     if (insertResult.rowCount && insertResult.rowCount > 0) {
       try {
         await getResend().emails.send({
-          from: process.env.RESEND_FROM_EMAIL ?? "RadarRival <noreply@radarrival.com>",
+          from: getResendFromEmail(),
           to: trimmed,
           subject: WELCOME_EMAIL.subject,
           html: WELCOME_EMAIL.html,
