@@ -1745,3 +1745,36 @@
 ### Focused follow-up
 - Create a platform-level NanoCorp task to change the company record itself from `Create Co` to `RadarRival`, because the actual email sender address/footer are still injected server-side by NanoCorp after the app sends the email.
 - If RadarRival needs the welcome email to be fully free of NanoCorp transport branding immediately, create a task to move transactional email sending off NanoCorp's current `send_email` transport and onto a provider with sender-name/footer control.
+
+## 2026-05-12 - Production sync push and Resend preflight
+
+### What was completed
+- Rebuilt the missing local `sync/co-rgl1-improvements` branch in the `vincepanik/radarrival` checkout from the audited source commits recorded on `2026-05-11`, then tightened the Resend sender handling so production routes require `RESEND_FROM_EMAIL` explicitly.
+- Validated the sync branch locally with `npm run lint` and `npm run build` before push.
+- Force-pushed `sync/co-rgl1-improvements` to `main`, moving production from `f15ba04e061ab8b05763c25b3c66296e0d8d6fa1` to `858279face79f434dc8b8bd0e584e6b67d527ae8`.
+- Changed files in the production push:
+  - `app/api/stripe-webhook/route.ts`
+  - `app/api/subscribe/route.ts`
+  - `app/page.tsx`
+  - `lib/nanocorp-email.ts`
+  - `package-lock.json`
+  - `package.json`
+- Confirmed GitHub recorded a successful Vercel deployment for commit `858279face79f434dc8b8bd0e584e6b67d527ae8`:
+  - `https://vercel.com/vincepaniks-projects/radarrival/96zig3MDEupDLWJA8tSLJ3xuMHt5`
+- Sent exactly one Resend test email to `kevin.pacini@gmail.com`.
+
+## Resend Test Email Log
+
+**Date:** 2026-05-12
+**Test email sent to:** kevin.pacini@gmail.com
+**From:** RadarRival <contact@radarrival.com>
+**Reply-To:** contact@radarrival.com
+**Subject:** Test Resend setup — RadarRival
+**Resend message_id:** 060fbe4a-4935-4664-955c-4782eb36894a
+**HTTP status:** 200
+**Result:** Success
+**Notes:** Pre-flight deliverability test before resuming cold outreach.
+
+### Focused follow-up
+- Monitor receipt and deliverability for Resend message `060fbe4a-4935-4664-955c-4782eb36894a`, including spam-folder placement if the inbox owner can confirm it.
+- If future production syncs are expected, keep a persistent local `vincepanik/radarrival` worktree or push the sync branch itself as well so the next run does not need to reconstruct the audited branch from source commits.
