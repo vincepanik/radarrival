@@ -1,5 +1,53 @@
 # DOCS
 
+## 2026-05-13 - Wave 12 French SME prospect research and outreach via Resend
+
+### Findings captured before sends
+- Read the available outreach history first, then rebuilt the suppression list from the documented waves plus the current outbound mailbox history.
+- Re-checked the exact 10 planned recipient addresses against the documented do-not-contact history and `nanocorp emails list --direction outbound --limit 500`; all 10 were new and none used an `@nanocorp.app` domain.
+- Used the required direct Resend path for every send: `POST https://api.resend.com/emails` with `from: "RadarRival <contact@radarrival.com>"` and `reply_to: contact@radarrival.com`.
+- Kept this wave inside fresh French SME targets across insurtech, legaltech, fintech, growth agencies, women’s health, and DTC brands.
+- Mixed public company inboxes with verified named founder/operator emails only; no contact forms were used.
+- Important brief conflict resolved before sending: `Seyna` was prioritized in the task brief, but the current suppression history already showed they had been contacted in an earlier wave, so I did **not** re-contact them and filled the wave with another net-new French SME instead.
+
+### What I completed
+- Sent 10 new French outreach emails through the Resend API from `contact@radarrival.com`.
+- Used new, personalized subject lines for every target; did **not** reuse `Savoir ce que font vos concurrents chaque lundi matin`.
+- Kept every body in French, short, paid-offer only, with RadarRival positioned at `19€/mois` and linked to `https://radarrival.com`.
+- Logged all 10 sends below with website, targeted contact, source of the address, timestamp, and Resend `message_id`.
+
+### Wave 12 Outreach
+
+| Company | Website | Person targeted | Direct email used | Source of direct email | Contact type | Sent at | Resend message ID |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Orus | https://www.orus.eu | public team inbox | hello@orus.eu | official site public inbox | generic inbox | 2026-05-13T22:33:22.880328Z | 8e8f2416-8f3b-4be6-8a5e-e801ceaa156f |
+| Dalma | https://www.dalma.co | Alban Preville (co-founder & CEO) | alban@dalma.co | `nanocorp prospects verify-email` | direct named contact | 2026-05-13T22:33:23.075902Z | a7f72482-6969-4301-a9ad-850042c27748 |
+| Tomorro | https://www.tomorro.com | public team inbox | contact@tomorro.com | official site public inbox | generic inbox | 2026-05-13T22:33:23.356102Z | ce0b0e94-e408-47a0-9bde-0ebc15e9da33 |
+| Junto | https://junto.fr | Etienne (public named inbox) | etienne@junto.fr | official legal page named email | direct named contact | 2026-05-13T22:33:23.553576Z | 09a43f90-795b-4830-a7ab-98c5e54b1a67 |
+| Eskimoz | https://www.eskimoz.fr | Alexandre Courbin | alexandre.courbin@eskimoz.fr | official site public named email | direct named contact | 2026-05-13T22:33:23.761794Z | c2ee54b5-ed1f-4b33-8dbc-209b8bee5285 |
+| Fygr | https://www.fygr.io | public team inbox | hello@fygr.io | official site public inbox | generic inbox | 2026-05-13T22:33:23.966885Z | f1139dc1-507b-49f6-ad0e-d2667a2ab076 |
+| Perifit | https://perifit.co | sales team | sales@perifit.co | official site public sales inbox | generic inbox | 2026-05-13T22:33:24.176502Z | 9dcc252c-448f-46eb-bfa5-207ed4c1c5fa |
+| Jho | https://jho.fr | public team inbox | hello@jho.fr | official legal page public inbox | generic inbox | 2026-05-13T22:33:24.353788Z | d493dd6b-dc7d-4cde-b503-9cd26c1b9ccb |
+| SideCare | https://www.side.care | Louis Fourrier (cofounder & CTO) | louis@sidecare.com | `nanocorp prospects verify-email` | direct named contact | 2026-05-13T22:33:24.590725Z | 52557cef-9dea-4d5f-8dc1-2d4028d4d2dd |
+| Defacto | https://www.getdefacto.com | Jordane Giuly (co-founder) | jordane@getdefacto.com | `nanocorp prospects verify-email` | direct named contact | 2026-05-13T22:33:24.805800Z | f9a7cdf7-10d5-4623-8ec8-491c22428301 |
+
+### Send result
+- Successful sends recorded in this run: `10`
+- Failed sends recorded in this run: `0`
+- Contact forms used in this run: `0`
+- Generic inboxes used in this run: `5`
+- Direct named contacts used in this run: `5`
+
+### Result
+- Wave 12 research and outreach are complete with direct Resend sends from `contact@radarrival.com`.
+- `DOCS.md` now records the Wave 12 suppression checks, the `Seyna` exclusion decision, the exact 10 recipient addresses used, and the full Resend send log.
+- No application code changes were required for this task.
+
+### Focused follow-up
+- Monitor the 10 Wave 12 threads for replies, bounces, and unsubscribe requests in the RadarRival inbox.
+- Create a small replacement queue for any Wave 12 address that bounces, using the same no-repeat suppression rules.
+- Tighten future outreach briefs so any “priority target” is first checked against `DOCS.md` suppression history before the wave is assigned.
+
 ## 2026-04-29 - Paid offer messaging cleanup across site, emails, and docs
 
 ### Findings captured before edits
