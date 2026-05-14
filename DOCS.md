@@ -1,5 +1,53 @@
 # DOCS
 
+## 2026-05-14 - Wave 13 French SME prospect research and outreach via Resend
+
+### Findings captured before sends
+- Read the available outreach history first, then rebuilt the suppression list from Waves 1 to 12 plus the earlier `LiveMentor` send before researching any new target.
+- Re-checked the final 10 recipient domains against the documented do-not-contact history and `nanocorp emails list --direction outbound --limit 500`; no prior outbound messages matched these domains.
+- Confirmed none of the selected addresses used an `@nanocorp.app` domain.
+- Used the required direct Resend path for every send: `POST https://api.resend.com/emails` with `from: "RadarRival <contact@radarrival.com>"` and `replyTo: contact@radarrival.com`.
+- Kept this wave inside the requested profile with fresh French SME targets across beauty DTC, architecture / interior design, wine / spirits, sports / fitness tech, and B2B software for HR / formation workflows.
+- Used only direct company-domain inboxes surfaced on official websites, official legal/contact pages, or official-site search results; no contact forms were used.
+
+### What I completed
+- Sent 10 new French outreach emails through the Resend API from `contact@radarrival.com`.
+- Used new personalized subject lines for every target and did not reuse `Savoir ce que font vos concurrents chaque lundi matin`.
+- Kept every body in French, short, paid-offer only, with RadarRival positioned from `19€/mois` and linked to `https://radarrival.com`.
+- Logged all 10 sends below with website, direct email used, source of the address, timestamp, and Resend `message_id`.
+
+### Wave 13 Outreach
+
+| Company | Sector | Website | Direct email used | Source of direct email | Sent at | Resend message ID |
+| --- | --- | --- | --- | --- | --- | --- |
+| La Canopée | Beauty DTC | https://la-canopee.com | serviceclient@la-canopee.com | official site public footer inbox | 2026-05-14T22:43:54Z | 06190b52-7560-4a44-a364-c7b855081cfe |
+| Archibien | Architecture / interior design | https://www.archibien.com | bonjour@archibien.com | official site public contact section | 2026-05-14T22:43:54Z | 9097d63e-8441-4f63-968a-0b356b626e46 |
+| Krème | Beauty DTC | https://kreme-paris.com | contact@kreme-paris.com | official `/contact` public inbox | 2026-05-14T22:43:55Z | 75cead0b-340b-4901-9dd8-9e78316b049d |
+| Cut By Fred | Beauty DTC | https://cutbyfred.com | help@cutbyfred.com | official legal page public inbox | 2026-05-14T22:43:55Z | 9f2c5682-4d48-4fc0-b6e6-434cddae58ce |
+| Paris Wine Company | Wine / spirits | https://www.pariswinecompany.com | contact@pariswinecompany.com | official site public inbox | 2026-05-14T22:43:55Z | f495f130-3874-455f-9c50-1637f8f43778 |
+| JNPR | Wine / spirits | https://jnprspirits.com | hello@jnprspirits.com | official site public inbox | 2026-05-14T22:43:56Z | 43c7cdcb-215f-4306-a041-e71dcd5da7db |
+| FizzUp | Sports / fitness tech | https://www.fizzup.com | support@fizzup.com | official site public support inbox | 2026-05-14T22:43:56Z | 23135dfc-0f82-4db3-8697-0e7404dc2a4c |
+| Empowill | B2B SaaS / HR | https://www.empowill.com | contact@empowill.com | official site public inbox | 2026-05-14T22:43:56Z | 88846757-3658-464f-9932-a62df457cf7e |
+| OSCO | Wine / spirits | https://www.oscodrinks.com | tellmemore@oscodrinks.com | official `/pages/contact` public inbox | 2026-05-14T22:43:57Z | a1898e29-40e9-42d6-bf0a-8ce6b50095b3 |
+| Little Worker | Architecture / interior design | https://www.littleworker.fr | contact@littleworker.fr | official site contact page public inbox | 2026-05-14T22:43:57Z | e3b97d0c-1c18-4d07-b11e-bbe057ce7485 |
+
+### Send result
+- Successful sends recorded in this run: `10`
+- Failed sends recorded in this run: `0`
+- Contact forms used in this run: `0`
+- Generic company inboxes used in this run: `10`
+- Direct named contacts used in this run: `0`
+
+### Result
+- Wave 13 research and outreach are complete with direct Resend sends from `contact@radarrival.com`.
+- `DOCS.md` now records the Wave 13 suppression checks, the exact 10 recipient addresses used, and the full Resend send log.
+- No application code changes were required for this task.
+
+### Focused follow-up
+- Monitor the 10 Wave 13 threads for replies, bounces, and unsubscribe requests in the RadarRival inbox.
+- Build a small replacement queue for any Wave 13 inbox that bounces, prioritizing named founder/operator emails where public generic inboxes prove weak.
+- Create a follow-up task to draft short French reply templates for demo requests, pricing questions, and polite opt-outs.
+
 ## 2026-05-13 - Wave 12 French SME prospect research and outreach via Resend
 
 ### Findings captured before sends
