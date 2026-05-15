@@ -1,5 +1,47 @@
 # DOCS
 
+## 2026-05-15 - LiveMentor Outreach
+
+### Findings captured before send
+- Read the available outreach history first to avoid reusing a recently contacted target or duplicating the LiveMentor send.
+- Checked the public LiveMentor pages `about`, `contact`, and `devenir-partenaire-livementor`; the exposed public inboxes were `masterclass@livementor.com` and `presse@livementor.com`, with `masterclass@livementor.com` present on all three pages.
+- Treated Alexandre Dana as the intended decision-maker for this pitch based on the founder angle requested in the task and the fact that the inbound newsletter received on `2026-05-15` came from `masterclass@livementor.com`.
+- Tested both `alexandre.dana@livementor.com` and `alexandre@livementor.com` with `nanocorp prospects verify-email` using `Alexandre Dana` + `livementor.com`; both checks returned `email_status: unavailable`, so I did not use an unverified founder alias.
+- Because `masterclass@livementor.com` is the publicly exposed active mailbox and matches the newsletter sender already observed, I used that address while addressing the email personally to Alexandre Dana.
+
+### What I completed
+- Sent one personalized French email via the Resend API from `RadarRival <contact@radarrival.com>` to `masterclass@livementor.com`.
+- Kept the copy short and personal, mentioned the `27 000+` entrepreneur community, referenced `OpenClassrooms` as a named EdTech competitor, covered both the direct-customer use case and the community-partnership angle, and included the required price floor `à partir de 19€/mois`.
+- Captured the Resend API response ID for the send and logged it below.
+
+### LiveMentor Outreach
+
+| Date | Intended decision-maker | Delivery address used | Subject | Resend message ID | Send status |
+| --- | --- | --- | --- | --- | --- |
+| 2026-05-15 | Alexandre Dana | masterclass@livementor.com | Veille EdTech pour la communauté LiveMentor | a6b1362a-e67e-4e4a-8329-abbfe37249df | sent |
+
+### Email copy
+
+```text
+Bonjour Alexandre,
+
+J’ai reçu votre newsletter LiveMentor du 15 mai, et je me suis dit que RadarRival pouvait être utile à la fois à votre équipe et à votre communauté de 27 000+ entrepreneurs accompagnés.
+Pour LiveMentor, on livre chaque semaine une veille concurrentielle simple sur l’EdTech et le coaching, par exemple pour suivre OpenClassrooms sans mobiliser du temps interne.
+Et côté partenariat, vous pourriez aussi recommander RadarRival à vos freelances et PME qui veulent surveiller leur marché, à partir de 19€/mois, avec partage de revenus possible.
+Si c’est pertinent, voici un aperçu rapide : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+### Result
+- LiveMentor outreach is complete for this task.
+- `DOCS.md` now records the public-address research, the failed founder-alias verification attempts, the exact recipient address used, the subject line, the sent copy, and the Resend message ID.
+- No application code or deployment changes were required.
+
+### Focused follow-up
+- Monitor `contact@radarrival.com` for a reply from `masterclass@livementor.com` and log any response or bounce outcome in `DOCS.md`.
+- If there is no reply after a reasonable delay, create a follow-up task to identify a named LiveMentor partnerships or marketing lead and send a second, tighter partnership-only message.
+
 ## 2026-05-14 - Wave 13 French SME prospect research and outreach via Resend
 
 ### Findings captured before sends
