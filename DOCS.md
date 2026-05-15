@@ -1,5 +1,52 @@
 # DOCS
 
+## 2026-05-15 - Wave 14 French SME prospect research and outreach via Resend
+
+### Findings captured before sends
+- Read the available outreach history first, then rebuilt the suppression list from Waves 1 to 13 plus the `LiveMentor` outreach already logged on `2026-05-15`.
+- Re-checked the final Wave 14 company names, domains, and recipient inboxes against both the documented history and `nanocorp emails list --direction outbound --limit 500`; none had been contacted before and none used an `@nanocorp.app` address.
+- Used the required direct Resend path for every send: `POST https://api.resend.com/emails` with `from: "RadarRival <contact@radarrival.com>"` and `reply_to: contact@radarrival.com`.
+- Kept this wave inside fresh French SME targets across sustainable food, pet care, HR tech, accounting / spend-management SaaS, travel tech, home-improvement platforms, and esports software.
+- Used only direct emails surfaced from official websites, official legal/contact pages, or official-site search snippets exposing a company inbox or named company email; no contact forms were used.
+
+### What I completed
+- Sent 10 new French outreach emails through the Resend API from `contact@radarrival.com`.
+- Used a new personalized subject line for every target, each under 50 characters and distinct from prior waves.
+- Kept every body short, in French, paid-offer only, with one concrete company/market observation, one named competitor, the weekly Monday synthesis angle, and the price floor `à partir de 19€/mois`.
+- Logged all 10 sends below with sector, website, direct email used, source of the address, subject, date, and Resend `message_id`.
+
+### Wave 14 Outreach
+
+| Company | Sector | Website | Direct email used | Source of direct email | Subject | Date | Resend message ID |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Bene Bono | Sustainable food / anti-gaspi | https://www.benebono.fr | miam@benebono.fr | official site public inbox | Bene Bono face à Atypique | 2026-05-15 | 612d912c-7db4-4c88-8297-490ac18eef18 |
+| Hector Kitchen | Pet care / pet food | https://www.hectorkitchen.com | hector@hectorkitchen.com | official site public legal notice inbox | Hector Kitchen face à Japhy | 2026-05-15 | 315683e9-e0ab-479a-b8b7-607443b33135 |
+| Japhy | Pet care / pet food | https://japhy.fr | thomas@japhy.fr | official legal page public named inbox | Japhy et les signaux d'Hector | 2026-05-15 | 4c5b98f7-605c-4ef9-ab6d-0a0632d11f42 |
+| Elevo | HR tech / talent management | https://www.elevo.fr | hello@elevo.fr | official site mentions-legales inbox | Elevo dans la bataille RH | 2026-05-15 | dc10423a-acf4-4de0-9dd9-f067a6be264b |
+| Dougs | Accounting SaaS | https://www.dougs.fr | support@dougs.fr | official site public support inbox | Dougs face à Indy | 2026-05-15 | dc5717f4-bd46-4c8c-ad5c-7418742c67c0 |
+| Libeo | Accounting / spend management SaaS | https://www.libeo.io | support@libeo.io | official legal page public inbox | Libeo face aux signaux de Pennylane | 2026-05-15 | ccca7a0d-079a-474c-baf3-a592f6cdfe2b |
+| Fairmoove | Travel / tourisme tech | https://www.fairmoove.fr | fairmoover@fairmoove.fr | official site public contact inbox | Fairmoove face à GreenGo | 2026-05-15 | 7ba53ef3-9c82-4c5f-b01c-892d5a118725 |
+| hemea | Home improvement / renovation platform | https://www.hemea.com | contact@hemea.com | official site public contact page inbox | hemea dans la course rénovation | 2026-05-15 | fe29149d-3ba2-4687-a531-127c3b6e3e84 |
+| Renovation Man | Home improvement / renovation platform | https://www.renovationman.com | contact@renovationman.com | official site public contact page inbox | Renovation Man face à hemea | 2026-05-15 | bbadd0e4-314b-4351-bc03-ad48a67efcd5 |
+| Toornament | Gaming / esports software | https://www.toornament.com | contact@toornament.com | official knowledge-base public contact inbox | Toornament face à Battlefy | 2026-05-15 | 6d572727-a85d-42cf-bcf7-477014bc4952 |
+
+### Send result
+- Successful sends recorded in this run: `10`
+- Failed sends recorded in this run: `0`
+- Contact forms used in this run: `0`
+- Generic company inboxes used in this run: `8`
+- Direct named contacts used in this run: `2`
+
+### Result
+- Wave 14 research and outreach are complete with direct Resend sends from `contact@radarrival.com`.
+- `DOCS.md` now records the Wave 14 suppression checks, the exact 10 recipient addresses used, the subject lines, and the full Resend send log.
+- No application code changes were required for this task.
+
+### Focused follow-up
+- Monitor the 10 Wave 14 threads for replies, bounces, and unsubscribe requests in the RadarRival inbox.
+- Build a small replacement queue for any Wave 14 inbox that bounces, prioritizing more named founder/operator emails in mobility, legaltech, and travel tech.
+- Create a follow-up task to draft concise French reply templates for demo requests, pricing questions, and opt-out confirmations.
+
 ## 2026-05-15 - LiveMentor Outreach
 
 ### Findings captured before send
