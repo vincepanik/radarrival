@@ -1,5 +1,215 @@
 # DOCS
 
+## 2026-05-18 - Wave 15 Resend env fix and outreach send
+
+### Findings captured before sends
+- Read the available outreach history in both the local `co-rgl1` workspace and the canonical `vincepanik/radarrival` repo before touching live sends.
+- Validated the current user-owned Resend key with a minimal API send to `contact@radarrival.com`; the precheck returned HTTP `200`, so the key itself is valid.
+- Checked `nanocorp vercel env list` for the current NanoCorp-linked Vercel project and confirmed `RESEND_API_KEY` was still missing there.
+- Set `RESEND_API_KEY` in Vercel via `nanocorp vercel env set` and confirmed it now appears in `production` and `preview`.
+- Retrieved the Wave 15 prospect list from the `co-rgl1` `DOCS.md` / commit `dca4778`, but the exact per-company body copy was **not** preserved there; only the subjects, addresses, and copy constraints survived.
+- Reconstructed the 10 Wave 15 bodies from the preserved subject lines, the documented copy constraints, and lightweight official-site cues, then persisted the final sent bodies below so future runs do not have to rebuild them.
+- Found two history conflicts while reconciling the canonical repo and mailbox history: `hello@jnprspirits.com` had already been logged in `radarrival` on `2026-05-14`, and `Mailinblack` already appeared in the company mailbox history. I kept the assigned Wave 15 batch intact and logged those conflicts explicitly below.
+- The first custom Python batch failed for all 10 sends with HTTP `403` and Resend `error code: 1010` even though the key was valid. This turned out to be a client bug: the script omitted a `User-Agent` header, while the earlier successful `curl` precheck implicitly included one.
+- After adding `User-Agent`, the next pass accepted the first 5 recipients and rate-limited the last 5 with HTTP `429` (`5 requests / second`). I then replayed only the 5 rate-limited recipients with pacing; all 5 succeeded.
+
+### What I completed
+- Fixed the missing `RESEND_API_KEY` in Vercel for the current project using the valid user-owned credential.
+- Sent all 10 Wave 15 emails via `POST https://api.resend.com/emails` from `RadarRival <contact@radarrival.com>` with `reply_to: contact@radarrival.com`.
+- Captured the final UTC send timestamps and Resend `message_id` values for all 10 accepted messages.
+- Persisted the final reconstructed subjects and bodies below so the canonical repo now contains the exact Wave 15 send payloads, not just the prospect table.
+
+### Wave 15 Send Results
+
+| Company | Email | Subject | Sent at | Resend message ID | Notes |
+| --- | --- | --- | --- | --- | --- |
+| C&C Events | contact@cycevents.com | C&C Events face à la pression de WMH | 2026-05-18T23:21:51.808720+00:00 | b680814e-e49c-4045-a57c-2ab43c3a97db | none |
+| Batiik Studio | studio@batiik.fr | Batiik face aux moves de Maison Kyka | 2026-05-18T23:21:51.952034+00:00 | 42990938-fa98-4ce6-9f12-06a7c6f46e2c | none |
+| ARCHIK | contact@archik.fr | ARCHIK et le radar Espaces Atypiques | 2026-05-18T23:21:52.047905+00:00 | b9df9089-2d18-4194-b71f-af350a1ca10d | none |
+| Le Lab Coaching | contact@lelabcoaching.fr | Le Lab face à Dynamo à Paris | 2026-05-18T23:21:52.157557+00:00 | 9132b1de-2efe-4d4c-b87c-c2fa2b6e6655 | none |
+| Filigran | contact@filigran.io | Filigran face à l'avance de Sekoia | 2026-05-18T23:21:52.249891+00:00 | f7bf06ee-8be0-48e3-9edd-4cf0fc6d3ec9 | none |
+| Mailinblack | contact@mailinblack.com | Mailinblack dans le viseur d'Altospam | 2026-05-18T23:22:01.992682+00:00 | 5ba71c82-f1a1-4efe-aae3-16feeceecaeb | Mailbox history already contained prior Mailinblack-related inbound activity before this send. |
+| JNPR | hello@jnprspirits.com | JNPR dans la bataille du sans-alcool | 2026-05-18T23:22:02.487495+00:00 | fa87fe2a-eeb1-4766-aac1-0c6de909517b | Canonical radarrival docs already logged a send to this exact address on 2026-05-14. |
+| Episod | hello@episod.com | Episod face à la montée de Dynamo | 2026-05-18T23:22:03.016794+00:00 | 037a97b8-69db-4e9d-a523-fb7119c5f322 | none |
+| Magic Makers | claude.terosier@magicmakers.fr | Magic Makers face à Ecole Robots | 2026-05-18T23:22:03.518086+00:00 | 38fd305f-8292-40ce-bbcf-8b6d7bcf1d20 | none |
+| Hunteed | sylvie@hunteed.com | Hunteed face à l'essor de Flatchr | 2026-05-18T23:22:04.003128+00:00 | 4893e311-b967-45ca-afdb-abc9d3ddb2be | none |
+
+### Wave 15 Send mechanics
+
+| Attempt | Outcome | Notes |
+| --- | --- | --- |
+| Initial Python batch | `0/10` accepted | All 10 failed with HTTP `403` / Resend `error code: 1010` because the custom client omitted `User-Agent`. |
+| Retry with `User-Agent` | `5/10` accepted | First 5 recipients succeeded; last 5 hit HTTP `429 rate_limit_exceeded` because Resend allows `5` requests / second. |
+| Pacing retry for the 5 rate-limited recipients | `5/5` accepted | Replayed only the rate-limited half with pacing; no duplicate replay of already accepted sends. |
+
+### Wave 15 Email Copy
+
+#### C&C Events
+
+- Subject: `C&C Events face à la pression de WMH`
+- To: `contact@cycevents.com`
+```text
+Bonjour l'équipe C&C Events,
+
+En voyant que C&C Events se positionne comme agence événementielle corporate full service en France, je me suis dit que votre veille marché devait vite devenir chronophage.
+RadarRival vous envoie chaque lundi matin une synthèse claire de ce que pousse WMH et du reste du marché, sans y consacrer du temps côté équipe.
+Vous gardez ainsi un radar simple sur les offres, prises de parole et signaux visibles des concurrents.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Batiik Studio
+
+- Subject: `Batiik face aux moves de Maison Kyka`
+- To: `studio@batiik.fr`
+```text
+Bonjour l'équipe Batiik,
+
+Votre site insiste sur votre façon de détourner les contraintes pour créer des lieux uniques, et c'est exactement le genre de positionnement qu'il faut surveiller face à Maison Kyka.
+RadarRival vous livre chaque lundi matin une synthèse courte sur les signaux concurrentiels qui comptent vraiment pour votre marché.
+Vous voyez plus vite les nouvelles offres, les prises de parole et les angles mis en avant par les autres acteurs.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### ARCHIK
+
+- Subject: `ARCHIK et le radar Espaces Atypiques`
+- To: `contact@archik.fr`
+```text
+Bonjour l'équipe ARCHIK,
+
+Le mix immobilier et architecture que vous portez entre Paris, Marseille et la Côte Ouest vous place sur un terrain où Espaces Atypiques occupe aussi beaucoup d'espace.
+RadarRival vous envoie chaque lundi matin une synthèse exploitable des mouvements concurrentiels visibles sur ce segment.
+L'idée est de garder un oeil sur les biens mis en avant, les messages et les offres sans mobiliser du temps interne toute la semaine.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Le Lab Coaching
+
+- Subject: `Le Lab face à Dynamo à Paris`
+- To: `contact@lelabcoaching.fr`
+```text
+Bonjour l'équipe Le Lab Coaching,
+
+Votre positionnement de studio de coaching à Paris avec accompagnement personnalisé donne un vrai angle premium à surveiller dans une ville où Dynamo pousse fort sa marque.
+RadarRival vous livre chaque lundi matin une synthèse simple de ce que font les concurrents les plus visibles du marché.
+Vous récupérez rapidement les signaux sur les offres, messages et activations sans passer votre semaine en veille.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Filigran
+
+- Subject: `Filigran face à l'avance de Sekoia`
+- To: `contact@filigran.io`
+```text
+Bonjour l'équipe Filigran,
+
+Votre promesse autour d'une gestion cyber de bout en bout très proactive vous place naturellement face à des acteurs comme Sekoia qu'il faut suivre de près.
+RadarRival vous envoie chaque lundi matin une synthèse claire des signaux concurrentiels visibles sur votre catégorie.
+Vous gardez ainsi un radar simple sur les annonces, le positionnement et les nouveautés sans mobiliser l'équipe en continu.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Mailinblack
+
+- Subject: `Mailinblack dans le viseur d'Altospam`
+- To: `contact@mailinblack.com`
+```text
+Bonjour l'équipe Mailinblack,
+
+Votre discours sur une cybersécurité centrée sur l'utilisateur et la vigilance des collaborateurs rend la comparaison avec Altospam particulièrement intéressante à suivre.
+RadarRival vous livre chaque lundi matin une synthèse courte de ce que racontent et lancent les acteurs visibles de votre marché.
+Cela permet à l'équipe de garder un radar utile sur les offres, messages et signaux concurrentiels sans y passer des heures.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### JNPR
+
+- Subject: `JNPR dans la bataille du sans-alcool`
+- To: `hello@jnprspirits.com`
+```text
+Bonjour l'équipe JNPR,
+
+Votre promesse d'un spiritueux français sans alcool au goût intense montre bien à quel point le segment se professionnalise face à des marques comme French Bloom.
+RadarRival vous envoie chaque lundi matin une synthèse simple de ce que poussent les concurrents visibles du sans-alcool.
+Vous gardez ainsi un radar clair sur les lancements, offres et messages de marché sans ajouter de charge à l'équipe.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Episod
+
+- Subject: `Episod face à la montée de Dynamo`
+- To: `hello@episod.com`
+```text
+Bonjour l'équipe Episod,
+
+Le fait d'opérer 25 studios autour de 8 disciplines à Paris et Levallois vous donne une présence de marque forte à comparer à des acteurs comme Dynamo.
+RadarRival vous livre chaque lundi matin une synthèse nette sur les mouvements concurrentiels visibles du marché fitness boutique.
+Vous voyez plus vite les nouvelles offres, les messages et les activations sans passer votre semaine en veille.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Magic Makers
+
+- Subject: `Magic Makers face à Ecole Robots`
+- To: `claude.terosier@magicmakers.fr`
+```text
+Bonjour Claude,
+
+Le fait que Magic Makers se présente comme le numéro 1 en France pour apprendre à coder aux enfants et ados rend la veille concurrentielle particulièrement utile face à Ecole Robots.
+RadarRival vous envoie chaque lundi matin une synthèse courte de ce que mettent en avant les autres acteurs visibles de l'EdTech kids.
+Vous gardez ainsi un radar concret sur les offres, messages et nouveautés sans mobiliser du temps interne toute la semaine.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+#### Hunteed
+
+- Subject: `Hunteed face à l'essor de Flatchr`
+- To: `sylvie@hunteed.com`
+```text
+Bonjour Sylvie,
+
+Le positionnement de Hunteed comme plateforme de recrutement simple et efficace à l'échelle européenne donne beaucoup de matière à suivre face à des acteurs comme Flatchr.
+RadarRival vous livre chaque lundi matin une synthèse claire des signaux concurrentiels visibles sur votre marché.
+Vous gardez ainsi un radar sur les offres, les messages et les nouveautés sans transformer l'équipe en cellule de veille.
+C'est disponible à partir de 19 €/mois : https://radarrival.com
+
+— L'équipe RadarRival
+```
+
+### Send result
+- Successful sends recorded in this run: `10`
+- Failed sends recorded in this run after the final paced replay: `0`
+- Contact forms used in this run: `0`
+- Messages sent from the reconstructed Wave 15 body set now persisted above: `10`
+
+### Result
+- Wave 15 outreach is now complete in the canonical `radarrival` repo with 10 accepted Resend sends and logged `message_id` values.
+- `DOCS.md` now records the Vercel env fix, the Resend client/debugging path, the exact send timestamps, and the final body copy actually used.
+- No application code changes were required for this task.
+
+### Focused follow-up
+- Monitor `contact@radarrival.com` for replies, bounces, or unsubscribe requests tied to the 10 Wave 15 `message_id` values logged above.
+- Create a small cleanup task to deduplicate suppression history between `co-rgl1` and `vincepanik/radarrival`, because `JNPR` and `Mailinblack` showed that the two histories are not fully reconciled.
+- Create a task to replace any custom Resend scripts that omit `User-Agent` or ignore per-second pacing, so future batch sends do not trip `1010` or `429` again.
+
 ## 2026-05-15 - Wave 14 French SME prospect research and outreach via Resend
 
 ### Findings captured before sends
