@@ -83,6 +83,7 @@ type Copy = {
       href: string;
       features: string[];
     }>;
+    guarantee: { title: string; body: string };
   };
   faq: {
     title: string;
@@ -315,6 +316,10 @@ const copy: Record<Locale, Copy> = {
           ],
         },
       ],
+      guarantee: {
+        title: "Satisfait ou remboursé — 30 jours",
+        body: "Si vous n'obtenez aucune information utile sur vos concurrents dans les 30 premiers jours, nous vous remboursons intégralement. Sans conditions.",
+      },
     },
     faq: {
       title: "Questions fréquentes",
@@ -615,6 +620,10 @@ const copy: Record<Locale, Copy> = {
           ],
         },
       ],
+      guarantee: {
+        title: "Money-back guarantee — 30 days",
+        body: "If you don't get any useful insight on your competitors within 30 days, we'll refund you in full. No questions asked.",
+      },
     },
     faq: {
       title: "Frequently asked questions",
@@ -1438,6 +1447,16 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-brand-500/25 bg-brand-500/8 px-6 py-5 text-center">
+            <div className="mb-2 flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-brand-400" aria-hidden="true">
+                <path fillRule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clipRule="evenodd" />
+              </svg>
+              <span className="text-base font-semibold text-brand-300">{t.pricing.guarantee.title}</span>
+            </div>
+            <p className="text-sm leading-relaxed text-slate-300">{t.pricing.guarantee.body}</p>
+          </div>
+
           <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center gap-2 text-center text-sm">
             <p className="inline-flex items-center gap-2 text-slate-400">
               <IconLock />
